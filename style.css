@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(255, 243, 243);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    height: 100%;
+    width: 100vw;
+    /* Set the grid container height to 100% of viewport height */
+}
+
+.grid-item-nav{
+    background-color:rgb(255, 243, 243);
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.grid-item-nav img{
+    width:75px;
+}
+
+.grid-item-bg{
+    background-color:rgb(255, 243, 243);
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.grid-item-bg img{
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    object-fit: cover;
+}
+
+.fixed-element {
+    position: fixed; /* This makes the element fixed-positioned */
+    top: 100%; /* Position from the top of the viewport */
+    left: 100%; /* Position from the left of the viewport */
+    transform: translate(-95%,-100%);
+}
+
+.fixed-element img{
+width: 500px;
+}
+
+
+@media (max-width: 900px min-width:700px) {/*this is very specific*/
+    .grid-container {
+        grid-template-columns: 1fr;
+        height:100vh;
+
+    }
+        
+    .grid-item-nav{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .fixed-element{
+        position: fixed; /* This makes the element fixed-positioned */
+        top: 5vh; /* Position from the top of the viewport */
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+@media (max-width: 1200px) {/*this is very specific*/
+    .grid-container {
+        grid-template-columns: 1fr;
+        height:100vh;
+
+    }
+        
+    .grid-item-nav{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .fixed-element{
+        position: fixed; /* This makes the element fixed-positioned */
+        top: 5vh; /* Position from the top of the viewport */
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
