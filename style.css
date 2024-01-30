@@ -55,11 +55,10 @@ width: 500px;
 }
 
 
-@media (max-width: 900px min-width:700px) {/*this is very specific*/
+@media (max-width: 900px) and (min-width:500px) {/*this is very specific*/
     .grid-container {
         grid-template-columns: 1fr;
         height:100vh;
-
     }
         
     .grid-item-nav{
@@ -69,10 +68,11 @@ width: 500px;
 
     .fixed-element{
         position: fixed; /* This makes the element fixed-positioned */
-        top: 5vh; /* Position from the top of the viewport */
-        left: 50%;
-        transform: translate(-50%,-50%);
+        top: 100%; /* Position from the top of the viewport */
+        left: 100%; /* Position from the left of the viewport */
+        transform: translate(-95%,-100%);
     }
+
 }
 @media (max-width: 1200px) {/*this is very specific*/
     .grid-container {
@@ -82,6 +82,7 @@ width: 500px;
     }
         
     .grid-item-nav{
+        margin-top:100px ;
         display: flex;
         flex-direction: row;
     }
