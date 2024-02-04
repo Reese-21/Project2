@@ -50,12 +50,21 @@ body{
     transform: translate(-95%,-100%);
 }
 
-.fixed-element img{
-width: 300px;
+.map area:hover {
+    /* opacity: 0.7; */
+    cursor: pointer;
+  }
+
+.cloud {
+    display: block;
+    position: absolute; /* This makes the element fixed-positioned */
+    top: 15%;/*distance from top of the element to the top edge of browser*/
+    left: 80%;
+    transform: translate(-50%, -50%);/*put the middle of something in the center with out flex*/
 }
 
 
-@media (max-width: 900px) and (min-width:500px) {/*this is very specific*/
+@media (max-width: 900px) and (min-width:500px) {this is very specific
     .grid-container {
         grid-template-columns: 1fr;
         height:100vh;

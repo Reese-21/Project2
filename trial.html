@@ -1,119 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Define the grid */
-    body {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: repeat(13, 1fr);
-      height: 100vh;
-      margin: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Define the grid */
+        body {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(13, 1fr);
+            height: 100vh;
+            margin: 0;
+        }
 
-    /* Center column 2/9 and row 1/14 */
-    .center {
-      grid-column: 2 / 10;
-      grid-row: 1 / 14;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      background-color: rgb(255, 246, 246);
-    }
+        /* Center column 2/9 and row 1/14 */
+        .center {
+            grid-column: 2 / 10;
+            grid-row: 1 / 14;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: rgb(255, 246, 246);
+        }
 
-    /* Right column 9/13 and rows 1/14 */
-    .right {
-      grid-column: 9 / 13;
-      grid-row: 1 / 14;
-      background-color: blanchedalmond;
-    }
+        /* Right column 9/13 and rows 1/14 */
+        .right {
+            grid-column: 9 / 13;
+            grid-row: 1 / 14;
+            background-color: blanchedalmond;
+        }
 
-    /* Left column 1 and rows 1/14 */
-    .left {
-      grid-column: 1 / span 1;
-      grid-row: 1 / 14;
-      background-color: darkgrey;
-    }
+        /* Left column 1 and rows 1/14 */
+        .left {
+            grid-column: 1 / span 1;
+            grid-row: 1 / 14;
+            background-color: darkgrey;
+        }
 
-    /* Make the image responsive */
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: auto;
-    }
+        /* Make the image responsive */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
 
-    /* Style for the tooltip */
-    .tooltip {
-      position: absolute;
-      background-color: #f9f9f9;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      z-index: 10;
-      display: none;
-    }
+        /* Style for the tooltip */
+        .tooltip {
+            position: absolute;
+            background-color: #f9f9f9;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 10;
+            display: none;
+        }
 
-    .map area:hover {
-  opacity: 0.7;
-  cursor: pointer;
-}
-  </style>
+        .map area:hover {
+            /* opacity: 0.7; */
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
 
-  <!-- Center Column -->
-  <div class="center">
-    <!-- Responsive Image Map -->
-    <div style="position: relative;">
-        <img src="images/homebg.png" usemap="#image_map">
+    <!-- Center Column -->
+    <div class="center">
+        <!-- Responsive Image Map -->
+        <div style="position: relative;">
+            <img src="images/homebg.png" usemap="#image_map">
 
-      <!-- Image Map -->
-      <map name="image-map">
-        <!-- Define areas and their respective tooltips -->
-        <area alt="Heart?" title="Heart?" href="https://en.wikipedia.org/wiki/Heart" coords="914,762,961,809" shape="rect">
-        <area alt="squiggle" title="squiggle" href="https://sites.evergreen.edu/politicalshakespeares/wp-content/uploads/sites/226/2015/12/Stryker-My-Words-to-VF.pdf" coords="983,767,1031,845" shape="rect">
-        <area alt="lump" title="lump" href="https://www.youtube.com/watch?v=j0fucPpR1K0&list=PLFHfsimBl6edxOhk6E3--u6s-ku00u3Z_&index=10" coords="1141,756,1163,818" shape="rect">
-        <area alt="red part" title="red part" href="https://www.youtube.com/watch?v=ohco3PB6eBw&list=PLFHfsimBl6edxOhk6E3--u6s-ku00u3Z_&index=18" coords="1089,731,1138,845" shape="rect">
-      </map>
+            <!-- Image Map -->
+            <map name="image-map">
+                <!-- Define areas and their respective tooltips -->
+                <area alt="Heart?" title="Heart?" href="https://en.wikipedia.org/wiki/Heart" coords="914,762,961,809"
+                    shape="rect">
+                <area alt="squiggle" title="squiggle"
+                    href="https://sites.evergreen.edu/politicalshakespeares/wp-content/uploads/sites/226/2015/12/Stryker-My-Words-to-VF.pdf"
+                    coords="983,767,1031,845" shape="rect">
+                <area alt="lump" title="lump"
+                    href="https://www.youtube.com/watch?v=j0fucPpR1K0&list=PLFHfsimBl6edxOhk6E3--u6s-ku00u3Z_&index=10"
+                    coords="1141,756,1163,818" shape="rect">
+                <area alt="red part" title="red part"
+                    href="https://www.youtube.com/watch?v=ohco3PB6eBw&list=PLFHfsimBl6edxOhk6E3--u6s-ku00u3Z_&index=18"
+                    coords="1089,731,1138,845" shape="rect">
+            </map>
 
-      <!-- Tooltip Container -->
-      <div class="tooltip" id="tooltip"></div>
+            <!-- Tooltip Container -->
+            <div class="tooltip" id="tooltip"></div>
+        </div>
     </div>
-  </div>
 
-  <!-- Right Column -->
-  <div class="right">
-    <!-- Content for the right column -->
-    <!-- Add your content here -->
-  </div>
+    <!-- Right Column -->
+    <div class="right">
+        <!-- Content for the right column -->
+        <!-- Add your content here -->
+    </div>
 
-  <!-- Left Column -->
-  <div class="left">
-    <!-- Content for the left column -->
-    <!-- Add your content here -->
-  </div>
+    <!-- Left Column -->
+    <div class="left">
+        <!-- Content for the left column -->
+        <!-- Add your content here -->
+    </div>
 
-  <script>
-    // Add event listener to each area
-    document.querySelectorAll('area').forEach(function (area) {
-      area.addEventListener('mouseover', function () {
-        // Display the tooltip when mouse is over the area
-        var tooltip = document.getElementById('tooltip');
-        tooltip.innerHTML = this.getAttribute('data-tooltip');
-        tooltip.style.display = 'block';
-      });
+    <script>
+        // Add event listener to each area
+        document.querySelectorAll('area').forEach(function (area) {
+            area.addEventListener('mouseover', function () {
+                // Display the tooltip when mouse is over the area
+                var tooltip = document.getElementById('tooltip');
+                tooltip.innerHTML = this.getAttribute('data-tooltip');
+                tooltip.style.display = 'block';
+            });
 
-      area.addEventListener('mouseout', function () {
-        // Hide the tooltip when mouse is out of the area
-        var tooltip = document.getElementById('tooltip');
-        tooltip.style.display = 'none';
-      });
-    });
-  </script>
+            area.addEventListener('mouseout', function () {
+                // Hide the tooltip when mouse is out of the area
+                var tooltip = document.getElementById('tooltip');
+                tooltip.style.display = 'none';
+            });
+        });
+    </script>
 
 </body>
+
 </html>
