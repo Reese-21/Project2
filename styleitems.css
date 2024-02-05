@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #a0a0a0;
+    font-family: 'Shantell Sans', cursive;
+}
+
+h3{
+    font-size:20px; 
+}
+
+p{
+    font-size:20px;
+}
+
+body::before {
+    /* Add dotted background */
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-size: 20px 20px;
+    /* Adjust the size of the dots */
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100px repeat(8, 1fr);
+    /* grid-template-rows: repeat(8, 1fr); */
+    width: 100vw;
+    height: 100vh;
+}
+
+.grid-item-nav {
+    grid-column: span 1;
+    /* grid-row: span 8; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+    /* Gradient from #a0a0a0 (left) to #808080 (right) */
+    opacity: 0.6;
+}
+
+.grid-item-nav img {
+    width: 100px;
+
+}
+
+.grid-item-left {
+    padding-top: 500px;
+    grid-column: span 4;
+    /* grid-row: span 8; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+
+}
+
+.grid-item-left::-webkit-scrollbar {
+    width: 0;
+    /* Set the width of the scrollbar to 0 */
+}
+
+.grid-item-right {
+    grid-column: span 4;
+    /* grid-row: span 8; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.grid-item-right img {
+    width: 350px;
+    animation: movechair 4s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+.grid-prop {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    width: 70%;
+}
+
+.grid-prop-left {
+    margin-bottom: 80px;
+    margin-right: 80px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.grid-prop-right {
+    margin-bottom: 80px;
+    margin-left: 0px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+
+
+
+
+.fctitle {
+    position: fixed;
+    top: 0%;
+    left: 103%;
+    transform: translate(-100%, 0%);
+}
+
+h1 {
+    font-size: 100px;
+}
