@@ -63,6 +63,7 @@ body::before {
 .grid-item-ground {
     padding-top: 20px;
     width: 30vw;
+    min-width: 600px;
     grid-area: 1/2/9/3;
     display: flex;
     flex-direction: column;
@@ -78,6 +79,7 @@ body::before {
 .grid-item-sus {
     padding-top: 20px;
     width: 30vw;
+    min-width: 400px;
     grid-area: 1/3/9/4;
     display: flex;
     flex-direction: column;
@@ -94,6 +96,7 @@ body::before {
 .grid-item-bed {
     padding-top: 20px;
     width: 30vw;
+    min-width: 500px;
     grid-area: 1/4/9/5;
     display: flex;
     flex-direction: column;

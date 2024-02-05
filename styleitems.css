@@ -8,12 +8,12 @@ body {
     font-family: 'Shantell Sans', cursive;
 }
 
-h3{
-    font-size:20px; 
+h3 {
+    font-size: 20px;
 }
 
-p{
-    font-size:20px;
+p {
+    font-size: 20px;
 }
 
 body::before {
@@ -140,4 +140,59 @@ body::before {
 
 h1 {
     font-size: 100px;
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .grid-container {
+        display: grid;
+        grid-template-rows: 100px 2fr 3fr;
+        grid-template-columns: 1fr;
+        width:100vw;
+    }
+
+    .grid-item-nav {
+        grid-row: span 1;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+        /* Gradient from #a0a0a0 (left) to #808080 (right) */
+        opacity: 0.6;
+    }
+
+    .grid-item-right{
+        margin-top: 50px;
+        grid-row:2/3;
+        height:100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .grid-item-left{
+        grid-row:3/4;
+    }
+
+    .grid-prop {
+        display: grid;
+        grid-template-columns: 3fr 3fr;
+        min-width: 700px;
+        margin-bottom: 100px;
+    }
+
+
+    h1 {
+        font-size: 80px;
+    }
+    .fctitle {
+        position: fixed;
+        top: 90%;
+        left: 20%;
+        transform: translate(0%, 0%);
+    }
 }
