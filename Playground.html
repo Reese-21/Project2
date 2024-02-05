@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+
+    
     <link rel="stylesheet" href="styleitems.css">
 
     <title>Pointer Trail with Image</title>
@@ -13,6 +18,12 @@
         body {
             margin: 0;
             overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
         }
 
         .trail-dot {
@@ -20,6 +31,28 @@
             height: 100px;
             position: absolute;
             pointer-events: none;
+        }
+
+        .grid-item-bg {
+            grid-column: span 8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #img1 {
+            display: block;
+        }
+
+
+        @media (max-width: 1200px) {
+            .grid-container {
+                display: grid;
+                grid-template-rows: 100px 1fr;
+                grid-template-columns: 1fr;
+                width: 100vw;
+            }
         }
     </style>
 </head>
@@ -40,7 +73,93 @@
                 <img title="project story" alt="story" src="images\4navstory.png">
             </a>
         </div>
+
+
+
+        <div class="grid-item-bg">
+            <h3>I AM WATCHING YOU.</h3>
+            <p id="mousePositionDisplay">Move your mouse to see the position!</p>
+            <img id='img1' src='images\head\middle.png'>
+        </div>
     </div>
+
+
+
+
+    <!-- coord script -->
+    <script>
+        function updateMousePosition(event) {
+            var x = event.clientX; // Get the horizontal coordinate
+            var y = event.clientY; // Get the vertical coordinate
+            var coor = "X coords: " + x + ", Y coords: " + y;
+            document.getElementById("mousePositionDisplay").textContent = coor;
+            // change the textcontent
+        }
+
+        // Add event listener for mouse coordination
+        document.addEventListener("mousemove", updateMousePosition);
+
+        document.addEventListener("mousemove", function (e) {
+            let width = window.innerWidth;
+            // the width changes with the browser size
+            let height = window.innerHeight;
+            let mouseX = e.clientX;
+            let mouseY = e.clientY;
+            let image = document.getElementById('img1');
+            // id needs to be in ''
+
+            // up
+            if (mouseX < width / 3 && mouseY < height / 3) {
+                image.src = 'images/head/leftup.png';
+            }
+
+            if (mouseX > width / 3 && mouseX < 2 * width / 3 && mouseY < height / 3) {
+                image.src = 'images/head/up.png';
+            }
+
+            if (mouseX > 2 * width / 3 && mouseY < height / 3) {
+                image.src = 'images/head/rightup.png';
+            }
+
+            // middle
+            if (mouseX < width / 3 && mouseY > height / 3 && mouseY < 2 * height / 3) {
+                image.src = 'images/head/left.png';
+            }
+
+            if (mouseX > width / 3 && mouseX < 2 * width / 3 && mouseY > height / 3 && mouseY < 2 * height / 3) {
+                image.src = 'images/head/middle.png';
+            }
+
+            if (mouseX > 2 * width / 3 && mouseY > height / 3 && mouseY < 2 * height / 3) {
+                image.src = 'images/head/right.png';
+            }
+
+            // down
+            if (mouseX < width / 3 && mouseY > 2 * height / 3) {
+                image.src = 'images/head/leftdown.png';
+            }
+
+            if (mouseX > width / 3 && mouseX < 2 * width / 3 && mouseY > 2 * height / 3) {
+                image.src = 'images/head/down.png';
+            }
+
+            if (mouseX > 2 * width / 3 && mouseY > 2 * height / 3) {
+                image.src = 'images/head/rightdown.png';
+            }
+        });
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+    <!-- trail script-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const trailLength = 5; // Number of trail dots
@@ -73,6 +192,12 @@
             });
         });
     </script>
+
+
+
+
+
+
 </body>
 
 </html>
