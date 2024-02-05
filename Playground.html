@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styleitems.css">
+
+    <title>Pointer Trail with Image</title>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .trail-dot {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- left navigation -->
+        <div class="grid-item-nav">
+            <a href="index.html">
+                <img title="home" alt="home" src="images\1navhome.png"> </a>
+            <a href="tree.html">
+                <img title="tree" alt="tree" src="images\2navtree.png">
+            </a>
+            <img src="images\3navmine.png">
+            <a href="https://hyjreesepfo.cargo.site/2-8-The-Furniture-Creatures-Animation">
+                <img title="project story" alt="story" src="images\4navstory.png">
+            </a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const trailLength = 5; // Number of trail dots
+            const trailDots = [];
+
+            for (let i = 0; i < trailLength; i++) {
+                const dot = document.createElement('img');
+                dot.className = 'trail-dot';
+                dot.src = 'images/homepage/stool.png'; // Set the correct image path
+                document.body.appendChild(dot);
+                trailDots.push(dot);
+            }
+
+            document.addEventListener('mousemove', function (event) {
+                const mouseX = event.pageX;
+                const mouseY = event.pageY;
+
+                // Update the positions of trail dots based on historical mouse coordinates
+                for (let i = trailLength - 1; i > 0; i--) {
+                    const prevDot = trailDots[i - 1];
+                    const currentDot = trailDots[i];
+
+                    currentDot.style.left = prevDot.style.left;
+                    currentDot.style.top = prevDot.style.top;
+                }
+
+                // Place the first trail dot at the current mouse position
+                trailDots[0].style.left = mouseX - 25 + 'px'; // Adjust position for the image size
+                trailDots[0].style.top = mouseY - 25 + 'px';  // Adjust position for the image size
+            });
+        });
+    </script>
+</body>
+
+</html>
