@@ -84,7 +84,7 @@ body::before {
 
 .grid-container-words {
     grid-area: 2/2/6/7;
-    background: radial-gradient(circle at center, #ddcdcb85, transparent);
+    /* background: radial-gradient(circle at center, #ddcdcb85, transparent); */
 }
 
 .grid-container-image {
