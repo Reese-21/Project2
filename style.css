@@ -96,10 +96,8 @@ body::before {
 .fctitle{
     position: fixed;
     /* This makes the element fixed-positioned */
-    top: 100%;
-    /* Position from the top of the viewport */
-    left: 103%;
-    /* Position from the left of the viewport */
-    transform: translate(-100%, -100%);
+    bottom: 0%;
+    right: 0%;
+    transform: translate(10%, 0%);
 }
 /* green #b8d4d7 purple light #d1cfe8 purple dark #a19dca red #e6babe yellow #fceed1 */
