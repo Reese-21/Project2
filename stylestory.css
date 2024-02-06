@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #a0a0a0;
+    font-family: 'Shantell Sans', cursive;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+p {
+    font-size: 20px;
+
+}
+
+a {
+    color: rgb(0, 0, 0); /* Set the default color of the link */
+    text-decoration: underline; /* Remove the default underline */
+}
+
+a:hover {
+    color: #e6babe; /* Set the color of the link when hovered */
+    text-decoration: underline; /* Add underline on hover */
+    font-size: 30px;
+}
+
+body::before {
+    /* Add dotted background */
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-size: 20px 20px;
+    /* Adjust the size of the dots */
+}
+
+
+
+
+
+
+
+
+.all {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.grid-item-nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+    /* Gradient from #a0a0a0 (left) to #808080 (right) */
+    opacity: 0.6;
+}
+
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    height: 100vh;
+    width: 90vw;
+    margin-left: 150px;
+    overflow-y: auto;
+}
+
+.grid-container-words {
+    grid-area: 2/2/6/7;
+    background: radial-gradient(circle at center, #ddcdcb85, transparent);
+}
+
+.grid-container-image {
+    grid-area: 2/7/6/10;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.grid-container-image img {
+    border-radius: 40px;
+}
+
+
+
+
+.grid-future {
+    grid-area: 7/2/8/10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+/* decorations on the right */
+.grid-container-deco {
+    width: 200px;
+    height: 100vh;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.grid-container-deco img{
+    width:100px;
+}
+
+/* animation of decoration */
+.grid-container-deco img:hover:not(.grid-item-nav img){
+    animation: upDown 0.4s infinite alternate; /* Apply animation on hover */
+}
+@keyframes upDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px); /* Adjust the value for desired vertical movement */
+    }
+}
+
