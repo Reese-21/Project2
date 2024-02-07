@@ -66,7 +66,9 @@ body::before {
     /* Gradient from #a0a0a0 (left) to #808080 (right) */
     opacity: 0.6;
 }
-
+.grid-item-nav img {
+    width: 100px;
+}
 
 
 
@@ -80,6 +82,10 @@ body::before {
     width: 90vw;
     margin-left: 150px;
     overflow-y: auto;
+}
+.grid-container::-webkit-scrollbar {
+    width: 0;
+    /* Set the width of the scrollbar to 0 */
 }
 
 .grid-container-words {
@@ -105,7 +111,7 @@ body::before {
     grid-area: 7/2/8/10;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:  space-between;
 }
 
 
@@ -146,3 +152,94 @@ body::before {
     }
 }
 
+
+
+@media (max-width: 1500px) {
+    .all {
+        display: flex;
+        flex-direction: column;
+    }   
+   
+
+    .grid-item-nav {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+        opacity: 0.6;
+    }
+    .grid-item-nav img{
+        height: 100px;
+    }
+
+
+    .grid-container-deco {
+        width: 200px;
+        height: 100vh;
+        overflow-y: auto;
+    
+        display: flex;
+        flex-direction: row;
+        align-items: space-around;
+        justify-content: center;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 5fr 2fr;
+        grid-template-rows: 4fr 2fr 2fr;
+        height: 90vh;
+        width: 90vw;
+        margin-left: 5vw;
+        margin-top:200px;
+        overflow-y: auto;
+    }
+
+    .grid-container-words {
+        grid-area: 1/1/2/3;
+        /* background: radial-gradient(circle at center, #ddcdcb85, transparent); */
+    }
+
+    .grid-container-image {
+        grid-area: 2/2/3/3;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding:50px;
+    }
+    .grid-container-image img{
+        height: 200px;
+    }
+
+    .grid-future {
+        grid-area: 3/1/4/3;
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+        gap:40px;
+        margin-bottom: 60px;
+    }
+
+
+
+    /* decorations on the right */
+.grid-container-deco {
+    width: 100vw;
+    height: 10vh;
+    overflow-x: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.grid-container-deco img{
+    height:100px;
+    width:auto;
+}
+}
