@@ -100,4 +100,28 @@ body::before {
     right: 0%;
     transform: translate(10%, 0%);
 }
+
+
+
+
+@media (max-width: 1200px) {
+.grid-item-nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+    opacity: 0.6;
+}
+
+.fctitle{
+    position: fixed;
+    /* This makes the element fixed-positioned */
+    bottom: 0%;
+    right: 0%;
+    transform: translate(10%, 0%);
+}
+}
 /* green #b8d4d7 purple light #d1cfe8 purple dark #a19dca red #e6babe yellow #fceed1 */
