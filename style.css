@@ -133,9 +133,9 @@ body::before {
 
     .instructions{
         position:fixed;
-        top:600px;
+        top:575px;
         left:20px;
-        width:400px;
+        width:350px;
     }
 
     .cloud img{
