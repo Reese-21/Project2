@@ -121,7 +121,7 @@ body::before {
 
     /* zoom out of the background image when opening on phones, ipads, it seems the 'body' container cannot zoom */
     .grid-item-bg {
-        zoom: 0.5;
+        zoom: 0.4;
     }
 
 
