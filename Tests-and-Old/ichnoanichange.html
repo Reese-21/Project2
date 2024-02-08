@@ -7,29 +7,29 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
-    <link rel="icon" href="images\homepage\bedsheet.png" type="image/png">
-    
-    <title>My Bed Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="images\homepage\ch.png" type="image/png">
+
+
+
+    <title>My Clothes Hanger</title>
     <link rel="stylesheet" href="styleitems.css">
     <style>
-
-        .grid-item-right img {
-            width: 90%;
-            animation: movebs 4s infinite alternate linear;
-        }
-
-        @keyframes movebs {
+        @keyframes movechair {
             0% {
-                transform: translateY(20px);
+                transform: translateX(100px) translateY(200px);
+            }
+
+            50% {
+                transform: translateX(-150px) translateY(-300px);
             }
 
             100% {
-                transform: translateY(-10px);
+                transform: translateX(100px) translateY(200px);
             }
         }
     </style>
-
+    
 </head>
 
 <body>
@@ -56,9 +56,9 @@
 
         <!-- left words -->
         <div class="grid-item-left">
-            <h1 style="margin-top: 800px;">Too lazy to write my name</h1>
+            <h1 style="margin-top: 800px;">Trapeze No.16</h1>
             <br>
-            <p style="margin-left: 200px;">Almost Never Awake</p>
+            <p style="margin-left: 200px;">Greets you first when you come home</p>
             <br>
             <div class="container-game" style="margin-right:0; width: 306px;">
                 <div class="tools">
@@ -153,79 +153,30 @@
                         parseFloat(getComputedStyle(happinessRectangle).width) <= 12 &&
                         !JokeDisplayed) {
                         displayJoke();
-                        updateGridItemOpacity();
-                        stopMoveChairAnimation();
-
                         JokeDisplayed = true;
                     }
 
                 }
 
-
-
-
-                // functions that happen when it's in good condition
                 function displayLove() {
-                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Thanks,but but I am still gonna sleep...';
-                    alert('Your Furnicreature says: Thanks, but I am still gonna sleep...');
-                    addGridItemOpacity();
-                    restartMoveChairAnimation();
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Yey! I love you ♥';
+                    // alert('Your Furnicreature says: I love you!');
+                    // You can also modify the DOM to display the message in a specific element if needed.
                 }
 
-                function addGridItemOpacity() {
-                    // Set the opacity of the image with id 'fc' to 0.5 when displayjoke happends
-                    const fcImage = document.getElementById('fc');
-                    if (fcImage) {
-                        fcImage.style.opacity = '1';
-                    }
-                }
-
-                function restartMoveChairAnimation() {
-                    // restart the movechair animation
-                    const gridItemRight = document.getElementById('fc');
-                    if (gridItemRight) {
-                        gridItemRight.style.animation = 'movebs 8s infinite';
-                    }
-                }
-
-
-
-
-
-
-                // functions that happen when it's in bad condition
                 function displayJoke() {
-                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Guess I should start hibernation now...';
-                    alert('Your Furnicreature says: Guess I should start hibernation now...');
-                    reduceGridItemOpacity();
-                    stopMoveChairAnimation();
-                }
-
-                function reduceGridItemOpacity() {
-                    // Set the opacity of the image with id 'fc' to 0.5 when displayjoke happends
-                    const fcImage = document.getElementById('fc');
-                    if (fcImage) {
-                        fcImage.style.opacity = '0.3';
-                    }
-                }
-
-                function stopMoveChairAnimation() {
-                    // Stop the movechair animation
-                    const gridItemRight = document.getElementById('fc');
-                    if (gridItemRight) {
-                        gridItemRight.style.animation = 'none';
-                    }
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: If I am a real animal, I might have just died......just kidding!';
+                    // alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
+                    // You can also modify the DOM to display the message in a specific element if needed.
                 }
 
 
 
-
-                // width decrease with time function
                 document.addEventListener('DOMContentLoaded', () => {
                     // Start decreasing widths at different speeds
-                    decreaseWidth('rectangle-hunger', 1000); // 0.3 second interval
-                    decreaseWidth('rectangle-health', 1200); // 0.6 second interval
-                    decreaseWidth('rectangle-happiness', 5000); // 0.45 second interval
+                    decreaseWidth('rectangle-hunger', 300); // 0.3 second interval
+                    decreaseWidth('rectangle-health', 600); // 0.6 second interval
+                    decreaseWidth('rectangle-happiness', 450); // 0.45 second interval
                 });
 
             </script>
@@ -248,25 +199,23 @@
                     <h3>Likes</h3>
                     <h3>Dislikes</h3>
                     <h3>Journey</h3>
-                    <h3>Quote</h3>
                 </div>
 
                 <div class="grid-prop-right">
-                    <p>Too lazy to write my name</p>
-                    <p>Bed Sheet</p>
-                    <p>70 inch</p>
-                    <p>1 pound</p>
-                    <p>Bamboo viscose</p>
-                    <p>In the bed</p>
+                    <p>Trapeze No.16</p>
+                    <p>Suspended-Clothes Hanger</p>
+                    <p>12 inch</p>
+                    <p>0.3 pound</p>
+                    <p>Aluminum, Nylon</p>
+                    <p>Closets</p>
                     <br>
                     <br>
-                    <p>2 years and 2 month</p>
-                    <p>Children: Blanket, Carpet</p>
-                    <p>Lazy</p>
-                    <p>Stretching on the bed</p>
-                    <p>Being knead into a ball</p>
+                    <p>11 months</p>
+                    <p>Live together in a flock</p>
+                    <p>Fashionable</p>
+                    <p>Try out new clothes, Slide</p>
+                    <p>Being squeezed in the corner</p>
                     <p>-Rhode Island</p>
-                    <p>Relax-----</p>
                 </div>
             </div>
 
@@ -274,7 +223,7 @@
 
         <!-- obg image -->
         <div class="grid-item-right">
-            <img id="fc" title="Be a nice person and lay the bed, will you?"src="images\homepage\bedsheet.png">
+            <img title="WEEEEE-----"style="width: 200px;"src="images\homepage\ch.png">
         </div>
 
     </div>

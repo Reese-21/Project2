@@ -152,30 +152,79 @@
                         parseFloat(getComputedStyle(happinessRectangle).width) <= 12 &&
                         !JokeDisplayed) {
                         displayJoke();
+                        updateGridItemOpacity();
+                        stopMoveChairAnimation();
+
                         JokeDisplayed = true;
                     }
 
                 }
 
+
+
+
+                // functions that happen when it's in good condition
                 function displayLove() {
                     document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Yey! I love you ♥';
-                    // alert('Your Furnicreature says: I love you!');
-                    // You can also modify the DOM to display the message in a specific element if needed.
+                    alert('Your Furnicreature says: I love you!');
+                    addGridItemOpacity();
+                    restartMoveChairAnimation();
                 }
 
+                function addGridItemOpacity() {
+                    // Set the opacity of the image with id 'fc' to 0.5 when displayjoke happends
+                    const fcImage = document.getElementById('fc');
+                    if (fcImage) {
+                        fcImage.style.opacity = '1';
+                    }
+                }
+
+                function restartMoveChairAnimation() {
+                    // restart the movechair animation
+                    const gridItemRight = document.getElementById('fc');
+                    if (gridItemRight) {
+                        gridItemRight.style.animation = 'movechair 8s infinite';
+                    }
+                }
+
+
+
+
+
+
+                // functions that happen when it's in bad condition
                 function displayJoke() {
-                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: If I am a real animal, I might have just died......just kidding!';
-                    // alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
-                    // You can also modify the DOM to display the message in a specific element if needed.
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: If I am a real animal, I might have just died...just kidding!';
+                    alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
+                    reduceGridItemOpacity();
+                    stopMoveChairAnimation();
+                }
+
+                function reduceGridItemOpacity() {
+                    // Set the opacity of the image with id 'fc' to 0.5 when displayjoke happends
+                    const fcImage = document.getElementById('fc');
+                    if (fcImage) {
+                        fcImage.style.opacity = '0.3';
+                    }
+                }
+
+                function stopMoveChairAnimation() {
+                    // Stop the movechair animation
+                    const gridItemRight = document.getElementById('fc');
+                    if (gridItemRight) {
+                        gridItemRight.style.animation = 'none';
+                    }
                 }
 
 
 
+
+                // width decrease with time function
                 document.addEventListener('DOMContentLoaded', () => {
                     // Start decreasing widths at different speeds
-                    decreaseWidth('rectangle-hunger', 300); // 0.3 second interval
-                    decreaseWidth('rectangle-health', 600); // 0.6 second interval
-                    decreaseWidth('rectangle-happiness', 450); // 0.45 second interval
+                    decreaseWidth('rectangle-hunger', 100); // 0.1 second interval
+                    decreaseWidth('rectangle-health', 200); // 0.2 second interval
+                    decreaseWidth('rectangle-happiness', 400); // 0.4 second interval
                 });
 
             </script>
@@ -222,7 +271,7 @@
 
         <!-- obg image -->
         <div class="grid-item-right">
-            <img title="Never pull an all-nighter for work" style="width: 200px;"src="images\homepage\lamp.png">
+            <img id="fc" title="Never pull an all-nighter for work" style="width: 200px;"src="images\homepage\lamp.png">
         </div>
 
     </div>
