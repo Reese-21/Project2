@@ -147,6 +147,7 @@ body::before {
         /* This makes the element fixed-positioned */
         right: 0%;
         transform: translate(10%, 0%);
+        zoom:0.5;
     }
 
 }
