@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-body{
+body {
     background-color: #a0a0a0;
     /* border: dashed; */
     /* border-color: #ffffff; */
@@ -32,7 +32,7 @@ body::before {
 
 
 
-.grid-container{
+.grid-container {
     display: grid;
     grid-template-columns: 75px 2100px;
     grid-template-rows: repeat(8, 1fr);
@@ -45,7 +45,7 @@ body::before {
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     justify-content: space-around;
     position: fixed;
     background: linear-gradient(to right, #a0a0a0, #a0a0a088);
@@ -53,16 +53,16 @@ body::before {
     opacity: 0.6;
 }
 
-.grid-item-nav img{
+.grid-item-nav img {
     width: 100px;
 }
 
-.grid-item-bg{
+.grid-item-bg {
     grid-column: span 1;
     grid-row: span 8;
 }
 
-.grid-item-bg img{
+.grid-item-bg img {
     width: 2007px;
     height: auto;
 }
@@ -72,15 +72,16 @@ body::before {
 
 
 
-.cloud img{
-    position:absolute;
+.cloud img {
+    position: absolute;
     top: 12vh;
-    left:1500px;
+    left: 1500px;
     transform: translate(100%, -50%);
     width: 300px;
 
     animation: limitedchair 2s infinite alternate;
 }
+
 @keyframes limitedchair {
     0% {
         transform: translateY(20px);
@@ -89,11 +90,13 @@ body::before {
     100% {
         transform: translateY(-10px);
     }
-}/*cloud animation*/
+}
+
+/*cloud animation*/
 
 
 
-.fctitle{
+.fctitle {
     position: fixed;
     /* This makes the element fixed-positioned */
     bottom: 0%;
@@ -105,23 +108,31 @@ body::before {
 
 
 @media (max-width: 1200px) {
-.grid-item-nav {
-    height: 100px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-around;
-    background: linear-gradient(to right, #a0a0a0, #a0a0a088);
-    opacity: 0.6;
+    .grid-item-nav {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+        opacity: 0.6;
+    }
+
+    /* zoom out of the background image when opening on phones, ipads, it seems the 'body' container cannot zoom */
+    .grid-item-bg {
+        zoom: 0.5;
+    }
+
+
+    .fctitle {
+        position: fixed;
+        /* This makes the element fixed-positioned */
+        bottom: 0%;
+        right: 0%;
+        transform: translate(10%, 0%);
+    }
+
 }
 
-.fctitle{
-    position: fixed;
-    /* This makes the element fixed-positioned */
-    bottom: 0%;
-    right: 0%;
-    transform: translate(10%, 0%);
-}
-}
 /* green #b8d4d7 purple light #d1cfe8 purple dark #a19dca red #e6babe yellow #fceed1 */
