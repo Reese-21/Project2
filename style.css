@@ -5,8 +5,7 @@
 
 body {
     background-color: #a0a0a0;
-    /* border: dashed; */
-    /* border-color: #ffffff; */
+    font-family: 'Shantell Sans', cursive;
 }
 
 body::before {
@@ -68,6 +67,12 @@ body::before {
 }
 
 
+.instructions{
+    position:fixed;
+    bottom:20px;
+    left:150px;
+}
+
 
 
 
@@ -121,14 +126,25 @@ body::before {
 
     /* zoom out of the background image when opening on phones, ipads, it seems the 'body' container cannot zoom */
     .grid-item-bg {
+        margin-top: 200px;
         zoom: 0.4;
+        height: 100vh;
     }
 
+    .instructions{
+        position:fixed;
+        top:600px;
+        left:20px;
+        width:400px;
+    }
+
+    .cloud img{
+        top: 200px;
+    }
 
     .fctitle {
         position: fixed;
         /* This makes the element fixed-positioned */
-        bottom: 0%;
         right: 0%;
         transform: translate(10%, 0%);
     }

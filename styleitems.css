@@ -215,6 +215,7 @@ h1 {
         bottom: 2%;
         right: 0%;
         transform: translate(10%, 0%);
+        zoom:0.5;
     }
 }
 

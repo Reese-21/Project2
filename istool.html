@@ -34,6 +34,30 @@
                 transform: translateX(200px) rotateY(0);
             }
         }
+
+        @media (max-width: 1200px) {
+            @keyframes movechair {
+                0% {
+                    transform: translateX(100px) rotateY(0);
+                }
+
+                45% {
+                    transform: translateX(-150px);
+                }
+
+                50% {
+                    transform: translateX(-150px) rotateY(180deg);
+                }
+
+                95% {
+                    transform: translateX(100px) rotateY(180deg);
+                }
+
+                100% {
+                    transform: translateX(100px) rotateY(0);
+                }
+            }
+        }
     </style>
 
 </head>
