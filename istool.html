@@ -68,8 +68,6 @@
             <br>
             <br>
 
-
-
             <div class="container-game" style="margin-right:0; width: 306px;">
                 <div class="tools">
                     <img src="images\tools\hunger.png" title="FOOD!" alt="Increase Width Hunger"
@@ -79,33 +77,33 @@
                     <img src="images\tools\health.png" title="VITAMIN!" alt="Increase Width Health"
                         onclick="increaseWidth('rectangle-health')" class="button">
                 </div>
-        
+
                 <div class="bars">
                     <h3>Hunger</h3>
                     <div class="container-hunger">
                         <div class="resizable-rectangle-hunger" id="rectangle-hunger"></div>
                         <div class="not-resizable-container" id="notResizable"></div>
                     </div>
-        
+
                     <h3>Happiness</h3>
                     <div class="container-happiness">
                         <div class="resizable-rectangle-happiness" id="rectangle-happiness"></div>
                         <div class="not-resizable-container" id="notResizable"></div>
                     </div>
-        
+
                     <h3>Health</h3>
                     <div class="container-health">
                         <div class="resizable-rectangle-health" id="rectangle-health"></div>
                         <div class="not-resizable-container" id="notResizable"></div>
                     </div>
                 </div>
+                <p id="takeCareText">-Come play with me 0.0</p>
             </div>
 
-
             <img id="scrollicon" src="images\scroll.png">
-        
-        
-        
+
+
+
             <!-- script for rectangle -->
             <script>
                 const hungerRectangle = document.getElementById('rectangle-hunger');
@@ -113,27 +111,27 @@
                 const happinessRectangle = document.getElementById('rectangle-happiness');
                 let loveDisplayed = false;
                 let JokeDisplayed = false;
-        
+
                 function increaseWidth(rectangleId) {
                     // Increase the width of the specified rectangle
                     const currentWidth = parseFloat(getComputedStyle(document.getElementById(rectangleId)).width);
                     const currentMarginRight = parseFloat(getComputedStyle(document.getElementById(rectangleId)).marginRight);
-        
+
                     const newWidth = currentWidth + 40;
                     document.getElementById(rectangleId).style.width = `${newWidth}px`;
                     document.getElementById(rectangleId).style.marginRight = `${currentMarginRight - 10}px`;
-        
+
                     // Check if the rectangle has reached the maximum width
                     if (newWidth >= 145) {
                         checkAndDisplayLove();
                     }
                 }
-        
+
                 function decreaseWidth(rectangleId, interval) {
                     // Decrease the width of the specified rectangle
                     const currentWidth = parseFloat(getComputedStyle(document.getElementById(rectangleId)).width);
                     document.getElementById(rectangleId).style.width = `${currentWidth - 1}px`;
-        
+
                     // Check if the rectangle width is small enough or large enough
                     if (currentWidth <= 12 ||
                         (parseFloat(getComputedStyle(hungerRectangle).width) >= 145 &&
@@ -146,7 +144,7 @@
                         setTimeout(() => decreaseWidth(rectangleId, interval), interval);
                     }
                 }
-        
+
                 function checkAndDisplayLove() {
                     // Check if all three rectangles have reached 290px and 'I love you!' is not yet displayed
                     if (
@@ -165,28 +163,32 @@
                         displayJoke();
                         JokeDisplayed = true;
                     }
-        
+
                 }
-        
+
                 function displayLove() {
-                    alert('Your Furnicreature says: I love you!');
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Yey! I love you ♥';
+                    // alert('Your Furnicreature says: I love you!');
                     // You can also modify the DOM to display the message in a specific element if needed.
                 }
-        
+
                 function displayJoke() {
-                    alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: If I am a real animal, I might have just died......just kidding!';
+                    // alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
                     // You can also modify the DOM to display the message in a specific element if needed.
                 }
-        
+
+
+
                 document.addEventListener('DOMContentLoaded', () => {
                     // Start decreasing widths at different speeds
-                    decreaseWidth('rectangle-hunger', 200); // 0.2 second interval
-                    decreaseWidth('rectangle-health', 500); // 0.5 second interval
-                    decreaseWidth('rectangle-happiness', 400); // 0.4 second interval
+                    decreaseWidth('rectangle-hunger', 300); // 0.3 second interval
+                    decreaseWidth('rectangle-health', 600); // 0.6 second interval
+                    decreaseWidth('rectangle-happiness', 450); // 0.45 second interval
                 });
-        
+
             </script>
-        
+
 
 
             <!-- detailed info -->

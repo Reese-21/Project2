@@ -137,6 +137,7 @@
                 <div class="resizable-rectangle-health" id="rectangle-health"></div>
                 <div class="not-resizable-container" id="notResizable"></div>
             </div>
+            <p id="takeCareText">-Take care of me ♥</p>
         </div>
     </div>
 
@@ -206,12 +207,14 @@
         }
 
         function displayLove() {
-            alert('Your Furnicreature says: I love you!');
+            document.getElementById('takeCareText').innerText = '-Your Furnicreature says: I love you!';
+            // alert('Your Furnicreature says: I love you!');
             // You can also modify the DOM to display the message in a specific element if needed.
         }
 
         function displayJoke() {
-            alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
+            document.getElementById('takeCareText').innerText = '-Your Furnicreature says: If I am a real animal, I might have just died...just kidding!';
+            // alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
             // You can also modify the DOM to display the message in a specific element if needed.
         }
 
