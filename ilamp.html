@@ -165,8 +165,8 @@
 
                 // functions that happen when it's in good condition
                 function displayLove() {
-                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Yey! I love you ♥';
-                    alert('Your Furnicreature says: I love you!');
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Stand up and take a rest with me ♥';
+                    alert('Your Furnicreature says: Stand up and take a rest with me ');
                     addGridItemOpacity();
                     restartMoveChairAnimation();
                 }
@@ -194,8 +194,8 @@
 
                 // functions that happen when it's in bad condition
                 function displayJoke() {
-                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: If I am a real animal, I might have just died...just kidding!';
-                    alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: I need to be switched offfffff...';
+                    alert('Your Furnicreature says: I need to be switched offfffff...');
                     reduceGridItemOpacity();
                     stopMoveChairAnimation();
                 }
@@ -224,7 +224,7 @@
                     // Start decreasing widths at different speeds
                     decreaseWidth('rectangle-hunger', 100); // 0.1 second interval
                     decreaseWidth('rectangle-health', 200); // 0.2 second interval
-                    decreaseWidth('rectangle-happiness', 400); // 0.4 second interval
+                    decreaseWidth('rectangle-happiness', 300); // 0.3 second interval
                 });
 
             </script>
