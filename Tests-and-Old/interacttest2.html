@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="images\homepage\hook.png" type="image/png">
+
+
+
+    <title>Bar test</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Shantell Sans', cursive;
+        }
+
+        .container-game {
+            width: 306px;
+        }
+
+        .tools img {
+            cursor: pointer;
+        }
+
+        .bars {
+            width: auto;
+            height: auto;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bars h3 {
+            display: block;
+            font-size: 1.17em;
+            margin-block-start: 0.2em;
+            margin-block-end: 0.2em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+
+        .container-hunger {
+            position: relative;
+        }
+
+        .container-health {
+            position: relative;
+        }
+
+        .container-happiness {
+            position: relative;
+        }
+
+        .resizable-rectangle-hunger,
+        .resizable-rectangle-health,
+        .resizable-rectangle-happiness {
+            width: 150px;
+            height: 20px;
+            background-color: #e6babe;
+            transition: width 1s ease, margin-right 1s ease;
+            max-width: 300px;
+            min-width: 20px;
+            border-radius: 20px;
+            border-style: solid;
+            border-color: black;
+            margin-right: 2px;
+            position: absolute;
+            /* Add absolute positioning to place it on top */
+            top: 0%;
+            left: 0%;
+        }
+
+        .resizable-rectangle-health {
+            width: 200px;
+            height: 20px;
+            background-color: #b8d4d7;
+        }
+
+        .resizable-rectangle-happiness {
+            width: 100px;
+            height: 20px;
+            background-color: #fceed1;
+        }
+
+        /* Additional style for the non-resizable container */
+        .not-resizable-container {
+            background-color: #d1cfe8;
+            width: 300px;
+            height: 20px;
+            border-radius: 20px;
+            border-style: solid;
+            border-color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container-game">
+        <div class="tools">
+            <img src="images\tools\hunger.png" title="FOOD!" alt="Increase Width Hunger"
+                onclick="increaseWidth('rectangle-hunger')" class="button">
+            <img src="images\tools\happiness.png" title="PLAY!" alt="Increase Width Happiness"
+                onclick="increaseWidth('rectangle-happiness')" class="button">
+            <img src="images\tools\health.png" title="VITAMIN!" alt="Increase Width Health"
+                onclick="increaseWidth('rectangle-health')" class="button">
+        </div>
+
+        <div class="bars">
+            <h3>Hunger</h3>
+            <div class="container-hunger">
+                <div class="resizable-rectangle-hunger" id="rectangle-hunger"></div>
+                <div class="not-resizable-container" id="notResizable"></div>
+            </div>
+
+            <h3>Happiness</h3>
+            <div class="container-happiness">
+                <div class="resizable-rectangle-happiness" id="rectangle-happiness"></div>
+                <div class="not-resizable-container" id="notResizable"></div>
+            </div>
+
+            <h3>Health</h3>
+            <div class="container-health">
+                <div class="resizable-rectangle-health" id="rectangle-health"></div>
+                <div class="not-resizable-container" id="notResizable"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- script for rectangle -->
+    <script>
+        const hungerRectangle = document.getElementById('rectangle-hunger');
+        const healthRectangle = document.getElementById('rectangle-health');
+        const happinessRectangle = document.getElementById('rectangle-happiness');
+        let loveDisplayed = false;
+        let JokeDisplayed = false;
+
+        function increaseWidth(rectangleId) {
+            // Increase the width of the specified rectangle
+            const currentWidth = parseFloat(getComputedStyle(document.getElementById(rectangleId)).width);
+            const currentMarginRight = parseFloat(getComputedStyle(document.getElementById(rectangleId)).marginRight);
+
+            const newWidth = currentWidth + 100;
+            document.getElementById(rectangleId).style.width = `${newWidth}px`;
+            document.getElementById(rectangleId).style.marginRight = `${currentMarginRight - 10}px`;
+
+            // Check if the rectangle has reached the maximum width
+            if (newWidth >= 450) {
+                checkAndDisplayLove();
+            }
+        }
+
+        function decreaseWidth(rectangleId, interval) {
+            // Decrease the width of the specified rectangle
+            const currentWidth = parseFloat(getComputedStyle(document.getElementById(rectangleId)).width);
+            document.getElementById(rectangleId).style.width = `${currentWidth - 1}px`;
+
+            // Check if the rectangle width is small enough or large enough
+            if (currentWidth <= 20 ||
+                (parseFloat(getComputedStyle(hungerRectangle).width) >= 290 &&
+                    parseFloat(getComputedStyle(healthRectangle).width) >= 290 &&
+                    parseFloat(getComputedStyle(happinessRectangle).width) >= 290)
+            ) {
+                checkAndDisplayLove();
+            } else {
+                // Continue decreasing the width with a specified interval, not display the message
+                setTimeout(() => decreaseWidth(rectangleId, interval), interval);
+            }
+        }
+
+        function checkAndDisplayLove() {
+            // Check if all three rectangles have reached 290px and 'I love you!' is not yet displayed
+            if (
+                parseFloat(getComputedStyle(hungerRectangle).width) >= 290 &&
+                parseFloat(getComputedStyle(healthRectangle).width) >= 290 &&
+                parseFloat(getComputedStyle(happinessRectangle).width) >= 290 &&
+                !loveDisplayed
+            ) {
+                displayLove();
+                loveDisplayed = true; // Mark 'I love you!' as displayed
+            }
+            if (parseFloat(getComputedStyle(hungerRectangle).width) <= 25 &&
+                parseFloat(getComputedStyle(healthRectangle).width) <= 25 &&
+                parseFloat(getComputedStyle(happinessRectangle).width) <= 25 &&
+                !JokeDisplayed) {
+                displayJoke();
+                JokeDisplayed = true;
+            }
+
+        }
+
+        function displayLove() {
+            alert('Your Furnicreature says: I love you!');
+            // You can also modify the DOM to display the message in a specific element if needed.
+        }
+
+        function displayJoke() {
+            alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
+            // You can also modify the DOM to display the message in a specific element if needed.
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start decreasing widths at different speeds
+            decreaseWidth('rectangle-hunger', 200); // 0.2 second interval
+            decreaseWidth('rectangle-health', 500); // 0.5 second interval
+            decreaseWidth('rectangle-happiness', 400); // 0.4 second interval
+        });
+
+    </script>
+
+</body>
+
+</html

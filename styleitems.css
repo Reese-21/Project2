@@ -219,3 +219,118 @@ h1 {
         transform: translate(10%, 0%);
     }
 }
+
+
+
+
+
+
+
+/* for the mini game */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Shantell Sans', cursive;
+}
+
+.container-game {
+    width: 306px;
+}
+
+
+
+/* game buttons */
+.tools{
+    width:170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tools img {
+    cursor: pointer;
+    height:40px;
+}
+
+
+
+
+/* rectangles */
+.bars {
+    width: auto;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bars h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.container-hunger {
+    position: relative;
+}
+
+.container-health {
+    position: relative;
+}
+
+.container-happiness {
+    position: relative;
+}
+
+.resizable-rectangle-hunger,
+.resizable-rectangle-health,
+.resizable-rectangle-happiness {
+    height: 10px;
+    width:70px;
+    background-color: #e6babe;
+    transition: width 1s ease, margin-right 1s ease;
+    max-width: 150px;
+    min-width: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    margin-right: 2px;
+    position: absolute;
+    /* Add absolute positioning to place it on top */
+    top: 0%;
+    left: 0%;
+}
+
+.resizable-rectangle-happiness {
+    width: 40px;
+    height: 10px;
+    background-color: #fceed1;
+}
+
+.resizable-rectangle-health {
+    width: 100px;
+    height: 10px;
+    background-color: #b8d4d7;
+}
+
+
+
+
+
+/* Additional style for the non-resizable container */
+.not-resizable-container {
+    background-color: #d1cfe8;
+    width: 150px;
+    height: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+}
