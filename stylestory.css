@@ -112,6 +112,7 @@ body::before {
     display: flex;
     flex-direction: row;
     justify-content:  space-between;
+    align-items: flex-end;
 }
 
 
@@ -154,7 +155,12 @@ body::before {
 
 
 
-@media (max-width: 1500px) {
+
+
+
+
+
+@media (max-width: 1200px) {
     .all {
         display: flex;
         flex-direction: column;
