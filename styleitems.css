@@ -55,6 +55,13 @@ body::before {
 
 .grid-item-nav img {
     width: 100px;
+    transition: transform 0.2s;
+    /* Apply transition for a smooth effect */
+}
+
+.grid-item-nav img:hover {
+    transform: translateY(-5px);
+    /* Apply initial transformation on hover */
 }
 
 
@@ -309,13 +316,13 @@ body {
 }
 
 .resizable-rectangle-happiness {
-    width: 40px;
+    width: 50px;
     height: 10px;
     background-color: #fceed1;
 }
 
 .resizable-rectangle-health {
-    width: 100px;
+    width: 80px;
     height: 10px;
     background-color: #b8d4d7;
 }

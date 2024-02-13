@@ -37,7 +37,6 @@ body::before {
     grid-template-columns: 100px 1fr 1fr 1fr;
     grid-template-rows: repeat(8, 1fr);
     width: 100vw;
-    margin-top: 40px;
 }
 
 .grid-item-nav {
@@ -56,6 +55,13 @@ body::before {
 
 .grid-item-nav img {
     width: 100px;
+    transition: transform 0.2s;
+    /* Apply transition for a smooth effect */
+}
+
+.grid-item-nav img:hover {
+    transform: translateY(-5px);
+    /* Apply initial transformation on hover */
 }
 
 
@@ -68,6 +74,7 @@ body::before {
     justify-content: center;
     width: 100%;
 }
+
 .grid-item-ground {
     padding-top: 20px;
     width: 30vw;
@@ -91,6 +98,7 @@ body::before {
     justify-content: center;
     width: 100%;
 }
+
 .grid-item-sus {
     padding-top: 20px;
     width: 30vw;
@@ -115,6 +123,7 @@ body::before {
     justify-content: center;
     width: 100%;
 }
+
 .grid-item-bed {
     padding-top: 20px;
     width: 30vw;
@@ -171,12 +180,12 @@ body::before {
         grid-template-rows: 100px 1fr 1fr 1fr;
         grid-template-columns: 1fr 4fr;
         width: 100vw;
-        margin-top: 0px;            
+        margin-top: 0px;
         zoom: 0.5;
 
     }
 
-    .grid-item-nav{
+    .grid-item-nav {
         zoom: 2;
     }
 
@@ -189,7 +198,8 @@ body::before {
         justify-content: center;
         width: 100%;
     }
-    .grid-item-ground{
+
+    .grid-item-ground {
         padding-top: 20px;
         width: 100%;
         min-width: 400px;
@@ -209,7 +219,8 @@ body::before {
         justify-content: center;
         width: 100%;
     }
-    .grid-item-sus{
+
+    .grid-item-sus {
         padding-top: 20px;
         width: 100%;
         min-width: 600px;
@@ -229,6 +240,7 @@ body::before {
         justify-content: center;
         width: 100%;
     }
+
     .grid-item-bed {
         padding-top: 20px;
         width: 100%;
@@ -254,7 +266,7 @@ body::before {
 
 
     .grid-item-new {
-        grid-row:5/6;
+        grid-row: 5/6;
         padding-left: 80px;
         display: flex;
         justify-content: flex-start;
@@ -263,7 +275,7 @@ body::before {
     }
 
     .fctitle {
-        zoom:0.5; 
+        zoom: 0.5;
     }
 }
 

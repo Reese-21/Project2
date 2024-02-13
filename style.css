@@ -54,6 +54,13 @@ body::before {
 
 .grid-item-nav img {
     width: 100px;
+    transition: transform 0.2s;
+    /* Apply transition for a smooth effect */
+}
+
+.grid-item-nav img:hover {
+    transform: translateY(-5px);
+    /* Apply initial transformation on hover */
 }
 
 .grid-item-bg {
@@ -67,10 +74,10 @@ body::before {
 }
 
 
-.instructions{
-    position:fixed;
-    bottom:20px;
-    left:150px;
+.instructions {
+    position: fixed;
+    bottom: 20px;
+    left: 150px;
 }
 
 
@@ -124,6 +131,8 @@ body::before {
         opacity: 0.6;
     }
 
+
+
     /* zoom out of the background image when opening on phones, ipads, it seems the 'body' container cannot zoom */
     .grid-item-bg {
         margin-top: 200px;
@@ -131,14 +140,14 @@ body::before {
         height: 100vh;
     }
 
-    .instructions{
-        position:fixed;
-        top:575px;
-        left:20px;
-        width:350px;
+    .instructions {
+        position: fixed;
+        top: 575px;
+        left: 20px;
+        width: 350px;
     }
 
-    .cloud img{
+    .cloud img {
         top: 200px;
     }
 
@@ -147,7 +156,7 @@ body::before {
         /* This makes the element fixed-positioned */
         right: 0%;
         transform: translate(10%, 0%);
-        zoom:0.5;
+        zoom: 0.5;
     }
 
 }

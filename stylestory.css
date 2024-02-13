@@ -22,12 +22,6 @@ a {
     text-decoration: underline; /* Remove the default underline */
 }
 
-a:hover {
-    color: #e6babe; /* Set the color of the link when hovered */
-    text-decoration: underline; /* Add underline on hover */
-    font-size: 30px;
-}
-
 body::before {
     /* Add dotted background */
     content: "";
@@ -66,12 +60,15 @@ body::before {
     /* Gradient from #a0a0a0 (left) to #808080 (right) */
     opacity: 0.6;
 }
+
 .grid-item-nav img {
     width: 100px;
+    transition: transform 0.2s; /* Apply transition for a smooth effect */
 }
 
-
-
+.grid-item-nav img:hover {
+    transform: translateY(-5px); /* Apply initial transformation on hover */
+}
 
 
 .grid-container {
@@ -102,6 +99,11 @@ body::before {
 
 .grid-container-image img {
     border-radius: 40px;
+    transition: transform 0.2s; /* Apply transition for a smooth effect */
+}
+
+.grid-container-image img:hover {
+    transform: translateY(-5px); /* Apply initial transformation on hover */
 }
 
 
@@ -115,7 +117,11 @@ body::before {
     align-items: flex-end;
 }
 
-
+.grid-future a:hover {
+    color: #e6babe; /* Set the color of the link when hovered */
+    text-decoration: underline; /* Add underline on hover */
+    font-size: 30px;
+}
 
 
 
@@ -141,7 +147,7 @@ body::before {
 }
 
 /* animation of decoration */
-.grid-container-deco img:hover:not(.grid-item-nav img){
+.grid-container-deco img:hover{
     animation: upDown 0.4s infinite alternate; /* Apply animation on hover */
 }
 @keyframes upDown {
