@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Columns with Links</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #dbdbdb;
+            font-family: 'Shantell Sans', cursive;
+            /* border: dashed; */
+            /* border-color: #ffffff; */
+        }
+
+        body::before {
+            /* Add dotted background */
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: radial-gradient(circle, #000 1px, transparent 1px);
+            background-size: 20px 20px;
+            /* Adjust the size of the dots */
+        }
+
+        area:hover {
+            cursor: pointer;
+        }
+
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 100px 20% 1fr;
+            height: 100%;
+            width: 100%;
+        }
+
+        .grid-item-nav {
+            height: 100%;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+            opacity: 0.6;
+        }
+
+        .grid-item-nav img {
+            width: 100px;
+            transition: transform 0.2s;
+        }
+
+        .grid-item-nav img:hover {
+            transform: translateY(-5px);
+        }
+
+        .fctitle {
+            position: fixed;
+            top: 100%;
+            left: 100%;
+            transform: translate(-100%, -100%);
+        }
+
+        .fctitle img {
+            width: 20vw;
+            transition: transform 0.2s;
+        }
+
+        .instructions {
+            position: fixed;
+            bottom: 20px;
+            left: 100px;
+        }
+
+        .right-column::-webkit-scrollbar {
+            width: 0;
+            /* Set the width of the scrollbar to 0 */
+        }
+
+        .right-column #scrollicon {
+            margin-top: 200px;
+        }
+
+
+
+
+        .grid-item-container {
+            grid-column: 2 / 4;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .left-column {
+            height: 100%;
+            width: 10vw;
+            padding: 20px;
+            padding-bottom: 0;
+            border-right: 1px solid #000000;
+            overflow: auto;
+        }
+
+        .left-column a {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .left-column a:hover {
+            text-decoration: underline;
+        }
+
+        .right-column {
+            width: 90vw;
+            overflow: auto;
+            height: 100vh;
+        }
+
+        .right-column #content1,
+        .right-column #content2,
+        .right-column #content3,
+        .right-column #content4,
+        .right-column #content5,
+        .right-column #content6,
+        .right-column #content7,
+        .right-column #content8,
+        .right-column #content9,
+        .right-column #content10,
+        .right-column #content11,
+        .right-column #content12 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .right-column #content2 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .right-column img {
+            width: 50%;
+        }
+
+        /* content when not being clicked */
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+
+
+        @media (max-width: 900px) {
+            .grid-container {
+                display: flex;
+                width: 100%;
+            }
+
+
+            .grid-item-nav {
+                height: 50px;
+                width: 100vw;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-around;
+                background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+                opacity: 0.6;
+                position: fixed;
+            }
+
+            .grid-item-nav img {
+                width: 50px;
+                transition: transform 0.2s;
+            }
+
+
+
+
+            .grid-item-container {
+                margin-top: 50px;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .left-column {
+                width: 100vw;
+                height: 8vh;
+                margin: 0;
+                padding: 0;
+                margin-top: 20px;
+                overflow-x: auto;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .left-column a {
+                display: block;
+                margin-bottom: 0;
+                margin-right: 10px;
+                color: #333;
+                text-decoration: none;
+            }
+
+            .right-column {
+                width: 100%;
+            }
+
+            .right-column #content1 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .right-column img {
+                width: 100vw;
+            }
+
+
+
+            .fctitle {
+                position: fixed;
+                /* This makes the element fixed-positioned */
+                top: 100%;
+                /* Position from the top of the viewport */
+                left: 100%;
+                /* Position from the left of the viewport */
+                transform: translate(-100%, -100%);
+            }
+
+            .fctitle img {
+                width: 40vw;
+                /* Set the width of the image */
+                transition: transform 0.2s;
+                /* Apply transition for a smooth effect */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fctitle">
+        <img src="images\0navtitle.png">
+    </div>
+
+
+    <div class="grid-container">
+        <!-- four navigation icons -->
+        <div class="grid-item-nav">
+            <a href="index.html">
+                <img alt="home" src="images\1navhome.png"> </a>
+
+            <a href="tree.html">
+                <img alt="tree" src="images\2navtree.png"> </a>
+
+            <a href="playground.html">
+                <img title="playground" alt="play" src="images\3navmine.png">
+            </a>
+
+            <a href="story.html">
+                <img alt="story" src="images\4navstory.png"> </a>
+        </div>
+
+
+        <div class="grid-item-container">
+            <div class="left-column">
+                <a href="#" onclick="showContent('content1')">Stoolpy</a>
+                <a href="#" onclick="showContent('content2')">Snuggly</a>
+                <a href="#" onclick="showContent('content3')">StashyPup</a>
+                <a href="#" onclick="showContent('content4')">StashyCat</a>
+                <a href="#" onclick="showContent('content5')">Blanky</a>
+                <a href="#" onclick="showContent('content6')">Marshmallow</a>
+                <a href="#" onclick="showContent('content7')">Sheept</a>
+                <a href="#" onclick="showContent('content8')">Trapeze</a>
+                <a href="#" onclick="showContent('content9')">Hooky</a>
+                <a href="#" onclick="showContent('content10')">Sweaty</a>
+                <a href="#" onclick="showContent('content11')">StudyPaw</a>
+                <a href="#" onclick="showContent('content12')">Baggy</a>
+
+            </div>
+            <div class="right-column">
+                <div id="content1" class="content">
+                    <img src="images\wiki\wiki (1).jpg">
+                    <img src="images\wiki\wiki (2).jpg">
+                </div>
+                <div id="content2" class="content" style="display:none;">
+                    <img src="images\wiki\wiki (3).jpg">
+                    <img src="images\wiki\wiki (4).jpg">
+                </div>
+
+                <div id="content3" class="content" style="display:none;">
+                    <img src="images\wiki\wiki (5).jpg">
+                    <img src="images\wiki\wiki (6).jpg">
+                </div>
+                <div id="content4" class="content" style="display:none;">
+
+                    <img src="images\wiki\wiki (7).jpg">
+                    <img src="images\wiki\wiki (8).jpg">
+                </div>
+                <div id="content5" class="content" style="display:none;">
+                    <img src="images\wiki\wiki (9).jpg">
+                    <img src="images\wiki\wiki (10).jpg">
+                </div>
+                <div id="content6" class="content" style="display:none;">
+                    <img src="images\wiki\wiki (11).jpg">
+                    <img src="images\wiki\wiki (12).jpg">
+                </div>
+                <div id="content7" class="content" style="display:none;">
+                    <img src="images\wiki\wiki (13).jpg">
+                    <img src="images\wiki\wiki (14).jpg">
+                </div>
+                <div id="content8" class="content" style="display:none;">
+                    <img src="images\wiki\wiki (15).jpg">
+                    <img src="images\wiki\wiki (16).jpg">
+                </div>
+                <div id="content9" class="content" style="display:none;">
+                    <img src="images\wiki\wiki (17).jpg">
+                    <img src="images\wiki\wiki (18).jpg">
+                </div>
+                <div id="content10" class="content" style="display:none;">
+                    <img src="images\wiki\wiki (19).jpg">
+                    <img src="images\wiki\wiki (20).jpg">
+                </div>
+                <div id="content11" class="content" style="display:none;">
+                    <img src="images\wiki\wiki (21).jpg">
+                    <img src="images\wiki\wiki (22).jpg">
+                </div>
+                <div id="content12" class="content" style="display:none;">
+                    <img src="images\wiki\wiki (23).jpg">
+                    <img src="images\wiki\wiki (24).jpg">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>Invite The Creatures to your house!</h2>
+        </div>
+
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            // Hide all content divs
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.style.display = 'none');
+
+            // Show the selected content
+            document.getElementById(contentId).style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

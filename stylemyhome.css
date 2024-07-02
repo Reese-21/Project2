@@ -68,18 +68,11 @@ body::before {
     grid-row: span 8;
 }
 
-/* width should be same as original image width */
 .grid-item-bg img {
-    width: 2046px;
+    width: 2007px;
     height: auto;
     zoom:0.8;
 }
-
-
-
-
-
-
 
 
 .instructions {
@@ -154,7 +147,7 @@ body::before {
     /* zoom out of the background image when opening on phones, ipads, it seems the 'body' container cannot zoom */
     .grid-item-bg {
         margin-top: 200px;
-        zoom: 0.7;
+        zoom: 0.4;
         height: 100vh;
     }
 
@@ -185,7 +178,6 @@ body::before {
         transition: transform 0.2s;
         /* Apply transition for a smooth effect */
     }
-    
 
 }
 

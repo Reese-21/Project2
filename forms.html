@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summon/ Adoption Forms</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #dbdbdb;
+            font-family: 'Shantell Sans', cursive;
+        }
+
+        body::before {
+            /* Add dotted background */
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* make sure the dots are at the back */
+            background-image: radial-gradient(circle, #000 1px, transparent 1px);
+            background-size: 20px 20px;
+            /* Adjust the size of the dots */
+        }
+
+        .map area:hover {
+            cursor: pointer;
+        }
+
+
+
+
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100vw;
+        }
+
+        /* navigation bar */
+        .grid-item-nav {
+            grid-column: span 1;
+            grid-row: span 8;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            position: fixed;
+            background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+            /* Gradient from #a0a0a0 (left) to #808080 (right) */
+            opacity: 0.6;
+        }
+
+        .grid-item-nav img {
+            width: 100px;
+            transition: transform 0.2s;
+            /* Apply transition for a smooth effect */
+        }
+
+        .grid-item-nav img:hover {
+            transform: translateY(-5px);
+            /* Apply initial transformation on hover */
+        }
+
+        .grid-item-bg {
+            grid-column-start: 2;
+            grid-column: span 1;
+            grid-row: span 8;
+            margin-left: 200px;
+
+            display: flex;
+            flex-direction: column;
+            /* Ensures the divs are stacked vertically */
+            align-items: center;
+            /* Centers child items horizontally */
+            text-align: center;
+            /* Centers text within the child items */
+
+        }
+
+        .sf {
+            flex-direction: row;
+        }
+
+        /* width should be same as original image width */
+        .grid-item-bg img {
+            margin-left: 100px;
+            width: 80%;
+            height: auto;
+        }
+
+
+
+        .instructions {
+            position: fixed;
+            bottom: 0px;
+            left: 100px;
+            width: 250px;
+            /* transform: translate(-50%, -100%); */
+        }
+
+
+
+        .fctitle {
+            position: fixed;
+            /* This makes the element fixed-positioned */
+            top: 100%;
+            /* Position from the top of the viewport */
+            left: 100%;
+            /* Position from the left of the viewport */
+            transform: translate(-100%, -100%);
+        }
+
+        .fctitle img {
+            width: 20vw;
+            /* Set the width of the image */
+            transition: transform 0.2s;
+            /* Apply transition for a smooth effect */
+        }
+
+
+
+
+        @media (max-width: 900px) {
+            .grid-item-nav {
+                height: 50px;
+                width: 100vw;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-around;
+                background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+                opacity: 0.6;
+                position: fixed;
+            }
+
+            .grid-item-nav img {
+                width: 50px;
+                transition: transform 0.2s;
+            }
+
+
+
+            /* zoom out of the background image when opening on phones, ipads, it seems the 'body' container cannot zoom */
+            .grid-item-bg {
+                margin-top: 50px;
+                margin-left: 0px;
+                zoom: 0.7;
+                height: 100vh;
+            }
+
+            .grid-item-bg img {
+                margin-left: 0px;
+                width: 100%;
+                height: auto;
+            }
+
+            .instructions {
+                position: static;
+                margin-top: 80px;
+                width: 100%;
+                zoom: 0.8;
+            }
+
+            .fctitle {
+                position: fixed;
+                top: 100%;
+                left: 100%;
+                transform: translate(-100%, -100%);
+            }
+
+            .fctitle img {
+                width: 40vw;
+                transition: transform 0.2s;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <!-- left navigation -->
+        <div class="grid-item-nav">
+            <a href="myhome.html">
+                <img title="home" alt="home" src="images\1navhome.png"> </a>
+
+            <a href="tree.html">
+                <img title="tree" alt="tree" src="images\2navtree.png">
+            </a>
+
+            <a href="playground.html">
+                <img title="playground" alt="play" src="images\3navmine.png">
+            </a>
+
+            <a href="story.html">
+                <img title="Furnicreature Wiki" alt="story" src="images\4navstory.png">
+            </a>
+
+        </div>
+
+        <div class="instructions">
+            <h2 style="color: #7673a7;">Feel Free to Download these Forms!</h2> <br>
+            <p>Completing a summon form will result in the arrival of a newly born Furnicreature.</p> <br>
+            <p>Completing an adoption form will result in the arrival of a Furnicreature with a previous owner.</p>
+        </div>
+
+
+        <!-- main content -->
+        <div class="grid-item-bg">
+            <div class="sf">
+                <h2>Summon Form</h2>
+                <br>
+                <img src="images\froms\gs_form.jpg">
+            </div>
+            <br>
+            <br>
+            <div class="af">
+                <h2>Adoption Form</h2>
+                <br>
+                <img src="images\froms\ga_form.jpg">
+            </div>
+        </div>
+    </div>
+
+    <!-- furnicreature on the bottom right -->
+    <div class="fctitle">
+        <a href="index.html">
+        <img src="images\0navtitle.png"></a>
+    </div>
+
+</body>
+
+</html>

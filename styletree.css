@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #a0a0a0;
+    background-color: #dbdbdb;
     /* border: dashed; */
     /* border-color: #ffffff; */
 }
@@ -34,8 +34,8 @@ body::before {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 100px 1fr 1fr 1fr;
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: 75px 95vw;
+    grid-template-rows: 1fr;
     width: 100vw;
 }
 
@@ -66,6 +66,24 @@ body::before {
 
 
 
+.newtree {
+    width: 95vw;
+    margin-left: 80px;
+}
+
+.newtree img {
+    width: 5401px;
+    height: auto;
+    zoom: 0.3;
+}
+
+
+
+
+
+
+
+/* 
 .g1 {
     grid-area: 1/2/2/3;
     display: flex;
@@ -141,7 +159,6 @@ body::before {
     width:100%;
 }
 
-
 .grid-item-new {
     padding-left: 110px;
     grid-area: 8/2/9/5;
@@ -152,6 +169,8 @@ body::before {
 .grid-item-new img {
     height: 150px;
 }
+ */
+
 
 
 
@@ -165,9 +184,16 @@ body::before {
     /* This makes the element fixed-positioned */
     top: 100%;
     /* Position from the top of the viewport */
-    left: 103%;
+    left: 100%;
     /* Position from the left of the viewport */
     transform: translate(-100%, -100%);
+}
+
+.fctitle img {
+    width: 20vw;
+    /* Set the width of the image */
+    transition: transform 0.2s;
+    /* Apply transition for a smooth effect */
 }
 
 
@@ -177,7 +203,7 @@ body::before {
 
 
 
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
     .grid-container {
         display: grid;
         grid-template-rows: 100px 1fr 1fr 1fr;
@@ -192,7 +218,7 @@ body::before {
         zoom: 2;
     }
 
-
+    /* 
     .g1 {
         grid-area: 2/1/3/2;
         display: flex;
@@ -255,6 +281,27 @@ body::before {
         justify-content: center;
     }
 
+        .grid-item-new {
+        grid-row: 5/6;
+        padding-left: 80px;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+        zoom: 0.5;
+    }
+
+ */
+
+    .newtree {
+        width: 100vw;
+        margin-top: 200px;
+    }
+
+    .newtree img {
+        width: 5401px;
+        height: auto;
+        zoom: 0.4;
+    }
 
     .grid-item-nav {
         height: 100px;
@@ -268,17 +315,21 @@ body::before {
     }
 
 
-    .grid-item-new {
-        grid-row: 5/6;
-        padding-left: 80px;
-        display: flex;
-        justify-content: flex-start;
-        margin-bottom: 40px;
-        zoom: 0.5;
-    }
-
     .fctitle {
-        zoom: 0.5;
+        position: fixed;
+        /* This makes the element fixed-positioned */
+        top: 100%;
+        /* Position from the top of the viewport */
+        left: 100%;
+        /* Position from the left of the viewport */
+        transform: translate(-100%, -100%);
+    }
+    
+    .fctitle img {
+        width: 40vw;
+        /* Set the width of the image */
+        transition: transform 0.2s;
+        /* Apply transition for a smooth effect */
     }
 }
 
