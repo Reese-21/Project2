@@ -5,12 +5,10 @@
 
 body {
     background-color: #dbdbdb;
-    /* border: dashed; */
-    /* border-color: #ffffff; */
+    font-family: 'Shantell Sans', cursive;
 }
 
 body::before {
-    /* Add dotted background */
     content: "";
     position: fixed;
     top: 0;
@@ -18,30 +16,22 @@ body::before {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-image: radial-gradient(circle, #888888 1px, transparent 1px);
     background-size: 20px 20px;
-    /* Adjust the size of the dots */
 }
 
 .map area:hover {
     cursor: pointer;
 }
 
-
-
-
-
-
 .grid-container {
-    display: grid;
-    grid-template-columns: 75px 95vw;
-    grid-template-rows: 1fr;
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 75px;
 }
 
 .grid-item-nav {
-    grid-column: span 1;
-    grid-row: span 8;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -49,151 +39,96 @@ body::before {
     justify-content: space-around;
     position: fixed;
     background: linear-gradient(to right, #a0a0a0, #a0a0a088);
-    /* Gradient from #a0a0a0 (left) to #808080 (right) */
     opacity: 0.6;
 }
 
 .grid-item-nav img {
     width: 100px;
     transition: transform 0.2s;
-    /* Apply transition for a smooth effect */
 }
 
 .grid-item-nav img:hover {
     transform: translateY(-5px);
-    /* Apply initial transformation on hover */
 }
 
 
-
-.newtree {
-    width: 95vw;
-    margin-left: 80px;
+/* opening image */
+.grid-item-shop {
+    width: 90vw;
+    margin-bottom:50px;
+    /* background-color: #ffffff3b; */
 }
 
-.newtree img {
-    width: 5401px;
+.grid-item-shop img {
+    width: 100%;
     height: auto;
-    zoom: 0.3;
 }
 
 
 
 
-
-
-
-/* 
-.g1 {
-    grid-area: 1/2/2/3;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+/* shoppable items */
+.grid-item-goods {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
 }
 
-.grid-item-ground {
-    padding-top: 20px;
-    width: 30vw;
-    min-width: 400px;
-    max-width:600px;
-    grid-area: 2/2/9/3;
+.grid-item-goods img {
+    width: 20vw;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.open-square {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding:10px;
 }
 
-.grid-item-ground img {
-    width:100%;
+.sliding-square {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 90vw;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+    overflow: auto;
 }
 
-
-.s1 {
-    grid-area: 1/3/2/4;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+.sliding-square.active {
+    right: 0;
 }
 
-.grid-item-sus {
-    padding-top: 20px;
-    width: 30vw;
-    min-width: 400px;
-    max-width:600px;
-    grid-area: 2/3/9/4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
 }
-
-.grid-item-sus img {
-    width:100%;
-}
-
-
-
-.b1 {
-    grid-area: 1/4/2/5;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.grid-item-bed {
-    padding-top: 20px;
-    width: 30vw;
-    min-width: 500px;
-    max-width:600px;
-    grid-area: 2/4/9/5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.grid-item-bed img {
-    width:100%;
-}
-
-.grid-item-new {
-    padding-left: 110px;
-    grid-area: 8/2/9/5;
-    display: flex;
-    justify-content: center;
-}
-
-.grid-item-new img {
-    height: 150px;
-}
- */
-
-
-
-
-
-
-
-
 
 .fctitle {
     position: fixed;
-    /* This makes the element fixed-positioned */
     top: 100%;
-    /* Position from the top of the viewport */
     left: 100%;
-    /* Position from the left of the viewport */
     transform: translate(-100%, -100%);
 }
 
 .fctitle img {
     width: 20vw;
-    /* Set the width of the image */
     transition: transform 0.2s;
-    /* Apply transition for a smooth effect */
 }
 
 
@@ -218,89 +153,16 @@ body::before {
         zoom: 2;
     }
 
-    /* 
-    .g1 {
-        grid-area: 2/1/3/2;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .grid-item-ground {
-        padding-top: 20px;
-        width: 100%;
-        min-width: 400px;
-        grid-area: 2/2/3/3;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-top: 50px;
-    }
-
-
-    .s1 {
-        grid-area: 3/1/4/2;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .grid-item-sus {
-        padding-top: 20px;
-        width: 100%;
-        min-width: 600px;
-        grid-area: 3/2/4/3;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-
-    .b1 {
-        grid-area: 4/1/5/2;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .grid-item-bed {
-        padding-top: 20px;
-        width: 100%;
-        min-width: 600px;
-        grid-area: 4/2/5/3;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-        .grid-item-new {
-        grid-row: 5/6;
-        padding-left: 80px;
-        display: flex;
-        justify-content: flex-start;
-        margin-bottom: 40px;
-        zoom: 0.5;
-    }
-
- */
-
-    .newtree {
-        width: 100vw;
+    
+    .shop {
+        width: 90vw;
         margin-top: 200px;
     }
 
-    .newtree img {
-        width: 5401px;
+    .shop img {
+        width: 1280px;
         height: auto;
-        zoom: 0.4;
+        zoom: 0.8;
     }
 
     .grid-item-nav {

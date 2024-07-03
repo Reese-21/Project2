@@ -4,74 +4,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family Tree</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+
+
+    <title>Summon Center</title>
 
     <link rel="stylesheet" href="styletree.css">
-    <link rel="icon" href="images\2navtree.png" type="image/png">
-
+    <link rel="icon" href="images/2navtree.png" type="image/png">
 </head>
 
 <body>
     <div class="fctitle">
-        <img src="images\0navtitle.png">
+        <img src="images/0navtitle.png">
     </div>
 
+    <!-- four navigation icons -->
+    <div class="grid-item-nav">
+        <a href="index.html">
+            <img title="myhome" alt="home" src="images/1navhome.png"> </a>
+
+        <a href="tree.html">
+            <img alt="tree" src="images/2navtree.png"> </a>
+
+        <a href="playground.html">
+            <img title="playground" alt="play" src="images/3navmine.png">
+        </a>
+
+        <a href="story.html">
+            <img title="Furnicreature Wiki" alt="story" src="images/4navstory.png"> </a>
+    </div>
 
     <div class="grid-container">
-        <!-- four navigation icons -->
-        <div class="grid-item-nav">
-            <a href="index.html">
-                <img title="myhome" alt="home" src="images\1navhome.png"> </a>
+        <div class="grid-item-shop">
+            <img src="images/shop/shop.png">
+        </div>
 
-            <a href="tree.html">
-                <img alt="tree" src="images\2navtree.png"> </a>
+        <h2>NEWS:</h2>
+        <p>[2024/7/4] Furnicreatures will soon be available for summoning! Adoption community will be available soon.</p>
+        <p>[2024/5/22] Project Furnicreature is now exhibiting at Rhode Island Convention Center in Providence!</p>
+        <br>
+        <br>
 
-            <a href="playground.html">
-                <img title="playground" alt="play" src="images\3navmine.png">
+        <div class="grid-item-goods">
+            <a href="#" class="open-square" data-target="#square1">
+                <img src="images/shop/sstool.png" alt="Stoolpy">
+                <p>Stoolpy</p>
+                <p style="font-size: 14px;">$300.00</p>
             </a>
-
-            <a href="story.html">
-                <img title="Furnicreature Wiki" alt="story" src="images\4navstory.png"> </a>
+            <a href="#" class="open-square" data-target="#square2">
+                <img src="images/shop/ssofa.png" alt="Snuggly">
+                <p>Snuggly</p>
+                <p style="font-size: 14px;">$600.00</p>
+            </a>
+            <a href="#" class="open-square" data-target="#square3">
+                <img src="images/shop/sstashypup.png" alt="Stashypup">
+                <p>StashyPup</p>
+                <p style="font-size: 14px;">$40.00</p>
+            </a>
+            <a href="#" class="open-square" data-target="#square4">
+                <img src="images/shop/sstashycat.png" alt="Stashycat">
+                <p>StashyCat</p>
+                <p style="font-size: 14px;">$40.00</p>
+            </a>
         </div>
 
-
-        <div class="newtree">
-            <img src="images\tree\tree-04.png">
+        <div class="sliding-square" id="square1">
+            <button class="close-btn">&times;</button>
+            <h2>More Information for Stoolpy</h2>
+            <p>Details about Stoolpy...</p>
         </div>
-
-        <!-- 
-        <div class="g1">
-            <img src="images\tree\tground.png">
+        <div class="sliding-square" id="square2">
+            <button class="close-btn">&times;</button>
+            <h2>More Information for Snuggly</h2>
+            <p>Details about Snuggly...</p>
         </div>
-        <div class="grid-item-ground">
-            <img src="images\tree\treeground.png">
+        <div class="sliding-square" id="square3">
+            <button class="close-btn">&times;</button>
+            <h2>More Information for StashyPup</h2>
+            <p>Details about StashyPup...</p>
         </div>
-
-
-        <div class="s1">
-            <img src="images\tree\tsus.png">
+        <div class="sliding-square" id="square4">
+            <button class="close-btn">&times;</button>
+            <h2>More Information for StashyCat</h2>
+            <p>Details about StashyCat...</p>
         </div>
-        <div class="grid-item-sus">
-            <img src="images\tree\treesus.png">
-        </div>
-
-        <div class="b1">
-            <img src="images\tree\tbed.png">
-        </div>
-        <div class="grid-item-bed">
-            <img src="images\tree\treebed.png">
-        </div>
-
-
     </div>
 
 
 
-    <div class="grid-item-new">
-        <img src="images\tree\treenew.png">
-    </div>
-            
--->
+
+
+
+
+
+    <script>
+        // one item open one sliding square. there is only one sliding square.
+        //   document.getElementById('open-square').addEventListener('click', function (event) {
+        //     event.preventDefault();
+        //     document.querySelector('.sliding-square').classList.add('active');
+        // });
+
+        // document.querySelector('.close-btn').addEventListener('click', function () {
+        //     document.querySelector('.sliding-square').classList.remove('active');
+        // });
+
+
+
+
+        // all items open the sliding square
+        //         document.querySelectorAll('.open-square').forEach(function (element) {
+        //     element.addEventListener('click', function (event) {
+        //         event.preventDefault();
+        //         document.querySelector('.sliding-square').classList.add('active');
+        //     });
+        // });
+
+        // document.querySelector('.close-btn').addEventListener('click', function () {
+        //     document.querySelector('.sliding-square').classList.remove('active');
+        // });
+
+
+        document.querySelectorAll('.open-square').forEach(function (element) {
+            element.addEventListener('click', function (event) {
+                event.preventDefault();
+                var target = this.getAttribute('data-target');
+                document.querySelector(target).classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.close-btn').forEach(function (element) {
+            element.addEventListener('click', function () {
+                this.closest('.sliding-square').classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 

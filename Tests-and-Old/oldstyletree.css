@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #dbdbdb;
+    /* border: dashed; */
+    /* border-color: #ffffff; */
+}
+
+body::before {
+    /* Add dotted background */
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-size: 20px 20px;
+    /* Adjust the size of the dots */
+}
+
+.map area:hover {
+    cursor: pointer;
+}
+
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 75px 95vw;
+    grid-template-rows: 1fr;
+    width: 100vw;
+}
+
+.grid-item-nav {
+    grid-column: span 1;
+    grid-row: span 8;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+    /* Gradient from #a0a0a0 (left) to #808080 (right) */
+    opacity: 0.6;
+}
+
+.grid-item-nav img {
+    width: 100px;
+    transition: transform 0.2s;
+    /* Apply transition for a smooth effect */
+}
+
+.grid-item-nav img:hover {
+    transform: translateY(-5px);
+    /* Apply initial transformation on hover */
+}
+
+
+
+.newtree {
+    width: 95vw;
+    margin-left: 80px;
+}
+
+.newtree img {
+    width: 5401px;
+    height: auto;
+    zoom: 0.3;
+}
+
+
+
+
+
+
+
+/* 
+.g1 {
+    grid-area: 1/2/2/3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.grid-item-ground {
+    padding-top: 20px;
+    width: 30vw;
+    min-width: 400px;
+    max-width:600px;
+    grid-area: 2/2/9/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-item-ground img {
+    width:100%;
+}
+
+
+.s1 {
+    grid-area: 1/3/2/4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.grid-item-sus {
+    padding-top: 20px;
+    width: 30vw;
+    min-width: 400px;
+    max-width:600px;
+    grid-area: 2/3/9/4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-item-sus img {
+    width:100%;
+}
+
+
+
+.b1 {
+    grid-area: 1/4/2/5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.grid-item-bed {
+    padding-top: 20px;
+    width: 30vw;
+    min-width: 500px;
+    max-width:600px;
+    grid-area: 2/4/9/5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-item-bed img {
+    width:100%;
+}
+
+.grid-item-new {
+    padding-left: 110px;
+    grid-area: 8/2/9/5;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-item-new img {
+    height: 150px;
+}
+ */
+
+
+
+
+
+
+
+
+
+.fctitle {
+    position: fixed;
+    /* This makes the element fixed-positioned */
+    top: 100%;
+    /* Position from the top of the viewport */
+    left: 100%;
+    /* Position from the left of the viewport */
+    transform: translate(-100%, -100%);
+}
+
+.fctitle img {
+    width: 20vw;
+    /* Set the width of the image */
+    transition: transform 0.2s;
+    /* Apply transition for a smooth effect */
+}
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+    .grid-container {
+        display: grid;
+        grid-template-rows: 100px 1fr 1fr 1fr;
+        grid-template-columns: 1fr 4fr;
+        width: 100vw;
+        margin-top: 0px;
+        zoom: 0.5;
+
+    }
+
+    .grid-item-nav {
+        zoom: 2;
+    }
+
+    /* 
+    .g1 {
+        grid-area: 2/1/3/2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .grid-item-ground {
+        padding-top: 20px;
+        width: 100%;
+        min-width: 400px;
+        grid-area: 2/2/3/3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+
+    .s1 {
+        grid-area: 3/1/4/2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .grid-item-sus {
+        padding-top: 20px;
+        width: 100%;
+        min-width: 600px;
+        grid-area: 3/2/4/3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .b1 {
+        grid-area: 4/1/5/2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .grid-item-bed {
+        padding-top: 20px;
+        width: 100%;
+        min-width: 600px;
+        grid-area: 4/2/5/3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .grid-item-new {
+        grid-row: 5/6;
+        padding-left: 80px;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+        zoom: 0.5;
+    }
+
+ */
+
+    .newtree {
+        width: 100vw;
+        margin-top: 200px;
+    }
+
+    .newtree img {
+        width: 5401px;
+        height: auto;
+        zoom: 0.4;
+    }
+
+    .grid-item-nav {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+        opacity: 0.6;
+    }
+
+
+    .fctitle {
+        position: fixed;
+        /* This makes the element fixed-positioned */
+        top: 100%;
+        /* Position from the top of the viewport */
+        left: 100%;
+        /* Position from the left of the viewport */
+        transform: translate(-100%, -100%);
+    }
+    
+    .fctitle img {
+        width: 40vw;
+        /* Set the width of the image */
+        transition: transform 0.2s;
+        /* Apply transition for a smooth effect */
+    }
+}
+
+
+/* green #b8d4d7 purple light #d1cfe8 purple dark #a19dca red #e6babe yellow #fceed1 */
