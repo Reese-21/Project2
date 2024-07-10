@@ -40,18 +40,9 @@
         }
 
 
-        /* contains left and right column and family tree */
-        .grid-container {
-            display: grid;
-            grid-template-columns: 100px 20% 1fr;
-            grid-template-rows: 1fr 1fr;
-            height: 100%;
-            width: 100%;
-        }
-
-
 
         .grid-item-nav {
+            top:0;
             height: 100%;
             position: fixed;
             display: flex;
@@ -95,11 +86,14 @@
 
         /* contains the left and right column of wiki */
         .grid-item-container {
-            grid-column: 2 / 4;
-            grid-row: 1/2;
+            margin-left: 100px;
             display: flex;
             flex-direction: row;
         }
+
+
+
+
 
 
 
@@ -118,117 +112,54 @@
         }
 
 
-
-
-
-        .left-column {
-            height: 100vh;
-            width: 15vw;
-            padding: 20px;
-            padding-bottom: 0;
-            /* border-right: 1px solid #000000; */
-            overflow: auto;
+        .horizontal-line {
+            width: 100%;
+            /* Full width */
+            height: 2px;
+            /* Thickness of the line */
+            background-color: #000;
+            /* Color of the line */
+            margin: 20px 0;
+            /* Adjust the spacing around the line */
+            margin-left: 40px;
         }
 
-        .left-column img {
-            max-width: 80px;
-            max-height: 80px;
+        .newtree h2 {
+            margin-top:20px;
+            margin-left: 40px;
         }
 
-        .left-column a {
-            display: block;
-            margin-bottom: 10px;
-            color: #333;
-            text-decoration: none;
+        .more {
+            margin-left: 40px;
+            margin-bottom: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 20px;
         }
 
-        .left-column a:hover {
+        .more a {
+            color: #000;
             text-decoration: underline;
         }
 
-        /* animation of decoration */
-        .left-column img:hover {
-            animation: upDown 0.4s infinite alternate;
-            /* Apply animation on hover */
-        }
-
-        @keyframes upDown {
-            0% {
-                transform: translateY(0);
-            }
-
-            100% {
-                transform: translateY(-10px);
-                /* Adjust the value for desired vertical movement */
-            }
-        }
-
-        .left-column::-webkit-scrollbar {
-            width: 4px;
-            /* Set the width of the scrollbar */
+        .more a:hover h4 {
+            color: #d7a4a8;
+            /* Set the color of the link text when hovered */
+            text-decoration: underline;
+            /* Add underline on hover */
+            font-size: 30px;
         }
 
 
 
-
-
-
-        .right-column {
-            width: 85vw;
-            overflow: auto;
-            height: 100vh;
-        }
-
-        .right-column .content {
-            display: none;
-        }
-
-        .right-column .content.active {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .right-column img {
-            width: 50%;
-        }
-
-        /* Customize the scrollbar width */
-        .right-column::-webkit-scrollbar {
-            width: 4px;
-            /* Set the width of the scrollbar */
-        }
-
-        /* Customize the scrollbar track */
-        .right-column::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            /* Background color of the scrollbar track */
-        }
-
-        /* Customize the scrollbar thumb */
-        .right-column::-webkit-scrollbar-thumb {
-            background: #888;
-            /* Color of the scrollbar thumb */
-            border-radius: 2px;
-            /* Round the corners of the scrollbar thumb */
-        }
-
-        /* Customize the scrollbar thumb on hover */
-        .right-column::-webkit-scrollbar-thumb:hover {
-            background: #555;
-            /* Color of the scrollbar thumb on hover */
-        }
 
 
 
 
         @media (max-width: 900px) {
-            .grid-container {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-            }
-
             .grid-item-nav {
+                top: 0;
                 height: 50px;
                 width: 100vw;
                 display: flex;
@@ -245,91 +176,18 @@
                 transition: transform 0.2s;
             }
 
-            .grid-item-container {
-                margin-top: 50px;
-                width: 100vw;
-                display: flex;
-                flex-direction: column;
+
+            /* family tree */
+            .newtree h2 {
+                margin-left: 20px;
             }
-
-            .left-column {
-                width: 100vw;
-                height: 150px;
-                margin: 0;
-                padding: 0;
-                margin-top: 20px;
-                overflow-x: auto;
-                display: flex;
-                flex-direction: row;
-            }
-
-            .left-column a {
-                display: block;
-                margin-bottom: 0;
-                margin-right: 10px;
-                color: #333;
-                text-decoration: none;
-            }
-
-            /* Customize the scrollbar width */
-            .left-column::-webkit-scrollbar {
-                height: 4px;
-                /* Set the width of the scrollbar */
-            }
-
-            /* Customize the scrollbar track */
-            .left-column::-webkit-scrollbar-track {
-                background: #f1f1f1;
-                /* Background color of the scrollbar track */
-            }
-
-            /* Customize the scrollbar thumb */
-            .left-column::-webkit-scrollbar-thumb {
-                background: #888;
-                /* Color of the scrollbar thumb */
-                border-radius: 2px;
-                /* Round the corners of the scrollbar thumb */
-            }
-
-            /* Customize the scrollbar thumb on hover */
-            .left-column::-webkit-scrollbar-thumb:hover {
-                background: #555;
-                /* Color of the scrollbar thumb on hover */
-            }
-
-
-
-
-            .right-column {
-                width: 100%;
-            }
-
-            .right-column img {
-                width: 100vw;
-            }
-
-            .right-column .content {
-                display: none;
-            }
-
-            .right-column .content.active {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .right-column::-webkit-scrollbar {
-                height: 0px;
-                /* Set the width of a horizontal scrollbar */
-            }
-
-
-
 
             .newtree {
                 width: 100%;
                 /* the width is set to 90vw instead of 100vw is for the webpage to not scroll left to right */
                 margin-left: 0px;
                 margin-bottom: 80px;
+                margin-top: 60px;
             }
 
             .newtree img {
@@ -339,11 +197,24 @@
 
 
 
-
-
-            .instructions {
-                left: 0;
+            .horizontal-line {
+                width: 100%;
+                /* Full width */
+                height: 1px;
+                /* Thickness of the line */
+                background-color: #000;
+                /* Color of the line */
+                margin: 20px 0;
+                /* Adjust the spacing around the line */
             }
+
+            .more {
+                flex-direction: column;
+                justify-content: space-around;
+                margin-left: 20px;
+                margin-bottom: 10px;
+            }
+
 
             .fctitle {
                 position: fixed;
@@ -367,144 +238,47 @@
     </div>
 
 
-    <div class="grid-container">
-        <div class="grid-item-nav">
-            <a href="myhome.html">
-                <img title="myhome" alt="myhome" src="images/1navhome.png">
-            </a>
+    
+    <div class="grid-item-nav">
+        <a href="myhome.html">
+            <img title="myhome" alt="myhome" src="images/1navhome.png">
+        </a>
 
-            <a href="tree.html">
-                <img alt="tree" src="images/2navtree.png">
-            </a>
+        <a href="tree.html">
+            <img alt="tree" src="images/2navtree.png">
+        </a>
 
-            <a href="playground.html">
-                <img title="playground" alt="play" src="images/3navmine.png">
-            </a>
+        <a href="playground.html">
+            <img title="playground" alt="play" src="images/3navmine.png">
+        </a>
 
-            <a href="story.html">
-                <img title="Furnicreature Wiki" alt="story" src="images/4navstory.png">
-            </a>
-        </div>
-
-
-
-
-        <div class="grid-item-container">
-            <div class="left-column">
-                <h2 style="margin-right: 10px;">Click Me!</h2>
-                <br>
-                <a href="#" onclick="showContent('content1')">Stoolpy <br> <img title="Weee--"
-                        src="images\objects\stool.png"></a>
-                <a href="#" onclick="showContent('content2')">Snuggly <br> <img title="Come into my arms"
-                        src="images\objects\sofa4.png"></a>
-                <a href="#" onclick="showContent('content3')">StashyPup <br> <img title="Hi!"
-                        src="images\objects\conwin.png"></a>
-                <a href="#" onclick="showContent('content4')">StashyCat <br> <img title="...0.0"
-                        src="images\objects\conbed1.png"></a>
-                <a href="#" onclick="showContent('content5')">Blanky <br> <img title="Nah."
-                        src="images\objects\blanket.png"></a>
-                <a href="#" onclick="showContent('content6')">Marshmallow <br> <img title="zzz..."
-                        src="images\objects\cushion.png"></a>
-                <a href="#" onclick="showContent('content7')">Sheept <br> <img title="zzz..."
-                        src="images\objects\bedsheet.png"></a>
-                <a href="#" onclick="showContent('content8')">Trapeze <br> <img title="Slide---"
-                        src="images\objects\ch.png"></a>
-                <a href="#" onclick="showContent('content9')">Hooky <br> <img title="One more pull up!"
-                        src="images\objects\hook.png"></a>
-                <a href="#" onclick="showContent('content10')">Sweaty <br> <img title="How'ru doing"
-                        src="images\objects\sweaty.png"></a>
-                <a href="#" onclick="showContent('content11')">StudyPaw <br> <img title="Study with me"
-                        src="images\objects\studypaw.png"></a>
-                <a href="#" onclick="showContent('content12')">Baggy <br> <img title="Take me on a walk!"
-                        src="images\objects\bag2.png"></a>
-                <a href="#" onclick="showContent('content13')">Pancake <br> <img title="I'm slipping away"
-                        src="images\objects\carpet.png"></a>
-
-            </div>
-            <div class="right-column">
-                <div id="content1" class="content">
-                    <img src="images/wiki/wiki (1).jpg">
-                    <img src="images/wiki/wiki (2).jpg">
-                </div>
-                <div id="content2" class="content">
-                    <img src="images/wiki/wiki (3).jpg">
-                    <img src="images/wiki/wiki (4).jpg">
-                </div>
-
-                <div id="content3" class="content">
-                    <img src="images/wiki/wiki (5).jpg">
-                    <img src="images/wiki/wiki (6).jpg">
-                </div>
-                <div id="content4" class="content">
-                    <img src="images/wiki/wiki (7).jpg">
-                    <img src="images/wiki/wiki (8).jpg">
-                </div>
-                <div id="content5" class="content">
-                    <img src="images/wiki/wiki (9).jpg">
-                    <img src="images/wiki/wiki (10).jpg">
-                </div>
-                <div id="content6" class="content">
-                    <img src="images/wiki/wiki (11).jpg">
-                    <img src="images/wiki/wiki (12).jpg">
-                </div>
-                <div id="content7" class="content">
-                    <img src="images/wiki/wiki (13).jpg">
-                    <img src="images/wiki/wiki (14).jpg">
-                </div>
-                <div id="content8" class="content">
-                    <img src="images\wiki\wiki (15).jpg">
-                    <img src="images\wiki\wiki (16).jpg">
-                </div>
-                <div id="content9" class="content">
-                    <img src="images\wiki\wiki (17).jpg">
-                    <img src="images\wiki\wiki (18).jpg">
-                </div>
-                <div id="content10" class="content">
-                    <img src="images\wiki\wiki (19).jpg">
-                    <img src="images\wiki\wiki (20).jpg">
-                </div>
-                <div id="content11" class="content">
-                    <img src="images\wiki\wiki (23).jpg">
-                    <img src="images\wiki\wiki (24).jpg">
-                </div>
-                <div id="content12" class="content">
-                    <img src="images\wiki\wiki (25).jpg">
-                    <img src="images\wiki\wiki (26).jpg">
-                </div>
-                <div id="content13" class="content">
-                    <img src="images\wiki\wiki (21).jpg">
-                    <img src="images\wiki\wiki (22).jpg">
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-
-        <div class="newtree">
-            <img src="images\tree\tree-04.png">
-        </div>
-
-
-
-
-        <div class="instructions">
-            <h2>Invite The Creatures to your house!</h2>
-        </div>
-
-
+        <a href="story.html">
+            <img title="Furnicreature Wiki" alt="story" src="images/4navstory.png">
+        </a>
     </div>
 
 
-    <script>
-        function showContent(contentId) {
-            // Hide all content divs
-            const contents = document.querySelectorAll('.content');
-            contents.forEach(content => content.classList.remove('active'));
 
-            // Show the selected content
-            document.getElementById(contentId).classList.add('active');
-        }
-    </script>
+    <div class="newtree">
+
+        <h2>Family Tree</h2>
+
+        <img src="images\tree\tree-04.png">
+
+        <div class="horizontal-line"></div>
+
+        <div class="more">
+            <a href="storywiki.html" target="_blank">
+                <h4>Learn more from Furnicreature Wiki</h4>
+            </a>
+            <a href="" target="_blank">
+                <h4>Project Furnicreature</h4>
+            </a>
+            <a href="https://hyjreesepfo.cargo.site/2-8-FurniCreature-Animation" target="_blank">
+                <h4>Furnicreature Stories</h4>
+            </a>
+            <a href="https://digitalcommons.risd.edu/masterstheses/1341/" target="_blank">
+                <h4>Book</h4>
+            </a>
+        </div>
+    </div>
