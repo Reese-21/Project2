@@ -130,7 +130,7 @@ body::before {
 
 
 
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
     .grid-item-nav {
         height: 100px;
         width: 100%;
