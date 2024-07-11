@@ -37,59 +37,797 @@
             <img title="Furnicreature Wiki" alt="story" src="images/4navstory.png"> </a>
     </div>
 
+
+
+
     <div class="grid-container">
         <div class="grid-item-shop">
             <img src="images/shop/shop.png">
+            <!-- Highlighted change -->
+            <div class="text-overlay">Furnicreature Summon Center!</div>
         </div>
 
         <h2>NEWS:</h2>
-        <p>[2024/7/4] Furnicreatures will soon be available for summoning! Adoption community will be available soon.</p>
-        <p>[2024/5/22] Project Furnicreature is now exhibiting at Rhode Island Convention Center in Providence!</p>
+        <p> [2024/7/11] Summon Center is now OPEN!!! Mobile version is coming soon.
+            <br>
+            [2024/7/4] Furnicreatures will soon be available for summoning! Adoption community will be available soon.
+            <br>
+            [2024/5/22] Project Furnicreature is now exhibiting at Rhode Island Convention Center in Providence!
+        </p>
         <br>
         <br>
 
+
+        <!-- buyable goods and description -->
         <div class="grid-item-goods">
+            <!-- shoppable item icons -->
             <a href="#" class="open-square" data-target="#square1">
                 <img src="images/shop/sstool.png" alt="Stoolpy">
                 <p>Stoolpy</p>
                 <p style="font-size: 14px;">$300.00</p>
             </a>
+
             <a href="#" class="open-square" data-target="#square2">
                 <img src="images/shop/ssofa.png" alt="Snuggly">
                 <p>Snuggly</p>
                 <p style="font-size: 14px;">$600.00</p>
             </a>
+
             <a href="#" class="open-square" data-target="#square3">
                 <img src="images/shop/sstashypup.png" alt="Stashypup">
                 <p>StashyPup</p>
                 <p style="font-size: 14px;">$40.00</p>
             </a>
+
             <a href="#" class="open-square" data-target="#square4">
                 <img src="images/shop/sstashycat.png" alt="Stashycat">
                 <p>StashyCat</p>
                 <p style="font-size: 14px;">$40.00</p>
             </a>
+
+            <a href="#" class="open-square" data-target="#square5">
+                <img src="images\shop\sblanket.png" alt="Blanky">
+                <p>Blanky</p>
+                <p style="font-size: 14px;">$30</p>
+            </a>
+
+            <a href="#" class="open-square" data-target="#square6">
+                <img src="images/shop/scushion.png" alt="Marshmallow">
+                <p>Marshmallow</p>
+                <p style="font-size: 14px;">$20</p>
+            </a>
+
+            <a href="#" class="open-square" data-target="#square7">
+                <img src="images/shop/sch.png" alt="Trapeze">
+                <p>Trapeze</p>
+                <p style="font-size: 14px;">$25</p>
+            </a>
+
+            <a href="#" class="open-square" data-target="#square8">
+                <img src="images/shop/sbag.png" alt="Baggy">
+                <p>Baggy</p>
+                <p style="font-size: 14px;">$25</p>
+            </a>
+
+
+
+
+            <!-- other items -->
+            <a href="#" class="open-square" data-target="#square9">
+                <img src="images\shop\sb.png" alt="Speech Bubbles">
+                <p>Whiteboard Speech Bubbles (set of 4)</p>
+                <p style="font-size: 14px;">$4.99</p>
+            </a>
+
+            <a href="#" class="open-square" data-target="#square10">
+                <img src="images/shop/sbook.png" alt="Book">
+                <p>Book "Furnicreature"</p>
+                <p style="font-size: 14px;">$24.99</p>
+            </a>
+
+            <a href="#" class="open-square">
+                <img src="images/shop/sclothes.png" alt="Clothes">
+                <p>Furnicreature Fashion</p>
+                <p style="font-size: 14px;">Comming Soon</p>
+            </a>
+
+            <a href="#" class="open-square">
+                <img src="images/shop/scare.png" alt="Care">
+                <p>Furnicreature Care Products</p>
+                <p style="font-size: 14px;">Comming Soon</p>
+            </a>
+
+
+
+
+            <!-- unavailable fc -->
+            <a href="#" class="open-square">
+                <img src="images/shop/sbedsheet.png" alt="Sheeept">
+                <p>Sheeept</p>
+                <p style="font-size: 14px;">OUT OF STOCK</p>
+            </a>
+
+            <a href="#" class="open-square">
+                <img src="images/shop/sdesk.png" alt="StudyPaw">
+                <p>StudyPaw</p>
+                <p style="font-size: 14px;">OUT OF STOCK</p>
+            </a>
+
+            <a href="#" class="open-square">
+                <img src="images/shop/ssweaty.png" alt="Sweaty">
+                <p>Sweaty</p>
+                <p style="font-size: 14px;">OUT OF STOCK</p>
+            </a>
+
+            <a href="#" class="open-square">
+                <img src="images/shop/scarpet.png" alt="Pancake">
+                <p>Pancake</p>
+                <p style="font-size: 14px;">OUT OF STOCK</p>
+            </a>
         </div>
 
+
+
+
+        <!-- hidden components -->
+
+        <!-- 1 stoolpy-->
         <div class="sliding-square" id="square1">
+            <!-- &times; is the X shape button -->
             <button class="close-btn">&times;</button>
-            <h2>More Information for Stoolpy</h2>
-            <p>Details about Stoolpy...</p>
+            <div class="info-left">
+                <h2>We belong to the Stoolpy species!</h2>
+
+                <img class="mainImage" data-square="1" src="images/shop/sstool.png" alt="Main Image">
+
+
+                <div class="thumbnail-container">
+                    <img data-square="1" src="images/shop/prototypes/stoolpy/1.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="1" src="images/shop/prototypes/stoolpy/2.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="1" src="images/shop/prototypes/stoolpy/3.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="1" src="images/shop/prototypes/stoolpy/4.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="1" src="images/shop/prototypes/stoolpy/5.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="1" src="images/shop/prototypes/stoolpy/6.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="1" src="images/shop/prototypes/stoolpy/7.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="1" src="images/shop/prototypes/stoolpy/8.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="1" src="images/shop/prototypes/stoolpy/9.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                </div>
+            </div>
+
+            <div class="info-right">
+                <h4>Summon a Stoolpy!</h4>
+                <h2 style="margin-top: 40px;">$300~$350</h2>
+                <hr>
+                <br>
+                <h4>Size:</h4>
+                <br>
+                <p>Small: 12 x 12 x 12 inches</p>
+                <br>
+                <p>Medium: 14 x 14 x 14 inches</p>
+                <br>
+                <p>Large: 16 x 16 x 16 inches</p>
+                <hr>
+                <br>
+                <h4>Color:</h4>
+                <br>
+                <img src="images/shop/color.png">
+                <hr>
+                <br>
+                <h4>Description:</h4>
+                <br>
+                <p>Stoolpies are a species of Furnicreature that are known for their sturdy and reliable nature. They
+                    are often used as stools, footrests, or even small tables. They are very loyal and will always be
+                    there
+                    for you when you need them. They come in a variety of colors and sizes, so you can choose the one
+                    that best fits your needs. Summon a Stoolpy today and add a touch of whimsy to your home!</p>
+                <br>
+                <a href="storywiki.html">
+                    <h4>Learn more about us HERE! </h4>
+                </a>
+                <hr>
+                <br>
+                <button id="fakebutton" title="This is a fake button.">ADD to SUMMON LIST</button>
+            </div>
         </div>
+
+
+        <!-- 2 snuggly-->
         <div class="sliding-square" id="square2">
             <button class="close-btn">&times;</button>
-            <h2>More Information for Snuggly</h2>
-            <p>Details about Snuggly...</p>
+            <div class="info-left">
+                <h2>We belong to the Snuggly species!</h2>
+
+                <img class="mainImage" data-square="2" src="images/shop/ssofa.png" alt="Main Image">
+
+                <div class="thumbnail-container">
+                    <img data-square="2" src="images/shop/prototypes/sofa/1.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="2" src="images/shop/prototypes/sofa/2.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="2" src="images/shop/prototypes/sofa/3.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="2" src="images/shop/prototypes/sofa/4.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+
+                </div>
+            </div>
+            <div class="info-right">
+                <h4>Summon a Snuggly!</h4>
+                <h2 style="margin-top: 40px;">$600~$700</h2>
+                <hr>
+                <br>
+                <h4>Size:</h4>
+                <br>
+                <p>Small</p>
+                <br>
+                <p>Medium</p>
+                <br>
+                <p>Large</p>
+                <hr>
+                <br>
+                <h4>Color:</h4>
+                <br>
+                <img src="images/shop/color.png">
+                <hr>
+                <br>
+                <h4>Description:</h4>
+                <br>
+                <p> The Snuggly is a benevolent Furnicreature known for its affectionate nature. Often found joyfully
+                    embracing its offspring—two floor cushions that combine to form a soft, resilient sofa—it provides
+                    humans with comfortable hugs. Available in a variety of colors and sizes, Snugglies fit perfectly in
+                    any home, bringing a touch of coziness and warmth.
+                    <br><br>
+                    Snugglies can work as sofas, beds, or even children's forts. Occasionally, lonely Stoolpies seek
+                    solace by snuggling up to Snuggly. A friendly floor cushion will temporarily vacate its place,
+                    allowing Snuggly to embrace the Stoolpy. In this scenario, the Stoolpy takes on its side job as the
+                    perfect side table, multitasking like a true professional. If two Stoolpies approach simultaneously,
+                    they can form a sturdy high sofa with Snuggly, without diminishing the warmth of its embrace.
+                    <br><br>
+                    Summon a Snuggly today and experience the perfect blend of comfort, versatility, and affectionate
+                    companionship!
+                </p>
+                <br>
+                <a href="storywiki.html">
+                    <h4>Learn more about us HERE! </h4>
+                </a>
+                <hr>
+                <br>
+                <button id="fakebutton" title="This is a fake button.">ADD to SUMMON LIST</button>
+            </div>
         </div>
+
+
+        <!-- 3 pup-->
         <div class="sliding-square" id="square3">
             <button class="close-btn">&times;</button>
-            <h2>More Information for StashyPup</h2>
-            <p>Details about StashyPup...</p>
+            <div class="info-left">
+                <h2>We belong to the StashyPup species!</h2>
+                <img class="mainImage" data-square="3" src="images/shop/sstashypup.png" alt="Main Image">
+
+                <div class="thumbnail-container">
+                    <img data-square="3" src="images/shop/sstashypup.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="3" src="images\shop\prototypes\stashypup\1.png" alt="Thumbnail 1"
+                        class="thumbnail" onclick="showImage(this)">
+                    <img data-square="3" src="images\shop\prototypes\stashypup\2.png" alt="Thumbnail 1"
+                        class="thumbnail" onclick="showImage(this)">
+
+                </div>
+            </div>
+            <div class="info-right">
+                <h4>Summon a StashyPup!</h4>
+                <h2 style="margin-top: 40px;">$40</h2>
+                <hr>
+                <br>
+                <h4>Size:</h4>
+                <br>
+                <p>Small</p>
+                <br>
+                <p>Medium</p>
+                <br>
+                <p>Large</p>
+                <hr>
+                <br>
+                <h4>Color:</h4>
+                <br>
+                <img src="images/shop/color.png">
+                <hr>
+                <br>
+                <h4>Description:</h4>
+                <br>
+                <p>StashyPups are a species of Furnicreature that are known for their adaptability and versatility. It
+                    is a close biological relative of the StashyCat.
+                    <br><br>
+                    They are often used as storage boxes or containers, and are particularly good at protecting human
+                    belongings. In comparison to StashyCats, StashyPups are more adept at protecting
+                    human belongings, offering better concealment for items entrusted to them. Due to their lightweight
+                    nature, they can easily move around various home environments.
+                    <br><br>
+                    StashyPups come in a variety of colors and sizes, so you can choose the one that best fits your
+                    needs. Summon a StashyPup today and add a touch of whimsy to your home!
+                </p>
+                </p>
+                <br>
+                <a href="storywiki.html">
+                    <h4>Learn more about us HERE! </h4>
+                </a>
+                <hr>
+                <br>
+                <button id="fakebutton" title="This is a fake button.">ADD to SUMMON LIST</button>
+            </div>
         </div>
+
+
+        <!-- 4 cat-->
         <div class="sliding-square" id="square4">
             <button class="close-btn">&times;</button>
-            <h2>More Information for StashyCat</h2>
-            <p>Details about StashyCat...</p>
+            <div class="info-left">
+                <h2>We belong to the StashyCat species!</h2>
+                <img class="mainImage" data-square="4" src="images/shop/sstashycat.png" alt="Main Image">
+
+                <div class="thumbnail-container">
+                    <img data-square="4" src="images\shop\prototypes\stashycat\1.png" alt="Thumbnail 1"
+                        class="thumbnail" onclick="showImage(this)">
+                    <img data-square="4" src="images\shop\prototypes\stashycat\2.png" alt="Thumbnail 1"
+                        class="thumbnail" onclick="showImage(this)">
+                    <img data-square="4" src="images\shop\prototypes\stashycat\3.png" alt="Thumbnail 1"
+                        class="thumbnail" onclick="showImage(this)">
+                    <img data-square="4" src="images\shop\prototypes\stashycat\4.png" alt="Thumbnail 1"
+                        class="thumbnail" onclick="showImage(this)">
+                    <img data-square="4" src="images\shop\prototypes\stashycat\5.png" alt="Thumbnail 1"
+                        class="thumbnail" onclick="showImage(this)">
+                    <img data-square="4" src="images\shop\prototypes\stashycat\6.png" alt="Thumbnail 1"
+                        class="thumbnail" onclick="showImage(this)">
+
+                </div>
+            </div>
+
+            <div class="info-right">
+                <h4>Summon a StashyCat!</h4>
+                <h2 style="margin-top: 40px;">$40</h2>
+                <hr>
+                <br>
+                <h4>Size:</h4>
+                <br>
+                <p>Small</p>
+                <br>
+                <p>Medium</p>
+                <br>
+                <p>Large</p>
+                <hr>
+                <br>
+                <h4>Color:</h4>
+                <br>
+                <img src="images/shop/color.png">
+                <hr>
+                <br>
+                <h4>Description:</h4>
+                <br>
+                <p>StashyCats are a species of Furnicreature that are known for their adaptability and versatility. It
+                    is a close biological relative of the StashyPup.
+                    <br><br>
+                    In comparison to StashyPups, StashyCats are particularly skilled at gaining
+                    attention, making it less likely for stored items to be forgotten.
+                    StashyCats are elusive creatures that enjoy capturing
+                    human attention. Regardless of their location, they often
+                    discreetly poke their heads out, reminding people not to forget them.
+                    <br><br>
+                    StashyCats come in a variety of colors and sizes, so you can choose the one that best fits your
+                    needs. Summon a StashyCat today and add a touch of whimsy to your home!
+                </p>
+                <br>
+                <a href="storywiki.html">
+                    <h4>Learn more about us HERE! </h4>
+                </a>
+                <hr>
+                <br>
+                <button id="fakebutton" title="This is a fake button.">ADD to SUMMON LIST</button>
+            </div>
+        </div>
+
+
+
+
+        <!-- 5 blanky-->
+        <div class="sliding-square" id="square5">
+            <button class="close-btn">&times;</button>
+            <div class="info-left">
+                <h2>We belong to the Blanky species!</h2>
+                <img class="mainImage" data-square="5" src="images/shop/sblanket.png" alt="Main Image">
+
+                <div class="thumbnail-container">
+                    <img data-square="5" src="images\shop\prototypes\blanky\1.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="5" src="images\shop\prototypes\blanky\2.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="5" src="images\shop\prototypes\blanky\3.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+
+                </div>
+            </div>
+            <div class="info-right">
+                <h4>Summon a Blanky!</h4>
+                <h2 style="margin-top: 40px;">$30~$50</h2>
+                <hr>
+                <br>
+                <h4>Size:</h4>
+                <br>
+                <p>Small: 30 x 18 inches</p>
+                <br>
+                <p>Medium: 45 x 27 inches</p>
+                <br>
+                <p>Large: 60 x 30 inches</p>
+                <hr>
+                <br>
+                <h4>Function:</h4>
+                <br>
+                <p>Hugging Blanket</p>
+                <br>
+                <p>Bath Towel</p>
+                <hr>
+                <br>
+                <h4>Color:</h4>
+                <br>
+                <img src="images/shop/color.png">
+                <hr>
+                <br>
+                <h4>Description:</h4>
+                <br>
+                <p> Blankies are a species of Furnicreature that are known for their soft and cozy nature. They are
+                    often
+                    used as blankets, bath towels, throws, or even wall hangings.
+                    <br><br>
+                    Blanky, despite its tendency to do little besides laying around, remains a beloved presence in
+                    households. Many human infants choose to cuddle with Blanky due to its cozy fur and soft body,
+                    finding comfort in its embrace during sleep. Some individuals also use Blanky for warmth during the
+                    winter.
+                    In contrast to sturdier Furnicreatures, Blanky primarily provides warmth and emotional support.
+                    <br><br>
+                    They come in a variety of colors and sizes, so you can choose the one that best
+                    fits your needs. Summon a Blanky today and add a touch of whimsy to your home!
+                </p>
+
+                </p>
+                <br>
+                <a href="storywiki.html">
+                    <h4>Learn more about us HERE! </h4>
+                </a>
+                <hr>
+                <br>
+                <button id="fakebutton" title="This is a fake button.">ADD to SUMMON LIST</button>
+            </div>
+        </div>
+
+
+        <!-- 6 cushion-->
+        <div class="sliding-square" id="square6">
+            <button class="close-btn">&times;</button>
+            <div class="info-left">
+                <h2>We belong to the Marshmallow species!</h2>
+                <img class="mainImage" data-square="6" src="images/shop/scushion.png" alt="Main Image">
+
+                <div class="thumbnail-container">
+                    <img data-square="6" src="images\shop\prototypes\cushion\1.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="6" src="images/shop/scushion.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+
+                </div>
+            </div>
+            <div class="info-right">
+                <h4>Summon a Marshmallow!</h4>
+                <h2 style="margin-top: 40px;">$20~$60</h2>
+                <hr>
+                <br>
+                <h4>Size:</h4>
+                <br>
+                <p>Tiny: 5 x 3 inches</p>
+                <br>
+                <p>Small: 20 x 12 inches</p>
+                <br>
+                <p>Medium: 30 x 18 inches</p>
+                <br>
+                <p>Large: 40 x 24 inches</p>
+                <hr>
+                <br>
+                <h4>Color:</h4>
+                <br>
+                <img src="images/shop/color.png">
+                <hr>
+                <br>
+                <h4>Description:</h4>
+                <br>
+                <p> Marshmallows are a species of Furnicreature that are known for their soft and squishy nature.
+                    They excel at doing almost nothing but lying
+                    down and being embraced by humans, similar to Blankies. They do not engage
+                    in active thought processes but has gained popularity in
+                    household environments. Humans enjoy hugging it, and
+                    even household pets find joy in interacting with it. Many
+                    humans appreciate its soft skin and elastic body, often
+                    choosing to embrace it for a comfortable sleep.
+                    <br><br>
+                    They come in a variety of colors and sizes, so you can choose the one that best
+                    fits your needs. Summon a Blanky today and add a touch of whimsy to your home!
+                </p>
+                </p>
+                <br>
+                <a href="storywiki.html">
+                    <h4>Learn more about us HERE! </h4>
+                </a>
+                <hr>
+                <br>
+                <button id="fakebutton" title="This is a fake button.">ADD to SUMMON LIST</button>
+            </div>
+        </div>
+
+
+        <!-- 7 trapeze-->
+        <div class="sliding-square" id="square7">
+            <button class="close-btn">&times;</button>
+            <div class="info-left">
+                <h2>We belong to the Trapeze species!</h2>
+                <img class="mainImage" data-square="7" src="images/shop/sch.png" alt="Main Image">
+
+                <div class="thumbnail-container">
+                    <img data-square="7" src="images\shop\prototypes\ch\1.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="7" src="images\shop\prototypes\ch\2.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+
+                </div>
+            </div>
+            <div class="info-right">
+                <h4>Summon a Trapeze!</h4>
+                <h2 style="margin-top: 40px;">$25</h2>
+                <hr>
+                <br>
+                <h4>Style:</h4>
+                <br>
+                <p>Trapeze H</p>
+                <br>
+                <p>Trapeze O (OUT OF STOCK)</p>
+                <hr>
+                <br>
+                <h4>Color:</h4>
+                <br>
+                <img src="images/shop/color.png">
+                <hr>
+                <br>
+                <h4>Description:</h4>
+                <br>
+                <p> Trapezes are a species of Furnicreature that are known for their strong upper limbs and fondness for
+                    beautiful clothing. They are often used as hangers in domestic settings, helping humans organize and
+                    admire their garments. It comprises two species, distinguished by the gesture of their upper limbs:
+                    one species has its upper limbs curved backward, while the other has its upper limbs forming a
+                    circle.
+                    They typically prefer to hang in different environmental conditions.
+                    <br><br>
+                    They come in a variety of colors and styles, so you can choose the one that
+                    best fits your needs. Summon a Trapeze today and add a touch of whimsy to your home!
+                </p>
+                <br>
+                <a href="storywiki.html">
+                    <h4>Learn more about us HERE! </h4>
+                </a>
+                <hr>
+                <br>
+                <button id="fakebutton" title="This is a fake button.">ADD to SUMMON LIST</button>
+            </div>
+        </div>
+
+
+        <!-- 8 baggy-->
+        <div class="sliding-square" id="square8">
+            <button class="close-btn">&times;</button>
+            <div class="info-left">
+                <h2>We belong to the Baggy species!</h2>
+                <img class="mainImage" data-square="8" src="images/shop/sbag.png" alt="Main Image">
+
+                <div class="thumbnail-container">
+                    <img data-square="8" src="images\shop\prototypes\bag\1.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="8" src="images\shop\sbag.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="8" src="images\shop\sbag2.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+
+                </div>
+            </div>
+            <div class="info-right">
+                <h4>Summon a Baggy!</h4>
+                <h2 style="margin-top: 40px;">$25~$55</h2>
+                <hr>
+                <br>
+                <h4>Style:</h4>
+                <br>
+                <p>Back-Baggy</p>
+                <br>
+                <p>Shoulder-Baggy</p>
+                <br>
+                <p>Hand-Baggy</p>
+                <br>
+                <p>Sling-Baggy</p>
+                <br>
+                <p>Combo-Baggy</p>
+                <hr>
+                <br>
+                <h4>Color:</h4>
+                <br>
+                <img src="images/shop/color.png">
+                <hr>
+                <br>
+                <h4>Description:</h4>
+                <br>
+                <p> Baggies are a species of Furnicreature that are known for their ability to carry and store items.
+                    They are often used as bags, backpacks, or even purses.
+                    Baggies are highly adaptable Furnicreatures. They can live
+                    on the ground, hang from hooks, and even cling tightly to
+                    humans for extended periods. It has a remarkable ability
+                    to hold numerous personal items, making it a popular
+                    companion for humans on the go.
+                    <br><br>
+                    To avoid being mixed up with other Baggies, they often wear unique clothes and
+                    display their personality through badges and pins. Baggies love helping
+                    humans, carrying many personal items in their bellies.
+                    <br><br>
+                    They come in a variety of colors and styles, so you can choose the one that
+                    best fits your needs. Summon a Trapeze today and add a touch of whimsy to your home!
+                </p>
+                <br>
+                <a href="storywiki.html">
+                    <h4>Learn more about us HERE! </h4>
+                </a>
+                <hr>
+                <br>
+                <button id="fakebutton" title="This is a fake button.">ADD to SUMMON LIST</button>
+            </div>
+        </div>
+
+
+
+
+        <!-- 9 speech bubble-->
+        <div class="sliding-square" id="square9">
+            <button class="close-btn">&times;</button>
+            <div class="info-left">
+                <h2>Speech Bubbles!</h2>
+                <img class="mainImage" data-square="9" src="images/shop/sb.png" alt="Main Image">
+
+                <div class="thumbnail-container">
+                    <img data-square="9" src="images\shop\prototypes\sb\1.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="9" src="images\shop\prototypes\sb\2.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="9" src="images\shop\prototypes\sb\7.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="9" src="images\shop\prototypes\sb\4.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="9" src="images\shop\prototypes\sb\8.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="9" src="images\shop\prototypes\sb\6.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="9" src="images\shop\prototypes\sb\9.jpg" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+
+                </div>
+            </div>
+            <div class="info-right">
+                <h4>Enable your Furnicreatures to think & speak!</h4>
+                <h2 style="margin-top: 40px;">$4.99~$9.99</h2>
+                <hr>
+                <br>
+                <h4>Style:</h4>
+                <br>
+                <p>4 Classic Speech</p>
+                <br>
+                <p>4 Thought Bubble</p>
+                <br>
+                <p>4 Comic Book Style</p>
+                <br>
+                <p>4 Narration Box</p>
+                <br>
+                <p>Set of 4 (1 of each)</p>
+                <br>
+                <p>Set of 8 (2 of each)</p>
+                <hr>
+                <br>
+                <h4>Color:</h4>
+                <br>
+                <img src="images/shop/color.png">
+                <hr>
+                <br>
+                <h4>Description:</h4>
+                <br>
+                <p> Elevate your Furnicreatures' storytelling with our double-sided writable whiteboards, designed to
+                    give them a voice! Available in various styles and colors, these speech bubbles are perfect for
+                    adding a fun, engaging dimension to your interactions.<br> <br>
+
+                    Whether you're crafting stories or letting your Furnicreatures convey messages, these speech bubbles
+                    are versatile and reusable. Simply wipe them clean and start fresh. They attach easily to surfaces
+                    with magnets, clips, or Velcro, and each set includes free whiteboard pens.<br> <br>
+
+                    Get your set of Speech Bubbles today and let your Furnicreatures speak for themselves!
+                </p>
+                <hr>
+                <br>
+                <button id="fakebutton" title="This is a fake button.">ADD to SUMMON LIST</button>
+            </div>
+        </div>
+
+
+        <!-- 10 book-->
+        <div class="sliding-square" id="square10">
+            <button class="close-btn">&times;</button>
+            <div class="info-left">
+                <h2>Book 'Furnicreature'!</h2>
+                <img class="mainImage" data-square="10" src="images/shop/sbook.png" alt="Main Image">
+
+                <div class="thumbnail-container">
+                    <img data-square="10" src="images\shop\prototypes\book\1.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="10" src="images\shop\prototypes\book\2.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="10" src="images\shop\prototypes\book\3.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="10" src="images\shop\prototypes\book\4.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+                    <img data-square="10" src="images\shop\prototypes\book\5.png" alt="Thumbnail 1" class="thumbnail"
+                        onclick="showImage(this)">
+
+                </div>
+            </div>
+            <div class="info-right">
+                <h4>Learn Everything about Furnicreatures!</h4>
+                <h2 style="margin-top: 40px;">$24.99</h2>
+                <hr>
+                <br>
+                <h4>Size:</h4>
+                <br>
+                <p>Mini: 3.75 x 2.5 x 0.75 inches</p>
+                <br>
+                <p>Small: 4 x 5.5 x 2 inches</p>
+                <br>
+                <p>Normal: 7 x 10 x 1 inch</p>
+                <hr>
+                <br>
+                <h4>Color:</h4>
+                <br>
+                <img src="images/shop/color.png">
+                <hr>
+                <br>
+                <h4>Description:</h4>
+                <br>
+                <p> Introducing the ultimate guide to the enchanting world of Furnicreatures! This book is perfect for
+                    any enthusiast looking to dive deeper into the fascinating lives of these unique creatures. Here's
+                    what you can expect:
+                    <br> <br>
+                    <li><span class="bold-text">Comprehensive Guide</span>: Explore the origins, characteristics, and
+                        habitats of Furnicreatures in detail.</li>
+                    <li><span class="bold-text">Valuable Insights</span>: Gain an in-depth understanding of their
+                        behavior and lifestyle.</li>
+                    <li><span class="bold-text">Beautiful Illustrations</span>: Enjoy full-color images that bring each
+                        Furnicreature to life.</li>
+                    <li><span class="bold-text">Detailed Descriptions</span>: Discover detailed profiles of each
+                        species, with tips on how to care for and interact with them.</li>
+                    <li><span class="bold-text">Behind-the-Scenes Look</span>: Learn about the creative processes
+                        involved in designing and making these unique creatures.</li>
+                    <br>
+                    Whether you're a seasoned owner or new to the world of Furnicreatures, this book is sure to delight
+                    and inform (Does not include tiny Marshmallow). Get your copy today and embark on a journey of discovery with the Furnicreatures!
+                </p>
+                <hr>
+                <br>
+                <button id="fakebutton" title="This is a fake button.">ADD to SUMMON LIST</button>
+            </div>
         </div>
     </div>
 
@@ -101,32 +839,17 @@
 
 
     <script>
-        // one item open one sliding square. there is only one sliding square.
-        //   document.getElementById('open-square').addEventListener('click', function (event) {
-        //     event.preventDefault();
-        //     document.querySelector('.sliding-square').classList.add('active');
-        // });
 
-        // document.querySelector('.close-btn').addEventListener('click', function () {
-        //     document.querySelector('.sliding-square').classList.remove('active');
-        // });
-
+        // Highlighted change: Added scroll event listener for fading effect
+        window.addEventListener('scroll', function () {
+            var scrollPosition = window.scrollY;
+            var overlay = document.querySelector('.text-overlay');
+            var opacity = 1 - (scrollPosition / 200);
+            overlay.style.opacity = Math.max(opacity, 0);
+        });
 
 
-
-        // all items open the sliding square
-        //         document.querySelectorAll('.open-square').forEach(function (element) {
-        //     element.addEventListener('click', function (event) {
-        //         event.preventDefault();
-        //         document.querySelector('.sliding-square').classList.add('active');
-        //     });
-        // });
-
-        // document.querySelector('.close-btn').addEventListener('click', function () {
-        //     document.querySelector('.sliding-square').classList.remove('active');
-        // });
-
-
+        // open and close sliding squares
         document.querySelectorAll('.open-square').forEach(function (element) {
             element.addEventListener('click', function (event) {
                 event.preventDefault();
@@ -140,6 +863,16 @@
                 this.closest('.sliding-square').classList.remove('active');
             });
         });
+
+
+        // show image
+        function showImage(thumbnail) {
+            const squareId = thumbnail.getAttribute('data-square');
+            const mainImage = document.querySelector(`.mainImage[data-square="${squareId}"]`);
+            if (mainImage) {
+                mainImage.src = thumbnail.src;
+            }
+        }
     </script>
 
 </body>

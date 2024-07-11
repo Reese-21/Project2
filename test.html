@@ -35,6 +35,8 @@
             padding: 20px;
             box-sizing: border-box;
             z-index: 1000;
+            overflow-y: auto;
+            /* Enable vertical scrolling */
         }
 
         #infoSquare p {
@@ -55,10 +57,23 @@
             font-size: 24px;
             cursor: pointer;
         }
+
+        #mainImage {
+            width: 40%;
+            margin-bottom: 10px;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: calc(10% - 5px);
+            cursor: pointer;
+        }
     </style>
-
-
-
 </head>
 
 <body>
@@ -66,7 +81,14 @@
 
     <div id="infoSquare" class="hidden">
         <button id="closeButton">&times;</button>
-        <p>Here is some more information...</p>
+        <img id="mainImage" src="images/shop/sbedsheet.png" alt="Main Image">
+        <div class="thumbnail-container">
+            <img src="images/shop/sbubble.png" alt="Thumbnail 1" class="thumbnail" onclick="showImage('images/shop/sbubble.png')">
+            <img src="images/shop/sblanket.png" alt="Thumbnail 2" class="thumbnail" onclick="showImage('images/shop/sblanket.png')">
+            <img src="images/shop/sbook.png" alt="Thumbnail 3" class="thumbnail" onclick="showImage('images/shop/sbook.png')">
+            <img src="images/shop/sclothes.png" alt="Thumbnail 4" class="thumbnail" onclick="showImage('images/shop/sclothes.png')">
+            <img src="images/shop/scare.png" alt="Thumbnail 5" class="thumbnail" onclick="showImage('images/shop/scare.png')">
+        </div>
     </div>
 
     <script>
@@ -78,6 +100,9 @@
             document.getElementById('infoSquare').classList.remove('visible');
         });
 
+        function showImage(imageSrc) {
+            document.getElementById('mainImage').src = imageSrc;
+        }
     </script>
 </body>
 

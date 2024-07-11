@@ -24,6 +24,27 @@ body::before {
     cursor: pointer;
 }
 
+
+
+
+
+.fctitle {
+    position: fixed;
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+}
+
+.fctitle img {
+    width: 20vw;
+    transition: transform 0.2s;
+}
+
+
+
+
+
+
 .grid-container {
     display: flex;
     flex-direction: column;
@@ -55,8 +76,10 @@ body::before {
 /* opening image */
 .grid-item-shop {
     width: 90vw;
-    margin-bottom:50px;
+    margin-bottom: 50px;
     /* background-color: #ffffff3b; */
+    position: relative;
+    /* Highlighted change */
 }
 
 .grid-item-shop img {
@@ -64,6 +87,29 @@ body::before {
     height: auto;
 }
 
+/* Highlighted change: Added styles for text overlay */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 56px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+    /* Center align text horizontally */
+    width: 100%;
+    /* Ensure the text is centered within the container */
+}
+
+.grid-item-shop p {
+    text-align: left;
+    /* Center align text horizontally */
+    width: 100%;
+    /* Ensure the text is centered within the container */
+}
 
 
 
@@ -88,7 +134,7 @@ body::before {
     text-decoration: none;
     color: black;
     font-size: 14px;
-    padding:10px;
+    padding: 10px;
 }
 
 .sliding-square {
@@ -103,10 +149,40 @@ body::before {
     z-index: 1000;
     padding: 20px;
     overflow: auto;
+    display: grid;
+    /* left and right column width */
+    grid-template-columns: 1fr 0.8fr;
+    overflow-y: auto;
+    /* Enable vertical scrolling */
 }
 
 .sliding-square.active {
     right: 0;
+}
+
+/* only setting the width might make the scrollbar invisible */
+.sliding-square::-webkit-scrollbar {
+    width: 8px;
+    /* Set the width of the scrollbar */
+}
+
+.sliding-square::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Background color of the scrollbar track */
+}
+
+/* Customize the scrollbar thumb */
+.sliding-square::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Color of the scrollbar thumb */
+    border-radius: 4px;
+    /* Round the corners of the scrollbar thumb */
+}
+
+/* Customize the scrollbar thumb on hover */
+.sliding-square::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Color of the scrollbar thumb on hover */
 }
 
 .close-btn {
@@ -119,80 +195,55 @@ body::before {
     cursor: pointer;
 }
 
-.fctitle {
-    position: fixed;
-    top: 100%;
-    left: 100%;
-    transform: translate(-100%, -100%);
+
+
+
+/* left content in sliding squares */
+.info-left {
+    margin: 40px 0;
+    width: 100%;
 }
 
-.fctitle img {
-    width: 20vw;
-    transition: transform 0.2s;
+.mainImage {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.thumbnail-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    vertical-align: baseline;
+}
+
+.thumbnail {
+    width: calc(20% - 10px);
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 
+.info-right {
+    margin: 90px;
+    width: 60%;
+}
 
+.info-right img {
+    width: 100%;
+    margin-bottom: 10px;
+}
 
+.bold-text {
+    font-weight: bold;
+}
 
-
-
-
-@media (max-width: 900px) {
-    .grid-container {
-        display: grid;
-        grid-template-rows: 100px 1fr 1fr 1fr;
-        grid-template-columns: 1fr 4fr;
-        width: 100vw;
-        margin-top: 0px;
-        zoom: 0.5;
-
-    }
-
-    .grid-item-nav {
-        zoom: 2;
-    }
-
-    
-    .shop {
-        width: 90vw;
-        margin-top: 200px;
-    }
-
-    .shop img {
-        width: 1280px;
-        height: auto;
-        zoom: 0.8;
-    }
-
-    .grid-item-nav {
-        height: 100px;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-around;
-        background: linear-gradient(to right, #a0a0a0, #a0a0a088);
-        opacity: 0.6;
-    }
-
-
-    .fctitle {
-        position: fixed;
-        /* This makes the element fixed-positioned */
-        top: 100%;
-        /* Position from the top of the viewport */
-        left: 100%;
-        /* Position from the left of the viewport */
-        transform: translate(-100%, -100%);
-    }
-    
-    .fctitle img {
-        width: 40vw;
-        /* Set the width of the image */
-        transition: transform 0.2s;
-        /* Apply transition for a smooth effect */
-    }
+#fakebutton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #a19dca;
 }
 
 
