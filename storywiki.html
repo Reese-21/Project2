@@ -81,6 +81,16 @@
             left: 100px;
         }
 
+        .instructions a{
+            text-decoration: underline;
+            color: #000000;
+        }
+        .instructions a:hover{
+            color: #d7a4a8;
+            text-decoration: underline;
+            font-size: 30px;
+        }
+
 
 
         /* contains the left and right column of wiki */
@@ -235,6 +245,7 @@
                 width: 100vw;
                 height: 150px;
                 margin: 0;
+                margin-left:10px;
                 padding: 0;
                 margin-top: 20px;
                 overflow-x: auto;
@@ -326,20 +337,17 @@
 
 
             .instructions {
-                left: 0;
+                left: 10px;
+                bottom: 50px;
+            }
+            .instructions h2 {
+                font-size: 18px;
             }
 
             .fctitle {
-                position: fixed;
-                top: 100%;
-                left: 100%;
-                transform: translate(-100%, -100%);
+                display: none;
             }
 
-            .fctitle img {
-                width: 40vw;
-                transition: transform 0.2s;
-            }
         }
     </style>
 </head>
@@ -466,7 +474,9 @@
 
 
         <div class="instructions">
-            <h2>Invite The Creatures to your house!</h2>
+            <a href="tree.html">
+                <h2>Invite The Creatures to your house!</h2>
+            </a>
         </div>
 
 
