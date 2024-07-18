@@ -310,10 +310,12 @@ body::before {
 
 
 
+
     .grid-item-goods img{
         width: 100%;
         height: auto;
         margin-bottom: 5px;
+        object-fit:Contain;
     }
 
     .grid-item-goods p {
