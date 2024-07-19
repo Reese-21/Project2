@@ -270,10 +270,18 @@ body::before {
 
     .instructions {
         position: fixed;
-        top: 70vh;
+        bottom: 10vh;
         left: 4%;
         width: 70vw;
     }
+    .instructions h2 {
+        font-size: 18px;
+        font-family: 'Shantell Sans', cursive;
+    }
+    .instructions p {
+        font-size: 16px;
+    }
+
 
 
     .fctitle {
@@ -304,13 +312,8 @@ body::before {
         transform: translate(-0%, -100%);
         top:98vh;
         left: 4%;
-        width: 50px;
-        height: 50px;
-        background-color: #fceed1;
-        border-radius: 10px;
-        padding: 10px;
-        box-shadow: 0 0 10px #a19dca;
-        z-index: 1000;
+        width: 30px;
+        height: 30px;
     }
 
     #popup {

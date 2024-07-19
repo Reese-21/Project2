@@ -89,6 +89,7 @@ body::before {
     bottom: 20px;
     left: 150px;
 }
+
 .instructions h2 {
     cursor: pointer;
     /* Change cursor to pointer to indicate it's clickable */
@@ -106,8 +107,8 @@ body::before {
 
 @media screen and (max-width: 900px) {
     .moved {
-        transform: translateY(100px);
-        /* Move element 100px down after hiding detailed instructions*/
+        transform: translateY(1vh);
+        /* Move element 1vh down after hiding detailed instructions*/
     }
 }
 
@@ -264,9 +265,18 @@ body::before {
 
     .instructions {
         position: fixed;
-        top: 70vh;
+        bottom: 10vh;
         left: 4%;
-        width: 80vw;
+        width: 90vw;
+    }
+
+    .instructions h2 {
+        font-size: 18px;
+        font-family: 'Shantell Sans', cursive;
+    }
+
+    .instructions p {
+        font-size: 16px;
     }
 
 
@@ -294,20 +304,23 @@ body::before {
 
     #loginicon {
         transform: translate(-0%, -100%);
-        top:98vh;
+        top: 98vh;
         left: 4%;
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
     }
 
     #popup {
         transform: translate(-0%, -100%);
-        top:98vh;
-        left: 28%;
+        top: 98vh;
+        left: 20%;
         width: 150px;
-        height: 50px;
+        height: 30px;
     }
 
+    #popup p {
+        font-size: 10px;
+    }
 
 
 
