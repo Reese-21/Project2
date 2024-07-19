@@ -1,63 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Click Example</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Toggle Content Example</title>
 
     <style>
-
-        .run-in {
-            display: run-in;
-            background-color: lightblue;
-        }
-        .container {
-            background-color: lightgrey;
-            padding: 10px;
+        .instructions h2 {
+            cursor: pointer;
+            /* Change cursor to pointer to indicate it's clickable */
         }
 
+        .instructions p {
+            transition: all 0.5s ease;
+            /* Smooth transition for hiding/showing */
+        }
+
+        .hidden {
+            display: none;
+            /* Hide element */
+        }
+
+        @media screen and (max-width: 900px) {
+            .moved {
+                transform: translateY(100px);
+                /* Move element 100px down */
+            }
+        }
     </style>
 </head>
+
 <body>
-    <button id="myButton">Go to Website</button>
-
-
-
-
-    <div class="container">
-        <p class="run-in">This is a run-in element.</p>
-        <p>And this is some text following it.</p>
+    <div class="instructions">
+        <h2>▼ Welcome home!</h2>
+        <p>Here'are all the FurniCreatures currently living with you.</p>
+        <p>Click to interact, feed, play, and you might receive special messages from them.</p>
     </div>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const button = document.getElementById('myButton');
+            const header = document.querySelector('.instructions h2');
+            const paragraphs = document.querySelectorAll('.instructions p');
 
-            button.addEventListener('click', () => {
-                const now = new Date();
-                const currentHour = now.getHours();
-                const storedHour = localStorage.getItem('hour');
-                let clickCount = parseInt(localStorage.getItem('clickCount'), 10);
+            header.addEventListener('click', () => {
+                paragraphs.forEach(p => p.classList.toggle('hidden'));
 
-                // Reset click count if the hour has changed
-                if (storedHour === null || parseInt(storedHour, 10) !== currentHour) {
-                    clickCount = 0;
-                    localStorage.setItem('hour', currentHour);
-                }
-
-                // Increment the click count
-                clickCount += 1;
-                localStorage.setItem('clickCount', clickCount);
-
-                // Redirect based on the click count
-                if (clickCount === 1) {
-                    window.location.href = 'https://www.food.com/search/cookies+mixer';
-                } else {
-                    window.location.href = 'https://www.food.com/recipe/to-die-for-crock-pot-roast-27208';
+                if (window.innerWidth < 900) {
+                    header.classList.toggle('moved');
                 }
             });
         });
+
     </script>
 </body>
+
 </html>

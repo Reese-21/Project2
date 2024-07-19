@@ -22,7 +22,7 @@
 
         <!-- left navigation title is what shows when hover-->
         <div class="grid-item-nav">
-            <a id="LoginButton" href="myhome.html">
+            <a href="myhome.html">
                 <img title="myhome" alt="home" src="images/1navhome.png">
             </a>
 
@@ -132,12 +132,9 @@
     </div>
 
     <div class="instructions">
-        <h2>Welcome home!</h2>
+        <h2>▼ Welcome home!</h2>
         <p>Here'are all the FurniCreatures currently living with you.</p>
-        <p>Interact by clicking on them.</p>
-        <p>In all the individual pages, you can feed and play with them. </p>
-        <p>You might recieve special messages when they're really happy (or sad).</p>
-
+        <p>Click to interact, feed, play, and you might receive special messages from them.</p>
     </div>
 
     <!-- Fixed icon -->
@@ -151,21 +148,39 @@
     </div>
 
 
-    <!-- user icon -->
+
     <script>
+        // script1: popup demo user
         document.addEventListener('DOMContentLoaded', () => {
             const openPopupButton = document.getElementById('loginicon');
             const popup = document.getElementById('popup');
-    
+
             // Toggle the popup visibility when the icon is clicked
             openPopupButton.addEventListener('click', () => {
                 popup.classList.toggle('popup-hidden');
             });
-    
+
             // Close the popup if clicked outside of it
             window.addEventListener('click', (event) => {
                 if (!openPopupButton.contains(event.target) && !popup.contains(event.target)) {
                     popup.classList.add('popup-hidden');
+                }
+            });
+        });
+
+
+
+
+        // script2: hide instructions
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('.instructions h2');
+            const paragraphs = document.querySelectorAll('.instructions p');
+
+            header.addEventListener('click', () => {
+                paragraphs.forEach(p => p.classList.toggle('instructionshidden'));
+
+                if (window.innerWidth < 900) {
+                    header.classList.toggle('moved');
                 }
             });
         });

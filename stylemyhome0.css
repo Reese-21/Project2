@@ -254,28 +254,32 @@ body::before {
         overflow-x: auto;
         overflow-y: auto;
     }
+
+    .grid-item-bg::-webkit-scrollbar {
+        height: 0px;
+    }
     
     .grid-item-bg img {
         margin-left: -100px;
-        margin-top:-20px;
+        margin-top:50px;
         width: 2007px;
         height: auto;
-        zoom: 0.6;
+        zoom: 0.4;
     }
 
 
     .instructions {
         position: fixed;
-        top: 80vh;
+        top: 70vh;
         left: 4%;
-        width: 350px;
+        width: 70vw;
     }
 
 
     .fctitle {
         position: fixed;
         /* This makes the element fixed-positioned */
-        top: 100%;
+        top: 100vh;
         /* Position from the top of the viewport */
         left: 100%;
         /* Position from the left of the viewport */
@@ -297,8 +301,8 @@ body::before {
 
     #loginicon {
         position: fixed;
-        transform: translate(-0%, -50%);
-        top:95%;
+        transform: translate(-0%, -100%);
+        top:98vh;
         left: 4%;
         width: 50px;
         height: 50px;

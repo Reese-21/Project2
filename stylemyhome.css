@@ -89,9 +89,27 @@ body::before {
     bottom: 20px;
     left: 150px;
 }
+.instructions h2 {
+    cursor: pointer;
+    /* Change cursor to pointer to indicate it's clickable */
+}
 
+.instructions p {
+    transition: all 0.5s ease;
+    /* Smooth transition for hiding/showing */
+}
 
+.instructionshidden {
+    display: none;
+    /* Hide element */
+}
 
+@media screen and (max-width: 900px) {
+    .moved {
+        transform: translateY(100px);
+        /* Move element 100px down after hiding detailed instructions*/
+    }
+}
 
 
 .cloud img {
@@ -230,20 +248,25 @@ body::before {
         overflow-y: auto;
     }
 
+    .grid-item-bg::-webkit-scrollbar {
+        width: 0px;
+        /* Set the width of the scrollbar */
+    }
+
     .grid-item-bg img {
         margin-left: -160px;
-        margin-top: -20px;
+        margin-top: 50px;
         width: 2007px;
         height: auto;
-        zoom: 0.6;
+        zoom: 0.4;
     }
 
 
     .instructions {
         position: fixed;
-        top: 65vh;
+        top: 70vh;
         left: 4%;
-        width: 350px;
+        width: 80vw;
     }
 
 
@@ -270,17 +293,17 @@ body::before {
 
 
     #loginicon {
-        transform: translate(-0%, -50%);
-        top: 95%;
+        transform: translate(-0%, -100%);
+        top:98vh;
         left: 4%;
         width: 50px;
         height: 50px;
     }
 
     #popup {
-        transform: translate(-0%, -50%);
-        top: 95%;
-        left: 24%;
+        transform: translate(-0%, -100%);
+        top:98vh;
+        left: 28%;
         width: 150px;
         height: 50px;
     }
