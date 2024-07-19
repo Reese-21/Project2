@@ -13,6 +13,7 @@
 
     <title>Home</title>
     <link rel="stylesheet" href="stylemyhome.css">
+    <script src="login-script.js" defer></script>
 
 </head>
 
@@ -21,8 +22,8 @@
 
         <!-- left navigation title is what shows when hover-->
         <div class="grid-item-nav">
-            <a href="myhome.html">
-                <img title="myhome" alt="home" src="images\1navhome.png"> 
+            <a id="LoginButton" href="myhome.html">
+                <img title="myhome" alt="home" src="images/1navhome.png">
             </a>
 
             <a href="tree.html">
@@ -127,12 +128,11 @@
 
     <div class="fctitle">
         <a href="index.html">
-        <img src="images\0navtitle.png"></a>
+            <img src="images\0navtitle.png"></a>
     </div>
 
     <div class="instructions">
-        <h2>Instructions</h2>
-        <p>Welcome home!</p>
+        <h2>Welcome home!</h2>
         <p>Here'are all the FurniCreatures currently living with you.</p>
         <p>Interact by clicking on them.</p>
         <p>In all the individual pages, you can feed and play with them. </p>
@@ -140,6 +140,36 @@
 
     </div>
 
+    <!-- Fixed icon -->
+    <div id="loginicon">
+        <img src="images/2navtree.png" alt="Icon" id="open-popup">
+    </div>
+
+    <!-- Username Popup -->
+    <div id="popup" class="popup-hidden">
+        <p>DEMO USER:: furnicreaturelover</p>
+    </div>
+
+
+    <!-- user icon -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const openPopupButton = document.getElementById('loginicon');
+            const popup = document.getElementById('popup');
+    
+            // Toggle the popup visibility when the icon is clicked
+            openPopupButton.addEventListener('click', () => {
+                popup.classList.toggle('popup-hidden');
+            });
+    
+            // Close the popup if clicked outside of it
+            window.addEventListener('click', (event) => {
+                if (!openPopupButton.contains(event.target) && !popup.contains(event.target)) {
+                    popup.classList.add('popup-hidden');
+                }
+            });
+        });
+    </script>
 
 
 </body>

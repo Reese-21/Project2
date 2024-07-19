@@ -22,9 +22,6 @@ body::before {
     /* Adjust the size of the dots */
 }
 
-.map area:hover {
-    cursor: pointer;
-}
 
 
 
@@ -32,10 +29,8 @@ body::before {
 
 
 /* .grid-container {
-    display: grid;
-    grid-template-columns: 75px 2100px;
-    grid-template-rows: repeat(8, 1fr);
-    width: 100vw;
+    left: 100px;
+    width: 100%;
 } */
 
 .grid-item-nav {
@@ -64,24 +59,18 @@ body::before {
 
 
 
-
 .grid-item-bg {
     display: flex;
-    justify-content: center;
-    /* Centers the image horizontally */
-    align-items: center;
-    /* Centers the image vertically if needed */
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically if needed */
 }
 
 .grid-item-bg img {
-    margin-left: 100px;
+    margin-left:100px;
     width: 2007px;
     height: auto;
     zoom: 0.8;
 }
-
-
-
 
 
 .instructions {
@@ -90,32 +79,6 @@ body::before {
     left: 150px;
 }
 
-
-
-
-
-.cloud img {
-    position: absolute;
-    top: 12vh;
-    left: 1500px;
-    transform: translate(100%, -50%);
-    width: 300px;
-
-
-    animation: limitedchair 2s infinite alternate;
-}
-
-@keyframes limitedchair {
-    0% {
-        transform: translateY(20px);
-    }
-
-    100% {
-        transform: translateY(-10px);
-    }
-}
-
-/*cloud animation*/
 
 
 
@@ -143,6 +106,9 @@ body::before {
 
 
 
+
+
+
 /* new change */
 #loginicon {
     position: fixed;
@@ -155,7 +121,6 @@ body::before {
     padding: 10px;
     box-shadow: 0 0 10px #a19dca;
     z-index: 1000;
-    cursor: pointer;
 }
 
 #loginicon img {
@@ -165,32 +130,94 @@ body::before {
     display: block;
 }
 
+/* Style for the popup window */
 #popup {
     position: fixed;
-    top: 90px;
-    right: 10px;
-    width: 150px;
-    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    height: auto;
+    max-height: 80vh;
     background-color: #fceed1;
-    /* Background color of the rectangle */
-    border: 1px solid #ccc;
-    /* Border color */
-    border-radius: 5px;
-    /* Corner radius */
-    padding: 10px;
-    /* Padding inside the rectangle */
-    box-shadow: 0 4px 8px #a19dca;
-    /* Shadow for a subtle effect */
-    display: run-in;
-    /* Hide initially */
+    border-radius: 10px;
+    box-shadow: 0 0 15px #a19dca;
+    display: none;
+    /* Hide popup initially */
     z-index: 1000;
-    /* Ensure it's above other content */
 }
 
-.popup-hidden {
-    display: none;
-    /* Class to hide the popup */
+.popup-content {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.popup-content h2 {
+    Font-size: 36px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.popup-content p {
+    Font-size: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+#close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+
+/* Optional styling for the form */
+.login form {
+    width: 100%;
+    text-align: center; /* Centers inline-block elements horizontally */
+
+    /* display: flex;
+    flex-direction: column; */
+}
+
+
+
+
+
+.login input[type="text"],
+.login input[type="password"] {
+    padding: 8px;
+    border-radius: 20px;
+    border: 2px solid #ddd;
+    width: calc(100% - 20px); /* Adjust width to fit within the form */
+    height: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    text-align: center; /* Center the text inside the input field */
+}
+
+.login input[type="submit"] {
+    font-size: 46px;
+    /* Adjust the size as needed */
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: black;
+    margin-bottom: 10px;
+}
+
 
 @media (max-width: 900px) {
     .grid-item-nav {
@@ -219,20 +246,18 @@ body::before {
     /* zoom out of the background image when opening on phones, ipads, it seems the 'body' container cannot zoom */
     .grid-item-bg {
         display: flex;
-        justify-content: flex-start;
-        /* Centers the image horizontally */
-        align-items: flex-start;
-        /* Centers the image vertically if needed */
-        margin-left: 0px;
+        justify-content: flex-start; /* Centers the image horizontally */
+        align-items: flex-start; /* Centers the image vertically if needed */
+        margin-left:0px;
         height: 100%;
-        width: auto;
+        width:auto;
         overflow-x: auto;
         overflow-y: auto;
     }
-
+    
     .grid-item-bg img {
-        margin-left: -160px;
-        margin-top: -20px;
+        margin-left: -100px;
+        margin-top:-20px;
         width: 2007px;
         height: auto;
         zoom: 0.6;
@@ -241,7 +266,7 @@ body::before {
 
     .instructions {
         position: fixed;
-        top: 65vh;
+        top: 80vh;
         left: 4%;
         width: 350px;
     }
@@ -269,32 +294,23 @@ body::before {
 
 
 
+
     #loginicon {
+        position: fixed;
         transform: translate(-0%, -50%);
-        top: 95%;
+        top:95%;
         left: 4%;
         width: 50px;
         height: 50px;
+        background-color: #fceed1;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 0 10px #a19dca;
+        z-index: 1000;
     }
 
     #popup {
-        transform: translate(-0%, -50%);
-        top: 95%;
-        left: 24%;
-        width: 150px;
-        height: 50px;
-    }
-
-
-
-
-
-
-    .cloud img {
-        position: relative;
-        top: 100px;
-        right: 10%;
-        width: 250px;
+        width: 90vw;
     }
 }
 

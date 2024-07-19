@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/1navhome.png" type="image/png">
+
+
+    <title>Home</title>
+    <link rel="stylesheet" href="stylemyhome0.css">
+    <script src="login-script.js" defer></script>
+    
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <!-- left navigation title is what shows when hover-->
+        <div class="grid-item-nav">
+            <a href="myhome0.html">
+                <img title="myhome" alt="home" src="images/1navhome.png">
+            </a>
+
+            <a href="tree.html">
+                <img title="tree" alt="tree" src="images\2navtree.png">
+            </a>
+
+            <a href="playground.html">
+                <img title="playground" alt="play" src="images\3navmine.png">
+            </a>
+
+            <a href="story.html">
+                <img title="Furnicreature Wiki" alt="story" src="images\4navstory.png">
+            </a>
+
+        </div>
+
+
+        <!-- main content -->
+        <div class="grid-item-bg">
+
+
+            <!-- Image Map, background image -->
+            <img src="images\objects\all3.png">
+
+        </div>
+    </div>
+
+    <div class="fctitle">
+        <a href="index.html">
+            <img src="images\0navtitle.png"></a>
+    </div>
+
+    <div class="instructions">
+        <h2>Welcome!</h2>
+        <p>Log in to populate your room with your Furnicreatures friends!</p>
+    </div>
+
+    <!-- Fixed icon -->
+    <div id="loginicon">
+        <img src="images/2navtree.png" alt="Icon" id="open-popup">
+    </div>
+
+    <!-- Popup window -->
+    <div id="popup" class="popup-hidden">
+        <div class="popup-content">
+            <button id="close-popup">&times;</button>
+            <h2>LOG IN</h2>
+
+            <div class="login">
+                <form action="login.php" method="post">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username"><br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                    <input type="submit" value="→">
+                </form>
+            </div>
+            <p>
+                *This 'My Home' page is currently a demo of a theoretical user's personal page. 
+                There is no need to think too hard about the email or password. Please click → to continue.</p>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    // JavaScript code to open and close the popup window
+    document.addEventListener('DOMContentLoaded', () => {
+        const openPopupButton = document.getElementById('open-popup');
+        const popup = document.getElementById('popup');
+        const closePopupButton = document.getElementById('close-popup');
+        const form = document.querySelector('.login form');
+
+        // Open the popup
+        openPopupButton.addEventListener('click', () => {
+            popup.style.display = 'block'; // Show popup
+        });
+
+        // Close the popup
+        closePopupButton.addEventListener('click', () => {
+            popup.style.display = 'none'; // Hide popup
+        });
+
+        // Close the popup if clicked outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                popup.style.display = 'none'; // Hide popup
+            }
+        });
+
+
+
+
+        // Handle form submission (log in)
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent the default form submission
+            // Perform your form validation here if needed
+
+            // Redirect to myhome.html after form submission
+            window.location.href = 'myhome.html';
+        });
+    });
+</script>
+
+</html>
