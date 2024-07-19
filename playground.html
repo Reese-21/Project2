@@ -19,12 +19,12 @@
         body {
             margin: 0;
             overflow: hidden;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
             width: 100vw;
             height: 100vh;
+        }
+
+        .grid-item-nav {
+            left: 0;
         }
 
         .trail-dot {
@@ -35,7 +35,8 @@
         }
 
         .grid-item-bg {
-            grid-column: span 8;
+            width: 100vw;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -48,46 +49,41 @@
         }
 
 
-        @media (max-width: 1200px) {
+        @media (max-width: 900px) {
             .grid-container {
-                display: grid;
-                grid-template-rows: 100px 1fr;
-                grid-template-columns: 1fr;
                 width: 100vw;
             }
 
             #img1 {
-                zoom:0.6;
+                zoom: 0.6;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="grid-container">
-        <!-- left navigation -->
-        <div class="grid-item-nav">
-            <a id="LoginButton" href="myhome.html">
-                <img title="myhome" alt="home" src="images/1navhome.png">
-            </a>
-            <a href="tree.html">
-                <img title="tree" alt="tree" src="images\2navtree.png">
-            </a>
-            <a href="playground.html">
-                <img title="playground" alt="play" src="images\3navmine.png">
-            </a>
-            <a href="story.html">
-                <img title="Furnicreature Wiki" alt="story" src="images\4navstory.png">
-            </a>
-        </div>
+    <!-- left navigation -->
+    <div class="grid-item-nav">
+        <a id="LoginButton" href="myhome.html">
+            <img title="myhome" alt="home" src="images/1navhome.png">
+        </a>
+        <a href="tree.html">
+            <img title="tree" alt="tree" src="images\2navtree.png">
+        </a>
+        <a href="playground.html">
+            <img title="playground" alt="play" src="images\3navmine.png">
+        </a>
+        <a href="story.html">
+            <img title="Furnicreature Wiki" alt="story" src="images\4navstory.png">
+        </a>
+    </div>
 
 
 
-        <div class="grid-item-bg">
-            <h3>I AM WATCHING.</h3>
-            <p id="mousePositionDisplay">Move your mouse to see the position!</p>
-            <img id='img1' src='images\head\middle.png'>
-        </div>
+    <div class="grid-item-bg">
+        <h3>I AM WATCHING.</h3>
+        <p id="mousePositionDisplay">Move your mouse to see the position!</p>
+        <img id='img1' src='images\head\middle.png'>
     </div>
 
 
