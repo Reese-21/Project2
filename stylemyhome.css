@@ -97,6 +97,12 @@ body::before {
     /* Hide element */
 }
 
+/* height of the instructions after small text are hidden */
+.instructions.moved {
+    height: 10vh;
+
+}
+
 @media screen and (max-width: 900px) {
     .moved {
         transform: translateY(1vh);
@@ -154,7 +160,7 @@ body::before {
 
 
 
-/* new change */
+/* user lcon, decided to not have it for phone*/
 #loginicon {
     position: fixed;
     top: 10px;
@@ -203,6 +209,15 @@ body::before {
     /* Class to hide the popup */
 }
 
+
+
+
+
+
+
+
+
+
 @media (max-width: 900px) {
     .grid-item-nav {
         top: 0;
@@ -247,7 +262,7 @@ body::before {
 
     .grid-item-bg img {
         margin-left: -160px;
-        margin-top: 50px;
+        margin-top: 100px;
         width: 2007px;
         height: auto;
         zoom: 0.4;
@@ -259,7 +274,7 @@ body::before {
         top: 50px;
         left: 4%;
         width: 90vw;
-        height: 30vh;
+        height: 25vh;
         overflow-y: auto;
         /* the height is specified to have this div 
         not block the whole screen and interferring 
@@ -272,7 +287,7 @@ body::before {
     }
 
     .instructions p {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .moved {
@@ -306,23 +321,26 @@ body::before {
 
 
     #loginicon {
-        transform: translate(-0%, -100%);
-        top: 98vh;
+        display:none;
+        /* transform: translate(0%, -100%);
+        top: 20vh;
         left: 4%;
         width: 30px;
-        height: 30px;
+        height: 30px; */
     }
 
     #popup {
-        transform: translate(-0%, -100%);
-        top: 98vh;
-        left: 20%;
+        display:none;
+        /* transform: translate(0%, -100%);
+        top: 20vh;
+        left: 22%;
         width: 150px;
-        height: 30px;
+        height: 30px; */
     }
 
     #popup p {
-        font-size: 10px;
+        display:none;
+        /* font-size: 10px; */
     }
 
 

@@ -261,26 +261,37 @@ body::before {
     
     .grid-item-bg img {
         margin-left: -100px;
-        margin-top:50px;
+        margin-top:100px;
         width: 2007px;
         height: auto;
         zoom: 0.4;
     }
 
 
+
+
+
+    
     .instructions {
         position: fixed;
-        bottom: 10vh;
+        top: 50px;
         left: 4%;
-        width: 70vw;
+        width: 90vw;
+        height:50px;
     }
+
     .instructions h2 {
         font-size: 18px;
         font-family: 'Shantell Sans', cursive;
     }
+
     .instructions p {
-        font-size: 16px;
+        font-size: 14px;
     }
+
+
+
+
 
 
 
@@ -310,7 +321,7 @@ body::before {
     #loginicon {
         position: fixed;
         transform: translate(-0%, -100%);
-        top:98vh;
+        top:175px;
         left: 4%;
         width: 30px;
         height: 30px;

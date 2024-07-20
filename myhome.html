@@ -132,10 +132,9 @@
     </div>
 
     <div class="instructions">
-        <h2>▼ Welcome home!</h2>
-        <p>Here'are all the FurniCreatures currently living with you.</p>
-        <p>Click to interact, feed, play, and you might receive special messages from them.</p>
-        <p style="font-size: 10px;">(Press 'welcome home' to show less)</p>
+        <h2>▼ Welcome home! <br> DEMO USER:: furnicreaturelover</h2>
+        <p>Here'are all the FurniCreatures currently living with you. Click to interact, feed, and play.</p>
+        <p style="font-size: 10px;">(Click 'welcome home' to show less)</p>
     </div>
 
     <!-- Fixed icon -->
@@ -176,9 +175,11 @@
         document.addEventListener('DOMContentLoaded', () => {
             const header = document.querySelector('.instructions h2');
             const paragraphs = document.querySelectorAll('.instructions p');
+            const instructions = document.querySelector('.instructions');
 
             header.addEventListener('click', () => {
                 paragraphs.forEach(p => p.classList.toggle('instructionshidden'));
+                instructions.classList.toggle('moved');
 
                 if (window.innerWidth < 900) {
                     header.classList.toggle('moved');

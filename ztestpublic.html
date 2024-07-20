@@ -8,19 +8,12 @@
     <title>Toggle Content Example</title>
 
     <style>
-        .instructions h2 {
-            cursor: pointer;
-            /* Change cursor to pointer to indicate it's clickable */
-        }
-
-        .instructions p {
-            transition: all 0.5s ease;
-            /* Smooth transition for hiding/showing */
-        }
-
-        .hidden {
+        .instructionshidden {
             display: none;
-            /* Hide element */
+        }
+
+        .instructions.moved {
+            height: 5vh;
         }
 
         @media screen and (max-width: 900px) {
@@ -43,13 +36,11 @@
         document.addEventListener('DOMContentLoaded', () => {
             const header = document.querySelector('.instructions h2');
             const paragraphs = document.querySelectorAll('.instructions p');
+            const instructions = document.querySelector('.instructions');
 
             header.addEventListener('click', () => {
-                paragraphs.forEach(p => p.classList.toggle('hidden'));
-
-                if (window.innerWidth < 900) {
-                    header.classList.toggle('moved');
-                }
+                paragraphs.forEach(p => p.classList.toggle('instructionshidden'));
+                instructions.classList.toggle('moved');
             });
         });
 
