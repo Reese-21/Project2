@@ -31,13 +31,6 @@ body::before {
 
 
 
-/* .grid-container {
-    display: grid;
-    grid-template-columns: 75px 2100px;
-    grid-template-rows: repeat(8, 1fr);
-    width: 100vw;
-} */
-
 .grid-item-nav {
     height: 100%;
     display: flex;
@@ -76,7 +69,6 @@ body::before {
 .grid-item-bg img {
     margin-left: 100px;
     width: 2007px;
-    height: auto;
     zoom: 0.8;
 }
 
@@ -244,14 +236,13 @@ body::before {
         /* Centers the image vertically if needed */
         margin-left: 0px;
         height: 100%;
-        width: auto;
+        width: 100vw;
         overflow-x: auto;
         overflow-y: auto;
     }
 
     .grid-item-bg::-webkit-scrollbar {
-        width: 0px;
-        /* Set the width of the scrollbar */
+        height: 0px;
     }
 
     .grid-item-bg img {
@@ -265,9 +256,14 @@ body::before {
 
     .instructions {
         position: fixed;
-        bottom: 10vh;
+        top: 50px;
         left: 4%;
         width: 90vw;
+        height: 30vh;
+        overflow-y: auto;
+        /* the height is specified to have this div 
+        not block the whole screen and interferring 
+        with user scrolling the background */
     }
 
     .instructions h2 {
@@ -278,6 +274,13 @@ body::before {
     .instructions p {
         font-size: 16px;
     }
+
+    .moved {
+        transform: translateY(0.2vh);
+        /* Move element 1vh down after hiding detailed instructions*/
+    }
+
+
 
 
     .fctitle {
