@@ -18,10 +18,10 @@
         rel="stylesheet">
 
     <!-- favicon -->
-    <link rel="icon" href="images\objects\deskshelf.png" type="image/png">
+    <link rel="icon" href="images\objects\cushion.png" type="image/png">
     <link rel="stylesheet" href="itemsstyle.css">
 
-    <title>My Shelfy</title>
+    <title>My Marshmallow</title>
 
 
     <script>
@@ -54,85 +54,86 @@
 
 
     <style>
-        .item-1 .fcimage img {
-            width: 300px;
-            animation: moveshelf 2s infinite alternate linear;
-            /* same but faster animation as bedsheet */
-        }
-
-        @keyframes moveshelf {
-            0% {
-                transform: translateY(10px);
-            }
-
-            100% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .notab .fcimage {
-            left: 50vw;
+        .fcimage {
+            left: 55vw;
         }
 
         .basic .fcimage {
-            top: 25vh;
-            left: 132vw;
-            zoom: 0.7;
+            top: 50vh;
+            left: 90vw;
         }
 
         .more .fcimage {
-            top: 25vh;
-            left: 128vw;
-            zoom: 0.7;
+            top: 35vh;
+            left: 90vw;
         }
 
+
+        .fcimage img {
+            width: 90%;
+            animation: movecushion 8s infinite linear;
+        }
+
+        @keyframes movecushion {
+            0% {
+                transform: translateY(5vw) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15vw) rotate(180deg) scale(1.8);
+            }
+
+            100% {
+                transform: translateY(5vw) rotate(360deg);
+            }
+        }
 
         /* tab 3 */
         .item-1 #slider-icon1 {
-            left: 65%;
-            /* 20% from the left border of the .personality container */
+            left: 80%;
         }
 
         .item-1 #slider-icon2 {
-            left: 25%;
-            /* 20% from the left border of the .personality container */
+            left: 80%;
         }
 
         .item-1 #slider-icon3 {
-            left: 65%;
-            /* 20% from the left border of the .personality container */
+            left: 80%;
         }
 
         .item-1 #slider-icon4 {
-            left: 65%;
-            /* 20% from the left border of the .personality container */
+            left: 80%;
         }
 
         .item-1 #slider-icon5 {
-            left: 45%;
-            /* 20% from the left border of the .personality container */
+            left: 50%;
         }
 
 
 
 
         /* 窄屏幕 */
-        @media (max-width:1200px) {
+        @media (max-width:900px) {
 
             /* Stool item image and animation */
-            .item-1 .fcimage img {
-                width: 150px;
+            .fcimage img {
+                width: 30vw;
+            }
+
+            .notab .fcimage {
+                left: 50vw;
             }
 
             .basic .fcimage {
-                top: 30vh;
-                left: 110vw;
+                top: 40vh;
+                left: 70vw;
             }
 
             .more .fcimage {
                 top: 50vh;
-                left:110vw;
+                left: 70vw;
             }
+
 
         }
     </style>
@@ -154,9 +155,9 @@
 
         <div class="notab">
             <div class="fcimage">
-                <img src="images\objects\deskshelf.png" alt="deskshelf" id="fc">
+                <img src="images/objects/cushions.png" alt="cushions" id="fc">
             </div>
-            <h1>HEY THERE I AM MR. DESK JR. YOUR DESK SHELF!</h1>
+            <h1>HEY THERE I AM PUFFY, YOUR CUTE & CUDDLY CUSHION!</h1>
 
             <!-- mini game -->
             <div class="container-game" style="margin-right:0; width: 306px;">
@@ -264,8 +265,8 @@
                 // functions that happen when it's in good condition
                 function displayLove() {
                     // send the happy message
-                    document.getElementById('takeCareText').innerText = "One more push-up!";
-                    alert("One more push-up!");
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Yey! Now I can sleep happier ❤';
+                    alert('Your Furnicreature says: Yey! Now I can sleep happier ❤');
                     addGridItemOpacity();
                     addGridItemOpacity();
                     restartMoveChairAnimation();
@@ -283,7 +284,7 @@
                     // restart the movechair animation
                     const gridItemRight = document.getElementById('fc');
                     if (gridItemRight) {
-                        gridItemRight.style.animation = 'moveblanket 2s infinite alternate linear';
+                        gridItemRight.style.animation = 'movecushion 16s infinite';
                     }
                 }
 
@@ -293,8 +294,8 @@
                 // functions that happen when it's in bad condition
                 function displayJoke() {
                     // send the sad message
-                    document.getElementById('takeCareText').innerText = "-No more push-ups?";
-                    alert("-No more push-ups?");
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says:  Ok...I guess you will not hug me today...😢';
+                    alert('Your Furnicreature says: Ok...I guess you will not hug me today...😢');
                     reduceGridItemOpacity();
                     stopMoveChairAnimation();
                 }
@@ -321,9 +322,9 @@
                 // retangles' width decrease with time function
                 document.addEventListener('DOMContentLoaded', () => {
                     // Start decreasing widths at different speeds
-                    decreaseWidth('rectangle-hunger', 1200); // 0.3 second interval
-                    decreaseWidth('rectangle-health', 1500); // 0.6 second interval
-                    decreaseWidth('rectangle-happiness', 1200); // 0.45 second interval
+                    decreaseWidth('rectangle-hunger', 500); // 0.3 second interval
+                    decreaseWidth('rectangle-health', 1000); // 0.6 second interval
+                    decreaseWidth('rectangle-happiness', 400); // 0.45 second interval
                 });
 
             </script>
@@ -333,13 +334,13 @@
         <!-- basic info tab -->
         <div class="tab basic">
             <div class="fcimage">
-                <img src="images/objects/deskshelf.png" alt="deskshelf">
+                <img src="images/objects/cushions.png" alt="cushions">
             </div>
             <div class="infocard">
                 <div class="grid-container">
                     <!-- left -->
                     <div class="title">
-                        <h2>Mr. Desk Jr.</h2>
+                        <h2>Puffy</h2>
                     </div>
 
                     <div class="l1">
@@ -348,11 +349,11 @@
                     </div>
                     <div class="l2">
                         <p>ID</p>
-                        <p>Shelvys2c5#14512</p>
+                        <p>Marshmallows1c6#83792</p>
                     </div>
                     <div class="l3">
                         <p>SPECIES</p>
-                        <p>Shelvy, Medium size, White</p>
+                        <p>Marshmallow, Medium size, Yellow</p>
                     </div>
 
                     <div class="vertical-line"></div>
@@ -360,31 +361,31 @@
                     <!-- right -->
                     <div class="r1">
                         <p>TIME TOGETHER</p>
-                        <p>1 years 10 month</p>
+                        <p>1 month and 4 days</p>
                     </div>
                     <div class="r2">
                         <p>MEMORIES</p>
-                        <p>0</p>
+                        <p>4</p>
                     </div>
                     <div class="r3">
                         <p>PERSONALITY</p>
-                        <p>Hard-working</p>
+                        <p>Chill</p>
                     </div>
                     <div class="r4">
                         <p>LIKES</p>
-                        <p>Do plank spports</p>
+                        <p>Lay in Bed</p>
                     </div>
                     <div class="r5">
                         <p>DISLIKES</p>
-                        <p>Having too much stress</p>
+                        <p>Being on the floor</p>
                     </div>
                     <div class="r6">
                         <p>JOURNEY</p>
-                        <p>Rhode Island</p>
+                        <p>Rhode Island -New York</p>
                     </div>
                     <div class="r7">
                         <p>QUOTE</p>
-                        <p>One more push-up!</p>
+                        <p>Have less snacks but more Marshmallows~</p>
                     </div>
                 </div>
             </div>
@@ -401,7 +402,6 @@
 
                     <div class="personality">
                         <h3 id="toggle-button">▼ PERSONALITY</h3>
-                        <p>(default)</p>
                         <div id="personality-content" class="hidden">
                             <p>This reflects the current personality of the Furnicreature based on the accumulated
                                 keywords from its memories.</p> <br>
@@ -466,12 +466,12 @@
 
                 <div class="grid-memory-right">
                     <div class="no-memory">
-                        <p>Mr. Desk Jr. can't seem to recall anything yet.</p>
+                        <p>Puffy can't seem to recall anything yet.</p>
                     </div>
                 </div>
 
                 <div class="fcimage">
-                    <img src="images/objects/deskshelf.png" alt="deskshelf">
+                    <img src="images/objects/cushion.png" alt="cushion">
                 </div>
             </div>
         </div>

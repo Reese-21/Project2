@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="images\homepage\blanket.png" type="image/png">
+
+
+    <title>My Blanket</title>
+    <link rel="stylesheet" href="styleitems.css">
+    <style>
+
+        .grid-item-right img {
+            animation: moveblanket 2s infinite alternate;
+        }
+
+        @keyframes moveblanket {
+            0% {
+                transform: translateY(20px);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /*carpet animation*/
+    </style>
+
+</head>
+
+<body>
+    <div class="fctitle">
+        <img src="images\0navtitle.png">
+    </div>
+
+    <div class="grid-container">
+
+        <!-- left navigation -->
+        <div class="grid-item-nav">
+            <a href="index.html">
+                <img title="home" alt="home" src="images\1navhome.png"> </a>
+            <a href="tree.html">
+                <img title="tree" alt="tree" src="images\2navtree.png">
+            </a>
+            <a href="playground.html">
+                <img title="playground" alt="play" src="images\3navmine.png">
+            </a>
+            <a href="story.html">
+                <img title="project story" alt="story" src="images\4navstory.png">
+            </a>
+        </div>
+
+        <!-- left words -->
+        <div class="grid-item-left">
+            <h1 style="margin-top: 800px;">Lazy Lucy</h1>
+            <br>
+            <p style="margin-left: 200px;">They don't have bones to stand</p>
+            <br>
+            <div class="container-game" style="margin-right:0; width: 306px;">
+                <div class="tools">
+                    <img src="images\tools\hunger.png" title="FOOD!" alt="Increase Width Hunger"
+                        onclick="increaseWidth('rectangle-hunger')" class="button">
+                    <img src="images\tools\happiness.png" title="PLAY!" alt="Increase Width Happiness"
+                        onclick="increaseWidth('rectangle-happiness')" class="button">
+                    <img src="images\tools\health.png" title="VITAMIN!" alt="Increase Width Health"
+                        onclick="increaseWidth('rectangle-health')" class="button">
+                </div>
+
+                <div class="bars">
+                    <h3>Hunger</h3>
+                    <div class="container-hunger">
+                        <div class="resizable-rectangle-hunger" id="rectangle-hunger"></div>
+                        <div class="not-resizable-container" id="notResizable"></div>
+                    </div>
+
+                    <h3>Happiness</h3>
+                    <div class="container-happiness">
+                        <div class="resizable-rectangle-happiness" id="rectangle-happiness"></div>
+                        <div class="not-resizable-container" id="notResizable"></div>
+                    </div>
+
+                    <h3>Health</h3>
+                    <div class="container-health">
+                        <div class="resizable-rectangle-health" id="rectangle-health"></div>
+                        <div class="not-resizable-container" id="notResizable"></div>
+                    </div>
+                </div>
+                <p id="takeCareText">-Come play with me 0.0</p>
+            </div>
+
+            <img id="scrollicon" src="images\scroll.png">
+
+
+
+            <!-- script for rectangle -->
+            <script>
+                const hungerRectangle = document.getElementById('rectangle-hunger');
+                const healthRectangle = document.getElementById('rectangle-health');
+                const happinessRectangle = document.getElementById('rectangle-happiness');
+                let loveDisplayed = false;
+                let JokeDisplayed = false;
+
+                function increaseWidth(rectangleId) {
+                    // Increase the width of the specified rectangle
+                    const currentWidth = parseFloat(getComputedStyle(document.getElementById(rectangleId)).width);
+                    const currentMarginRight = parseFloat(getComputedStyle(document.getElementById(rectangleId)).marginRight);
+
+                    const newWidth = currentWidth + 40;
+                    document.getElementById(rectangleId).style.width = `${newWidth}px`;
+                    document.getElementById(rectangleId).style.marginRight = `${currentMarginRight - 10}px`;
+
+                    // Check if the rectangle has reached the maximum width
+                    if (newWidth >= 145) {
+                        checkAndDisplayLove();
+                    }
+                }
+
+                function decreaseWidth(rectangleId, interval) {
+                    // Decrease the width of the specified rectangle
+                    const currentWidth = parseFloat(getComputedStyle(document.getElementById(rectangleId)).width);
+                    document.getElementById(rectangleId).style.width = `${currentWidth - 1}px`;
+
+                    // Check if the rectangle width is small enough or large enough
+                    if (currentWidth <= 12 ||
+                        (parseFloat(getComputedStyle(hungerRectangle).width) >= 145 &&
+                            parseFloat(getComputedStyle(healthRectangle).width) >= 145 &&
+                            parseFloat(getComputedStyle(happinessRectangle).width) >= 145)
+                    ) {
+                        checkAndDisplayLove();
+                    } else {
+                        // Continue decreasing the width with a specified interval, not display the message
+                        setTimeout(() => decreaseWidth(rectangleId, interval), interval);
+                    }
+                }
+
+                function checkAndDisplayLove() {
+                    // Check if all three rectangles have reached 290px and 'I love you!' is not yet displayed
+                    if (
+                        parseFloat(getComputedStyle(hungerRectangle).width) >= 145 &&
+                        parseFloat(getComputedStyle(healthRectangle).width) >= 145 &&
+                        parseFloat(getComputedStyle(happinessRectangle).width) >= 145 &&
+                        !loveDisplayed
+                    ) {
+                        displayLove();
+                        loveDisplayed = true; // Mark 'I love you!' as displayed
+                    }
+                    if (parseFloat(getComputedStyle(hungerRectangle).width) <= 12 &&
+                        parseFloat(getComputedStyle(healthRectangle).width) <= 12 &&
+                        parseFloat(getComputedStyle(happinessRectangle).width) <= 12 &&
+                        !JokeDisplayed) {
+                        displayJoke();
+                        JokeDisplayed = true;
+                    }
+
+                }
+
+                function displayLove() {
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Yey! I love you ♥';
+                    // alert('Your Furnicreature says: I love you!');
+                    // You can also modify the DOM to display the message in a specific element if needed.
+                }
+
+                function displayJoke() {
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: If I am a real animal, I might have just died......just kidding!';
+                    // alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
+                    // You can also modify the DOM to display the message in a specific element if needed.
+                }
+
+
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    // Start decreasing widths at different speeds
+                    decreaseWidth('rectangle-hunger', 300); // 0.3 second interval
+                    decreaseWidth('rectangle-health', 600); // 0.6 second interval
+                    decreaseWidth('rectangle-happiness', 450); // 0.45 second interval
+                });
+
+            </script>
+
+
+            <!-- detailed info -->
+            <div style="margin-top: 300px;" class="grid-prop">
+                <div class="grid-prop-left">
+                    <h3>Name</h3>
+                    <h3>Species</h3>
+                    <h3>Height</h3>
+                    <h3>Weight</h3>
+                    <h3>Material</h3>
+                    <h3>Habitat</h3>
+                    <br>
+                    <br>
+                    <h3>Time Together</h3>
+                    <h3>Relationship</h3>
+                    <h3>Personality</h3>
+                    <h3>Likes</h3>
+                    <h3>Dislikes</h3>
+                    <h3>Journey</h3>
+                    <h3>Quote</h3>
+                </div>
+
+                <div class="grid-prop-right">
+                    <p>Lazy Lucy</p>
+                    <p>Bedding-Blanket</p>
+                    <p>20 inch</p>
+                    <p>0.8 pound</p>
+                    <p>Cutton, Modal</p>
+                    <p>Anywhere not on the ground</p>
+                    <br>
+                    <br>
+                    <p>3 months and 12 days</p>
+                    <p>Cousin: Carpet</p>
+                    <p>Lazy, Slumped</p>
+                    <p>Lying down, Drying after bathing</p>
+                    <p>Too much moisture</p>
+                    <p>-Rhode Island</p>
+                    <p>If one can sit, don't stand. If one can lie down, don't sit.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- obg image -->
+        <div class="grid-item-right">
+            <img title="I'm doing the Ge You Palsy (葛优躺), and BACKWARDS!" src="images\homepage\blanket.png">
+        </div>
+
+    </div>
+
+</body>
+
+</html>

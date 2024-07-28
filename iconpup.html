@@ -18,10 +18,10 @@
         rel="stylesheet">
 
     <!-- favicon -->
-    <link rel="icon" href="images\objects\deskshelf.png" type="image/png">
+    <link rel="icon" href="images\objects\conwin.png" type="image/png">
     <link rel="stylesheet" href="itemsstyle.css">
 
-    <title>My Shelfy</title>
+    <title>My StashyPup</title>
 
 
     <script>
@@ -55,18 +55,18 @@
 
     <style>
         .item-1 .fcimage img {
-            width: 300px;
-            animation: moveshelf 2s infinite alternate linear;
+            width: 200px;
+            animation: movestashypup 3s infinite alternate linear;
             /* same but faster animation as bedsheet */
         }
 
-        @keyframes moveshelf {
+        @keyframes movestashypup {
             0% {
-                transform: translateY(10px);
+                transform: translateY(20px);
             }
 
             100% {
-                transform: translateY(-10px);
+                transform: translateY(-20px);
             }
         }
 
@@ -82,7 +82,7 @@
 
         .more .fcimage {
             top: 25vh;
-            left: 128vw;
+            left: 120vw;
             zoom: 0.7;
         }
 
@@ -121,7 +121,7 @@
 
             /* Stool item image and animation */
             .item-1 .fcimage img {
-                width: 150px;
+                width: 100px;
             }
 
             .basic .fcimage {
@@ -154,9 +154,9 @@
 
         <div class="notab">
             <div class="fcimage">
-                <img src="images\objects\deskshelf.png" alt="deskshelf" id="fc">
+                <img src="images\objects\conwin.png" alt="stashypup" id="fc">
             </div>
-            <h1>HEY THERE I AM MR. DESK JR. YOUR DESK SHELF!</h1>
+            <h1>HEY THERE I AM PUPPY, YOUR STORAGE GUARD DOG!</h1>
 
             <!-- mini game -->
             <div class="container-game" style="margin-right:0; width: 306px;">
@@ -264,8 +264,8 @@
                 // functions that happen when it's in good condition
                 function displayLove() {
                     // send the happy message
-                    document.getElementById('takeCareText').innerText = "One more push-up!";
-                    alert("One more push-up!");
+                    document.getElementById('takeCareText').innerText = "-Your secrets and snacks are safe with me! ( ˘ ³˘)♥";
+                    alert("-Your secrets and snacks are safe with me! ( ˘ ³˘)♥");
                     addGridItemOpacity();
                     addGridItemOpacity();
                     restartMoveChairAnimation();
@@ -283,7 +283,7 @@
                     // restart the movechair animation
                     const gridItemRight = document.getElementById('fc');
                     if (gridItemRight) {
-                        gridItemRight.style.animation = 'moveblanket 2s infinite alternate linear';
+                        gridItemRight.style.animation = 'movestashypup 6s infinite alternate linear';
                     }
                 }
 
@@ -293,8 +293,8 @@
                 // functions that happen when it's in bad condition
                 function displayJoke() {
                     // send the sad message
-                    document.getElementById('takeCareText').innerText = "-No more push-ups?";
-                    alert("-No more push-ups?");
+                    document.getElementById('takeCareText').innerText = "-QWQ...";
+                    alert("-QWQ...");
                     reduceGridItemOpacity();
                     stopMoveChairAnimation();
                 }
@@ -321,9 +321,9 @@
                 // retangles' width decrease with time function
                 document.addEventListener('DOMContentLoaded', () => {
                     // Start decreasing widths at different speeds
-                    decreaseWidth('rectangle-hunger', 1200); // 0.3 second interval
-                    decreaseWidth('rectangle-health', 1500); // 0.6 second interval
-                    decreaseWidth('rectangle-happiness', 1200); // 0.45 second interval
+                    decreaseWidth('rectangle-hunger', 600); // 0.3 second interval
+                    decreaseWidth('rectangle-health', 800); // 0.6 second interval
+                    decreaseWidth('rectangle-happiness', 600); // 0.45 second interval
                 });
 
             </script>
@@ -333,13 +333,13 @@
         <!-- basic info tab -->
         <div class="tab basic">
             <div class="fcimage">
-                <img src="images/objects/deskshelf.png" alt="deskshelf">
+                <img src="images\objects\conwin.png" alt="stashypup">
             </div>
             <div class="infocard">
                 <div class="grid-container">
                     <!-- left -->
                     <div class="title">
-                        <h2>Mr. Desk Jr.</h2>
+                        <h2>Puppy</h2>
                     </div>
 
                     <div class="l1">
@@ -348,11 +348,11 @@
                     </div>
                     <div class="l2">
                         <p>ID</p>
-                        <p>Shelvys2c5#14512</p>
+                        <p>StashyPups2c6#14512</p>
                     </div>
                     <div class="l3">
                         <p>SPECIES</p>
-                        <p>Shelvy, Medium size, White</p>
+                        <p>StashyPup, Small size, Green</p>
                     </div>
 
                     <div class="vertical-line"></div>
@@ -360,7 +360,7 @@
                     <!-- right -->
                     <div class="r1">
                         <p>TIME TOGETHER</p>
-                        <p>1 years 10 month</p>
+                        <p>4 months 5 days</p>
                     </div>
                     <div class="r2">
                         <p>MEMORIES</p>
@@ -368,23 +368,23 @@
                     </div>
                     <div class="r3">
                         <p>PERSONALITY</p>
-                        <p>Hard-working</p>
+                        <p>Loyal, Responsible</p>
                     </div>
                     <div class="r4">
                         <p>LIKES</p>
-                        <p>Do plank spports</p>
+                        <p>Guarding objects</p>
                     </div>
                     <div class="r5">
                         <p>DISLIKES</p>
-                        <p>Having too much stress</p>
+                        <p>Food thieves</p>
                     </div>
                     <div class="r6">
                         <p>JOURNEY</p>
-                        <p>Rhode Island</p>
+                        <p>Rhode Island -New York</p>
                     </div>
                     <div class="r7">
                         <p>QUOTE</p>
-                        <p>One more push-up!</p>
+                        <p>Your secrets/ snacks are safe with me.</p>
                     </div>
                 </div>
             </div>
@@ -466,12 +466,12 @@
 
                 <div class="grid-memory-right">
                     <div class="no-memory">
-                        <p>Mr. Desk Jr. can't seem to recall anything yet.</p>
+                        <p>Puppy can't seem to recall anything yet.</p>
                     </div>
                 </div>
 
                 <div class="fcimage">
-                    <img src="images/objects/deskshelf.png" alt="deskshelf">
+                    <img src="images\objects\conwin.png" alt="stashypup">
                 </div>
             </div>
         </div>

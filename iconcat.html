@@ -18,10 +18,10 @@
         rel="stylesheet">
 
     <!-- favicon -->
-    <link rel="icon" href="images\objects\deskshelf.png" type="image/png">
+    <link rel="icon" href="images\objects\conbed1.png" type="image/png">
     <link rel="stylesheet" href="itemsstyle.css">
 
-    <title>My Shelfy</title>
+    <title>My StashyCat</title>
 
 
     <script>
@@ -54,15 +54,18 @@
 
 
     <style>
-        .item-1 .fcimage img {
-            width: 300px;
-            animation: moveshelf 2s infinite alternate linear;
-            /* same but faster animation as bedsheet */
+        .fcimage img {
+            height: 180px;
+            width: auto;
+            object-fit: contain;
+            /* Ensure the image maintains its aspect ratio */
+            animation: moveconcat 4s infinite alternate linear;
+            /*this animation is the same as bedsheet */
         }
 
-        @keyframes moveshelf {
+        @keyframes moveconcat {
             0% {
-                transform: translateY(10px);
+                transform: translateY(20px);
             }
 
             100% {
@@ -71,7 +74,7 @@
         }
 
         .notab .fcimage {
-            left: 50vw;
+            left: 55vw;
         }
 
         .basic .fcimage {
@@ -82,34 +85,34 @@
 
         .more .fcimage {
             top: 25vh;
-            left: 128vw;
+            left: 120vw;
             zoom: 0.7;
         }
 
 
         /* tab 3 */
         .item-1 #slider-icon1 {
-            left: 65%;
+            left: 60%;
             /* 20% from the left border of the .personality container */
         }
 
         .item-1 #slider-icon2 {
-            left: 25%;
+            left: 60%;
             /* 20% from the left border of the .personality container */
         }
 
         .item-1 #slider-icon3 {
-            left: 65%;
+            left: 60%;
             /* 20% from the left border of the .personality container */
         }
 
         .item-1 #slider-icon4 {
-            left: 65%;
+            left: 20%;
             /* 20% from the left border of the .personality container */
         }
 
         .item-1 #slider-icon5 {
-            left: 45%;
+            left: 20%;
             /* 20% from the left border of the .personality container */
         }
 
@@ -120,18 +123,25 @@
         @media (max-width:1200px) {
 
             /* Stool item image and animation */
-            .item-1 .fcimage img {
-                width: 150px;
+            .fcimage {
+                top: 30vh;
+                left: 70vw;
+                height:100px;
+            }
+
+            .fcimage img {
+                height: 80px;
             }
 
             .basic .fcimage {
                 top: 30vh;
-                left: 110vw;
+                left: 70vw;
+                zoom: 1;
             }
 
             .more .fcimage {
                 top: 50vh;
-                left:110vw;
+                zoom: 0.6;
             }
 
         }
@@ -144,7 +154,7 @@
         <a href="myhome.html">←</a>
     </div>
 
-    <!-- item bedsheet -->
+    <!-- item CONCATBED -->
     <div class="item-1">
         <div class="tabbuttons">
             <button class="button" onclick="showTab('notab', 'item-1')"><img src="images/tools/interact.png"></button>
@@ -153,10 +163,10 @@
         </div>
 
         <div class="notab">
-            <div class="fcimage">
-                <img src="images\objects\deskshelf.png" alt="deskshelf" id="fc">
+            <div class="fcimage" >
+                <img src="images\objects\conbed1.png" id="fc">
             </div>
-            <h1>HEY THERE I AM MR. DESK JR. YOUR DESK SHELF!</h1>
+            <h1>HEY THERE I AM KITTY, YOUR STORAGE BOX & CAT!</h1>
 
             <!-- mini game -->
             <div class="container-game" style="margin-right:0; width: 306px;">
@@ -264,8 +274,8 @@
                 // functions that happen when it's in good condition
                 function displayLove() {
                     // send the happy message
-                    document.getElementById('takeCareText').innerText = "One more push-up!";
-                    alert("One more push-up!");
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Yey! You remembered me!';
+                    alert('Your Furnicreature says: Yey! You remembered me!');
                     addGridItemOpacity();
                     addGridItemOpacity();
                     restartMoveChairAnimation();
@@ -283,7 +293,7 @@
                     // restart the movechair animation
                     const gridItemRight = document.getElementById('fc');
                     if (gridItemRight) {
-                        gridItemRight.style.animation = 'moveblanket 2s infinite alternate linear';
+                        gridItemRight.style.animation = 'moveconcat 8s infinite alternate linear';
                     }
                 }
 
@@ -293,8 +303,8 @@
                 // functions that happen when it's in bad condition
                 function displayJoke() {
                     // send the sad message
-                    document.getElementById('takeCareText').innerText = "-No more push-ups?";
-                    alert("-No more push-ups?");
+                    document.getElementById('takeCareText').innerText = '-Dont forget me, i have some snacks for you...';
+                    alert('-Dont forget me, i have some snacks for you...');
                     reduceGridItemOpacity();
                     stopMoveChairAnimation();
                 }
@@ -321,9 +331,9 @@
                 // retangles' width decrease with time function
                 document.addEventListener('DOMContentLoaded', () => {
                     // Start decreasing widths at different speeds
-                    decreaseWidth('rectangle-hunger', 1200); // 0.3 second interval
-                    decreaseWidth('rectangle-health', 1500); // 0.6 second interval
-                    decreaseWidth('rectangle-happiness', 1200); // 0.45 second interval
+                    decreaseWidth('rectangle-hunger', 100); // 0.3 second interval
+                    decreaseWidth('rectangle-health', 600); // 0.6 second interval
+                    decreaseWidth('rectangle-happiness', 300); // 0.45 second interval
                 });
 
             </script>
@@ -333,13 +343,13 @@
         <!-- basic info tab -->
         <div class="tab basic">
             <div class="fcimage">
-                <img src="images/objects/deskshelf.png" alt="deskshelf">
+                <img src="images/objects/conbed1.png" alt="stashycat">
             </div>
             <div class="infocard">
                 <div class="grid-container">
                     <!-- left -->
                     <div class="title">
-                        <h2>Mr. Desk Jr.</h2>
+                        <h2>KITTY</h2>
                     </div>
 
                     <div class="l1">
@@ -348,11 +358,11 @@
                     </div>
                     <div class="l2">
                         <p>ID</p>
-                        <p>Shelvys2c5#14512</p>
+                        <p>Stashycats1c4#12345</p>
                     </div>
                     <div class="l3">
                         <p>SPECIES</p>
-                        <p>Shelvy, Medium size, White</p>
+                        <p>StashyCat, Medium size, Purple</p>
                     </div>
 
                     <div class="vertical-line"></div>
@@ -360,7 +370,7 @@
                     <!-- right -->
                     <div class="r1">
                         <p>TIME TOGETHER</p>
-                        <p>1 years 10 month</p>
+                        <p>1 month and 8 days</p>
                     </div>
                     <div class="r2">
                         <p>MEMORIES</p>
@@ -368,15 +378,15 @@
                     </div>
                     <div class="r3">
                         <p>PERSONALITY</p>
-                        <p>Hard-working</p>
+                        <p>Affectionate</p>
                     </div>
                     <div class="r4">
                         <p>LIKES</p>
-                        <p>Do plank spports</p>
+                        <p>Secretly looks at you</p>
                     </div>
                     <div class="r5">
                         <p>DISLIKES</p>
-                        <p>Having too much stress</p>
+                        <p>Being forgotten</p>
                     </div>
                     <div class="r6">
                         <p>JOURNEY</p>
@@ -384,7 +394,7 @@
                     </div>
                     <div class="r7">
                         <p>QUOTE</p>
-                        <p>One more push-up!</p>
+                        <p>Come shake hands with me!</p>
                     </div>
                 </div>
             </div>
@@ -401,14 +411,12 @@
 
                     <div class="personality">
                         <h3 id="toggle-button">▼ PERSONALITY</h3>
-                        <p>(default)</p>
                         <div id="personality-content" class="hidden">
-                            <p>This reflects the current personality of the Furnicreature based on the accumulated
-                                keywords from its memories.</p> <br>
-                            <p>For example, if a Furnicreature has many memories tagged with #JOYFUL, it is likely to be
-                                more optimistic.</p><br>
-                            <p>Its personality will influence the tone of messages it sends you. Each species has its
-                                own unique default personality traits.</p>
+                            <p>Reflects the current personality of this Furnicreature according to the keywords of its
+                                memories.</p>
+                            <p>For example, if a furnicreature has many memories with #JOYFUL tags, it would likely be
+                                more optimistic.</p>
+                            <p>Each species has its own unique default personalities.</p>
                         </div>
                         <script>
                             document.getElementById('toggle-button').addEventListener('click', function () {
@@ -466,12 +474,12 @@
 
                 <div class="grid-memory-right">
                     <div class="no-memory">
-                        <p>Mr. Desk Jr. can't seem to recall anything yet.</p>
+                        <p>Kitty can't seem to recall anything yet.</p>
                     </div>
                 </div>
 
                 <div class="fcimage">
-                    <img src="images/objects/deskshelf.png" alt="deskshelf">
+                    <img src="images/objects/conbed1.png" alt="stashycat">
                 </div>
             </div>
         </div>

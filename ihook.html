@@ -5,52 +5,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- font inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
-    <link rel="icon" href="images\homepage\hook.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-    
-    <title>My Hook</title>
-    <link rel="stylesheet" href="styleitems.css">
+    <!-- font fira sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" href="images\objects\hook.png" type="image/png">
+    <link rel="stylesheet" href="itemsstyle.css">
+
+    <title>My Hooky</title>
+
+
+    <script>
+        // 页面加载时显示对应的对象
+        function showTab(tabName, itemClass) {
+            const parent = document.querySelector('.' + itemClass);
+            const tabs = parent.querySelectorAll('.tab');
+            const currentTab = parent.querySelector('.' + tabName);
+
+            // 隐藏.notab class
+            const notabElement = parent.querySelector('.notab');
+            if (notabElement) {
+                notabElement.style.display = 'none';
+            }
+
+            // 如果当前 tab 已经显示，则隐藏它
+            if (currentTab.style.display === 'block') {
+                currentTab.style.display = 'none';
+                notabElement.style.display = 'block';
+            } else {
+                // Hide all tabs
+                tabs.forEach(tab => {
+                    tab.style.display = 'none';
+                });
+                // Show the selected tab
+                currentTab.style.display = 'block';
+            }
+        }
+    </script>
+
+
+    <style>
+        .item-1 .fcimage img {
+            width: 80px;
+            animation: movehook 2s infinite alternate linear;
+            /* same but faster animation as bedsheet */
+        }
+
+        @keyframes movehook {
+            0% {
+                transform: translateY(20px);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .notab .fcimage {
+            left: 50vw;
+        }
+
+        .basic .fcimage {
+            top: 25vh;
+            left: 130vw;
+            zoom: 0.7;
+        }
+
+        .more .fcimage {
+            top: 25vh;
+            left: 120vw;
+            zoom: 0.7;
+        }
+
+        .more .fcimage img {
+            width: 400px;
+        }
+
+
+        /* tab 3 */
+        .item-1 #slider-icon1 {
+            left: 20%;
+            /* 20% from the left border of the .personality container */
+        }
+
+        .item-1 #slider-icon2 {
+            left: 20%;
+            /* 20% from the left border of the .personality container */
+        }
+
+        .item-1 #slider-icon3 {
+            left: 20%;
+            /* 20% from the left border of the .personality container */
+        }
+
+        .item-1 #slider-icon4 {
+            left: 70%;
+            /* 20% from the left border of the .personality container */
+        }
+
+        .item-1 #slider-icon5 {
+            left: 30%;
+            /* 20% from the left border of the .personality container */
+        }
+
+
+
+
+        /* 窄屏幕 */
+        @media (max-width:1200px) {
+
+            /* Stool item image and animation */
+            .item-1 .fcimage img {
+                width: 50px;
+            }
+
+            .basic .fcimage {
+                top: 30vh;
+                left: 110vw;
+            }
+
+            .more .fcimage {
+                top: 50vh;
+                left: 110vw;
+            }
+
+            .more .fcimage img {
+                width: 200px;
+            }
+
+        }
+    </style>
 
 </head>
 
 <body>
-    <div class="fctitle">
-        <img src="images\0navtitle.png">
+    <div class="backarrow">
+        <a href="myhome.html">←</a>
     </div>
 
-    <div class="grid-container">
-
-        <!-- left navigation -->
-        <div class="grid-item-nav">
-            <a href="index.html">
-                <img title="home" alt="home" src="images\1navhome.png"> </a>
-            <a href="tree.html">
-                <img title="tree" alt="tree" src="images\2navtree.png">
-            </a>
-            <a href="playground.html">
-                <img title="playground" alt="play" src="images\3navmine.png">
-            </a>
-            <a href="story.html">
-                <img title="project story" alt="story" src="images\4navstory.png">
-            </a>
+    <!-- item bedsheet -->
+    <div class="item-1">
+        <div class="tabbuttons">
+            <button class="button" onclick="showTab('notab', 'item-1')"><img src="images/tools/interact.png"></button>
+            <button class="button" onclick="showTab('basic', 'item-1')"><img src="images/tools/basic.png"></button>
+            <button class="button" onclick="showTab('more', 'item-1')"><img src="images/tools/memory.png"></button>
         </div>
 
-        <!-- left words -->
-        <div class="grid-item-left">
-            <h1 style="margin-top: 800px;">EdgyElf</h1>
-            <br>
-            <p style="margin-left: 200px;">Summit! Here I come!</p>
-            <br>
+        <div class="notab">
+            <div class="fcimage">
+                <img src="images/objects/hook.png" alt="hook" id="fc">
+            </div>
+            <h1>HEY THERE I AM BUR, YOUR HANGING <br>HOOK!</h1>
+
+            <!-- mini game -->
             <div class="container-game" style="margin-right:0; width: 306px;">
                 <div class="tools">
-                    <img src="images\tools\hunger.png" title="FOOD!" alt="Increase Width Hunger"
+                    <img src="images/tools/hunger.png" title="FOOD!" alt="Increase Width Hunger"
                         onclick="increaseWidth('rectangle-hunger')" class="button">
-                    <img src="images\tools\happiness.png" title="PLAY!" alt="Increase Width Happiness"
+                    <img src="images/tools/happiness.png" title="PLAY!" alt="Increase Width Happiness"
                         onclick="increaseWidth('rectangle-happiness')" class="button">
-                    <img src="images\tools\health.png" title="VITAMIN!" alt="Increase Width Health"
+                    <img src="images/tools/health.png" title="VITAMIN!" alt="Increase Width Health"
                         onclick="increaseWidth('rectangle-health')" class="button">
                 </div>
 
@@ -58,33 +181,33 @@
                     <h3>Hunger</h3>
                     <div class="container-hunger">
                         <div class="resizable-rectangle-hunger" id="rectangle-hunger"></div>
-                        <div class="not-resizable-container" id="notResizable"></div>
+                        <div class="not-resizable-container"></div>
                     </div>
 
                     <h3>Happiness</h3>
                     <div class="container-happiness">
                         <div class="resizable-rectangle-happiness" id="rectangle-happiness"></div>
-                        <div class="not-resizable-container" id="notResizable"></div>
+                        <div class="not-resizable-container"></div>
                     </div>
 
                     <h3>Health</h3>
                     <div class="container-health">
                         <div class="resizable-rectangle-health" id="rectangle-health"></div>
-                        <div class="not-resizable-container" id="notResizable"></div>
+                        <div class="not-resizable-container"></div>
                     </div>
                 </div>
                 <p id="takeCareText">-Come play with me 0.0</p>
             </div>
-            <img id="scrollicon" src="images\scroll.png">
 
-
-            <!-- script for rectangle -->
+            <!-- script for mini game -->
             <script>
                 const hungerRectangle = document.getElementById('rectangle-hunger');
                 const healthRectangle = document.getElementById('rectangle-health');
                 const happinessRectangle = document.getElementById('rectangle-happiness');
+                const takeCareText = document.getElementById('takeCareText');
                 let loveDisplayed = false;
                 let JokeDisplayed = false;
+
 
                 function increaseWidth(rectangleId) {
                     // Increase the width of the specified rectangle
@@ -148,14 +271,16 @@
 
                 // functions that happen when it's in good condition
                 function displayLove() {
-                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Yey! I love you ♥';
-                    alert('Your Furnicreature says: I love you!');
+                    // send the happy message
+                    document.getElementById('takeCareText').innerText = "-Your Furnicreature just sent you a message: Great view here.";
+                    alert("-Your Furnicreature just sent you a message: Great view here.");
+                    addGridItemOpacity();
                     addGridItemOpacity();
                     restartMoveChairAnimation();
                 }
 
                 function addGridItemOpacity() {
-                    // Set the opacity of the image with id 'fc' to 0.5 when displayjoke happends
+                    // Set the opacity of the image with id 'fc' to 1 when displayjoke happends
                     const fcImage = document.getElementById('fc');
                     if (fcImage) {
                         fcImage.style.opacity = '1';
@@ -166,19 +291,18 @@
                     // restart the movechair animation
                     const gridItemRight = document.getElementById('fc');
                     if (gridItemRight) {
-                        gridItemRight.style.animation = 'movechair 8s infinite';
+                        gridItemRight.style.animation = 'movehook 5s infinite alternate linear';
                     }
                 }
 
 
 
 
-
-
                 // functions that happen when it's in bad condition
                 function displayJoke() {
-                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: If I am a real animal, I might have just died...just kidding!';
-                    alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
+                    // send the sad message
+                    document.getElementById('takeCareText').innerText = "-I am tired...";
+                    alert("-I am tired...");
                     reduceGridItemOpacity();
                     stopMoveChairAnimation();
                 }
@@ -202,61 +326,163 @@
 
 
 
-                // width decrease with time function
+                // retangles' width decrease with time function
                 document.addEventListener('DOMContentLoaded', () => {
                     // Start decreasing widths at different speeds
-                    decreaseWidth('rectangle-hunger', 300); // 0.3 second interval
-                    decreaseWidth('rectangle-health', 600); // 0.6 second interval
-                    decreaseWidth('rectangle-happiness', 450); // 0.45 second interval
+                    decreaseWidth('rectangle-hunger', 120); // 0.3 second interval
+                    decreaseWidth('rectangle-health', 400); // 0.6 second interval
+                    decreaseWidth('rectangle-happiness', 500); // 0.45 second interval
                 });
 
             </script>
+        </div>
 
 
-            <!-- detailed info -->
-            <div style="margin-top: 300px;" class="grid-prop">
-                <div class="grid-prop-left">
-                    <h3>Name</h3>
-                    <h3>Species</h3>
-                    <h3>Height</h3>
-                    <h3>Weight</h3>
-                    <h3>Material</h3>
-                    <h3>Habitat</h3>
-                    <br>
-                    <br>
-                    <h3>Time Together</h3>
-                    <h3>Relationship</h3>
-                    <h3>Personality</h3>
-                    <h3>Likes</h3>
-                    <h3>Dislikes</h3>
-                    <h3>Journey</h3>
-                </div>
+        <!-- basic info tab -->
+        <div class="tab basic">
+            <div class="fcimage">
+                <img src="images/objects/hook.png" alt="hook">
+            </div>
+            <div class="infocard">
+                <div class="grid-container">
+                    <!-- left -->
+                    <div class="title">
+                        <h2>Bur</h2>
+                    </div>
 
-                <div class="grid-prop-right">
-                    <p>EdgyElf</p>
-                    <p>Suspended-Hook</p>
-                    <p>5 inch</p>
-                    <p>0.2 pound</p>
-                    <p>Aluminum</p>
-                    <p>Next to a 'cliff'</p>
-                    <br>
-                    <br>
-                    <p>4 months</p>
-                    <p>Friend: Lamp</p>
-                    <p>Perservere, Positive, Energetic</p>
-                    <p>Extreme Sports</p>
-                    <p>Being overburdened</p>
-                    <p>-Boston -Rhode Island</p>
+                    <div class="l1">
+                        <p>OWNER</p>
+                        <p>Reese#811</p>
+                    </div>
+                    <div class="l2">
+                        <p>ID</p>
+                        <p>HookySc6#14512</p>
+                    </div>
+                    <div class="l3">
+                        <p>SPECIES</p>
+                        <p>HookyS, Green</p>
+                    </div>
+
+                    <div class="vertical-line"></div>
+
+                    <!-- right -->
+                    <div class="r1">
+                        <p>TIME TOGETHER</p>
+                        <p>12 days</p>
+                    </div>
+                    <div class="r2">
+                        <p>MEMORIES</p>
+                        <p>0</p>
+                    </div>
+                    <div class="r3">
+                        <p>PERSONALITY</p>
+                        <p>Adventurous</p>
+                    </div>
+                    <div class="r4">
+                        <p>LIKES</p>
+                        <p>Extreme Sports</p>
+                    </div>
+                    <div class="r5">
+                        <p>DISLIKES</p>
+                        <p>Slippery walls</p>
+                    </div>
+                    <div class="r6">
+                        <p>JOURNEY</p>
+                        <p>Rhode Island</p>
+                    </div>
+                    <div class="r7">
+                        <p>QUOTE</p>
+                        <p>Summit! Here I come!</p>
+                    </div>
                 </div>
             </div>
-
         </div>
 
-        <!-- obg image -->
-        <div class="grid-item-right">
-            <img title="I'm not gonna fallllllllllllll----...just kidding" src="images\homepage\hook.png">
-        </div>
 
+        <!-- memories tab -->
+        <div class="tab more">
+            <div class="grid-memory">
+                <div class="grid-memory-left">
+                    <div class="newmemory">
+                        <p><span style="font-size: 30px;">+</span> New Memory</p>
+                    </div>
+
+                    <div class="personality">
+                        <h3 id="toggle-button">▼ PERSONALITY</h3>
+                        <p>(default)</p>
+                        <div id="personality-content" class="hidden">
+                            <p>This reflects the current personality of the Furnicreature based on the accumulated
+                                keywords from its memories.</p> <br>
+                            <p>For example, if a Furnicreature has many memories tagged with #JOYFUL, it is likely to be
+                                more optimistic.</p><br>
+                            <p>Its personality will influence the tone of messages it sends you. Each species has its
+                                own unique default personality traits.</p>
+                        </div>
+                        <script>
+                            document.getElementById('toggle-button').addEventListener('click', function () {
+                                const content = document.getElementById('personality-content');
+                                content.classList.toggle('hidden');
+                            });
+                        </script>
+
+                        <div class="slider-container">
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon1">
+                                <div class="description">
+                                    <p>Energetic</p>
+                                    <p>Calm</p>
+                                </div>
+                            </div>
+
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon2">
+                                <div class="description">
+                                    <p>Enthusiastic</p>
+                                    <p>Chill</p>
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon3">
+                                <div class="description">
+                                    <p>Optimistic</p>
+                                    <p>Realistic</p>
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon4">
+                                <div class="description">
+                                    <p>Sociable</p>
+                                    <p>Independent</p>
+                                </div>
+                            </div>
+
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon5">
+                                <div class="description">
+                                    <p>Curious</p>
+                                    <p>Content</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-memory-right">
+                    <div class="no-memory">
+                        <p>Bur can't seem to recall anything yet.</p>
+                    </div>
+                </div>
+
+                <div class="fcimage">
+                    <img src="images/objects/hook2.png" alt="hook">
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>

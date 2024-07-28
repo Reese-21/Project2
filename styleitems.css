@@ -34,8 +34,7 @@ body::before {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 100px repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: 1.5fr 1fr;
     width: 100vw;
     height: 100vh;
 }
@@ -67,13 +66,13 @@ body::before {
 
 
 .grid-item-left {
-    padding-top: 500px;
-    grid-column: span 4;
-    /* grid-row: span 8; */
+    margin-left: 100px;
+    grid-column: 1/2;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    height: 100vh;
     overflow-y: auto;
 }
 
@@ -83,14 +82,13 @@ body::before {
 }
 
 .grid-item-left #scrollicon{
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 
 
 .grid-item-right {
-    grid-column: span 4;
-    /* grid-row: span 8; */
+    grid-column: 2/3;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,7 +98,7 @@ body::before {
 }
 
 .grid-item-right img {
-    width: 350px;
+    width: 400px;
     animation: movechair 4s infinite;
 }
 
@@ -128,9 +126,6 @@ body::before {
     align-items: flex-end;
 }
 
-.grid-item-left h1{
-    margin-top:800px;
-}
 
 .grid-prop-right {
     margin-bottom: 80px;
@@ -149,9 +144,19 @@ body::before {
 
 .fctitle {
     position: fixed;
-    bottom: 2%;
-    right: 0%;
-    transform: translate(10%, 0%);
+    /* This makes the element fixed-positioned */
+    top: 100%;
+    /* Position from the top of the viewport */
+    left: 100%;
+    /* Position from the left of the viewport */
+    transform: translate(-100%, -100%);
+}
+
+.fctitle img {
+    width: 20vw;
+    /* Set the width of the image */
+    transition: transform 0.2s;
+    /* Apply transition for a smooth effect */
 }
 
 h1 {

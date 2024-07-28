@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itemtest</title>
+    <script>
+        // 显示符合条件的对象（根据 URL 参数）
+        function showClass() {
+            const params = new URLSearchParams(window.location.search);
+            const item = params.get('item');
+            document.querySelectorAll('.item-1, .item-2').forEach(div => {
+                div.style.display = 'none';
+            });
+            if (item) {
+                document.querySelector('.item-' + item).style.display = 'block';
+            }
+        }
+    
+        // 页面加载时显示对应的对象
+        document.addEventListener('DOMContentLoaded', () => {
+            showClass();
+            updateFCImagePosition(); // 页面加载时更新 fcimage 位置
+        });
+    
+        // 显示对应 tab 的内容，并根据选中的 tab 位置调整 fcimage（在屏幕宽度大于 900px 时）
+        function showTab(tabName, itemClass) {
+            const parent = document.querySelector('.' + itemClass);
+            const tabs = parent.querySelectorAll('.tab');
+            const currentTab = parent.querySelector('.' + tabName);
+            const fcimage = document.querySelector('.fcimage');
+    
+            if (currentTab.style.display === 'block') {
+                // 如果当前 tab 已经显示，则隐藏它
+                currentTab.style.display = 'none';
+                if (window.innerWidth > 900) {
+                    updateFCImagePosition(); // 在大屏幕上更新 fcimage 位置
+                }
+            } else {
+                // 隐藏所有 tab
+                tabs.forEach(tab => {
+                    tab.style.display = 'none';
+                });
+                // 显示选中的 tab
+                currentTab.style.display = 'block';
+    
+                if (window.innerWidth > 900) {
+                    // 仅在窗口宽度大于 900px 时调整 fcimage 位置
+                    switch (tabName) {
+                        case 'basic':
+                        case 'more':
+                            fcimage.style.top = '10px';
+                            fcimage.style.right = '10px';
+                            fcimage.style.left = '';
+                            fcimage.style.bottom = '';
+                            fcimage.style.transform = '';
+                            fcimage.style.zIndex = '100'; // 确保 fcimage 在其他元素之上
+                            break;
+                        case 'details':
+                            fcimage.style.top = '50%';
+                            fcimage.style.left = '50%';
+                            fcimage.style.transform = 'translate(-50%, -50%)'; // 居中 fcimage
+                            fcimage.style.right = '';
+                            fcimage.style.bottom = '';
+                            fcimage.style.zIndex = '-1'; // 将 fcimage 放到其他元素下面
+                            break;
+                    }
+                    fcimage.style.display = 'block'; // 显示 fcimage（仅在窗口宽度大于 900px 时）
+                }
+            }
+        }
+    
+        // 移动 fcimage 位置（当屏幕宽度小于 900px 时）
+        function updateFCImagePosition() {
+            const fcimage = document.querySelector('.fcimage');
+            if (window.innerWidth <= 900) {
+                const items = document.querySelectorAll('.item-1, .item-2');
+                let anyTabVisible = false;
+    
+                items.forEach(item => {
+                    const tabs = item.querySelectorAll('.tab');
+                    tabs.forEach(tab => {
+                        if (tab.style.display === 'block') {
+                            anyTabVisible = true;
+                        }
+                    });
+                });
+    
+                if (!anyTabVisible) {
+                    // 当没有 tab 可见时，调整 fcimage 位置（在屏幕中央偏上的位置）
+                    fcimage.style.display = 'block';
+                    fcimage.style.top = '30%';
+                    fcimage.style.left = '50%';
+                    fcimage.style.transform = 'translate(-50%, -30%)'; // 居中偏上
+                    fcimage.style.bottom = '';
+                    fcimage.style.right = '';
+                    fcimage.style.zIndex = '-1'; // 确保 fcimage 在其他元素之下
+                }
+    
+            } else {
+                // 在屏幕宽度大于 900px 时，检查是否没有 tab 可见
+                const items = document.querySelectorAll('.item-1, .item-2');
+                let anyTabVisible = false;
+    
+                items.forEach(item => {
+                    const tabs = item.querySelectorAll('.tab');
+                    tabs.forEach(tab => {
+                        if (tab.style.display === 'block') {
+                            anyTabVisible = true;
+                        }
+                    });
+                });
+    
+                if (!anyTabVisible) {
+                    // 当没有 tab 可见时，调整 fcimage 位置（在屏幕右下角）
+                    fcimage.style.display = 'block';
+                    fcimage.style.bottom = '10px';
+                    fcimage.style.right = '10px';
+                    fcimage.style.top = '';
+                    fcimage.style.left = '';
+                    fcimage.style.transform = '';
+                    fcimage.style.zIndex = '100'; // 确保 fcimage 在其他元素之上
+                }
+            }
+        }
+    
+        // 窗口调整时也更新 fcimage 位置
+        window.addEventListener('resize', updateFCImagePosition);
+    </script>
+
+
+
+
+
+
+    <style>
+        .item-1,
+        .item-2 {
+            display: none;
+        }
+
+        .tab {
+            display: none;
+        }
+
+        .fcimage {
+            position: fixed;
+            transition: top 0.5s ease, left 0.5s ease, bottom 0.5s ease, right 0.5s ease, transform 0.5s ease, z-index 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item-1">
+        <div class="fcimage"><img src="images/objects/bedsheet.png" alt="bedsheet"></div>
+        <h1>HEY THERE, I AM SHEEEEEEEEEPT, YOUR BED SHEET!</h1>
+        <div>
+            <button onclick="showTab('basic', 'item-1')">Basic Info</button>
+            <button onclick="showTab('details', 'item-1')">Details</button>
+            <button onclick="showTab('more', 'item-1')">More Info</button>
+        </div>
+        <div class="tab basic">
+            <div class="left">
+                <p>Name</p>
+                <p>ID</p>
+                <p>Species</p>
+            </div>
+            <div class="right">
+                <p>Sheeeeeeept</p>
+                <p>001</p>
+                <p>Bedsheet, Twin size, liaic</p>
+            </div>
+        </div>
+        <div class="tab details">
+            <p>Here are more details about the bedsheet...</p>
+        </div>
+        <div class="tab more">
+            <p>Here is even more information about the bedsheet...</p>
+        </div>
+    </div>
+
+    <div class="item-2">
+        <div class="fcimage"><img src="images/objects/stool.png" alt="stool"></div>
+        <h1>HEY THERE, I AM STOOLPY, YOUR STOOL/ SIDE TABLE!</h1>
+        <div>
+            <button onclick="showTab('basic', 'item-2')">Basic Info</button>
+            <button onclick="showTab('details', 'item-2')">Details</button>
+            <button onclick="showTab('more', 'item-2')">More Info</button>
+        </div>
+        <div class="tab basic">
+            <div class="left">
+                <p>Name</p>
+                <p>ID</p>
+                <p>Species</p>
+            </div>
+            <div class="right">
+                <p>Stooooooooolpy</p>
+                <p>002</p>
+                <p>Stool, Small, Yellow</p>
+            </div>
+        </div>
+        <div class="tab details">
+            <p>Here are more details about the stool...</p>
+        </div>
+        <div class="tab more">
+            <p>Here is even more information about the stool...</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

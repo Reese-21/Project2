@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="images\homepage\ch.png" type="image/png">
+
+
+
+    <title>My Clothes Hanger</title>
+    <link rel="stylesheet" href="styleitems.css">
+    <style>
+        @keyframes movechair {
+            0% {
+                transform: translateX(100px) translateY(200px);
+            }
+
+            50% {
+                transform: translateX(-150px) translateY(-300px);
+            }
+
+            100% {
+                transform: translateX(100px) translateY(200px);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="fctitle">
+        <img src="images\0navtitle.png">
+    </div>
+
+    <div class="grid-container">
+
+        <!-- left navigation -->
+        <div class="grid-item-nav">
+            <a href="index.html">
+                <img title="home" alt="home" src="images\1navhome.png"> </a>
+            <a href="tree.html">
+                <img title="tree" alt="tree" src="images\2navtree.png">
+            </a>
+            <a href="playground.html">
+                <img title="playground" alt="play" src="images\3navmine.png">
+            </a>
+            <a href="story.html">
+                <img title="project story" alt="story" src="images\4navstory.png">
+            </a>
+        </div>
+
+        <!-- left words -->
+        <div class="grid-item-left">
+            <h1 style="margin-top: 800px;">Trapeze No.16</h1>
+            <br>
+            <p style="margin-left: 200px;">Greets you first when you come home</p>
+            <br>
+            <div class="container-game" style="margin-right:0; width: 306px;">
+                <div class="tools">
+                    <img src="images\tools\hunger.png" title="FOOD!" alt="Increase Width Hunger"
+                        onclick="increaseWidth('rectangle-hunger')" class="button">
+                    <img src="images\tools\happiness.png" title="PLAY!" alt="Increase Width Happiness"
+                        onclick="increaseWidth('rectangle-happiness')" class="button">
+                    <img src="images\tools\health.png" title="VITAMIN!" alt="Increase Width Health"
+                        onclick="increaseWidth('rectangle-health')" class="button">
+                </div>
+
+                <div class="bars">
+                    <h3>Hunger</h3>
+                    <div class="container-hunger">
+                        <div class="resizable-rectangle-hunger" id="rectangle-hunger"></div>
+                        <div class="not-resizable-container" id="notResizable"></div>
+                    </div>
+
+                    <h3>Happiness</h3>
+                    <div class="container-happiness">
+                        <div class="resizable-rectangle-happiness" id="rectangle-happiness"></div>
+                        <div class="not-resizable-container" id="notResizable"></div>
+                    </div>
+
+                    <h3>Health</h3>
+                    <div class="container-health">
+                        <div class="resizable-rectangle-health" id="rectangle-health"></div>
+                        <div class="not-resizable-container" id="notResizable"></div>
+                    </div>
+                </div>
+                <p id="takeCareText">-Come play with me 0.0</p>
+            </div>
+
+            <img id="scrollicon" src="images\scroll.png">
+
+
+
+            <!-- script for rectangle -->
+            <script>
+                const hungerRectangle = document.getElementById('rectangle-hunger');
+                const healthRectangle = document.getElementById('rectangle-health');
+                const happinessRectangle = document.getElementById('rectangle-happiness');
+                let loveDisplayed = false;
+                let JokeDisplayed = false;
+
+                function increaseWidth(rectangleId) {
+                    // Increase the width of the specified rectangle
+                    const currentWidth = parseFloat(getComputedStyle(document.getElementById(rectangleId)).width);
+                    const currentMarginRight = parseFloat(getComputedStyle(document.getElementById(rectangleId)).marginRight);
+
+                    const newWidth = currentWidth + 40;
+                    document.getElementById(rectangleId).style.width = `${newWidth}px`;
+                    document.getElementById(rectangleId).style.marginRight = `${currentMarginRight - 10}px`;
+
+                    // Check if the rectangle has reached the maximum width
+                    if (newWidth >= 145) {
+                        checkAndDisplayLove();
+                    }
+                }
+
+                function decreaseWidth(rectangleId, interval) {
+                    // Decrease the width of the specified rectangle
+                    const currentWidth = parseFloat(getComputedStyle(document.getElementById(rectangleId)).width);
+                    document.getElementById(rectangleId).style.width = `${currentWidth - 1}px`;
+
+                    // Check if the rectangle width is small enough or large enough
+                    if (currentWidth <= 12 ||
+                        (parseFloat(getComputedStyle(hungerRectangle).width) >= 145 &&
+                            parseFloat(getComputedStyle(healthRectangle).width) >= 145 &&
+                            parseFloat(getComputedStyle(happinessRectangle).width) >= 145)
+                    ) {
+                        checkAndDisplayLove();
+                    } else {
+                        // Continue decreasing the width with a specified interval, not display the message
+                        setTimeout(() => decreaseWidth(rectangleId, interval), interval);
+                    }
+                }
+
+                function checkAndDisplayLove() {
+                    // Check if all three rectangles have reached 290px and 'I love you!' is not yet displayed
+                    if (
+                        parseFloat(getComputedStyle(hungerRectangle).width) >= 145 &&
+                        parseFloat(getComputedStyle(healthRectangle).width) >= 145 &&
+                        parseFloat(getComputedStyle(happinessRectangle).width) >= 145 &&
+                        !loveDisplayed
+                    ) {
+                        displayLove();
+                        loveDisplayed = true; // Mark 'I love you!' as displayed
+                    }
+                    if (parseFloat(getComputedStyle(hungerRectangle).width) <= 12 &&
+                        parseFloat(getComputedStyle(healthRectangle).width) <= 12 &&
+                        parseFloat(getComputedStyle(happinessRectangle).width) <= 12 &&
+                        !JokeDisplayed) {
+                        displayJoke();
+                        updateGridItemOpacity();
+                        stopMoveChairAnimation();
+
+                        JokeDisplayed = true;
+                    }
+
+                }
+
+
+
+
+                // functions that happen when it's in good condition
+                function displayLove() {
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Welcome back ♥';
+                    alert('Your Furnicreature says: Welcome back ♥');
+                    addGridItemOpacity();
+                    restartMoveChairAnimation();
+                }
+
+                function addGridItemOpacity() {
+                    // Set the opacity of the image with id 'fc' to 0.5 when displayjoke happends
+                    const fcImage = document.getElementById('fc');
+                    if (fcImage) {
+                        fcImage.style.opacity = '1';
+                    }
+                }
+
+                function restartMoveChairAnimation() {
+                    // restart the movechair animation
+                    const gridItemRight = document.getElementById('fc');
+                    if (gridItemRight) {
+                        gridItemRight.style.animation = 'movechair 8s infinite';
+                    }
+                }
+
+
+
+
+
+
+                // functions that happen when it's in bad condition
+                function displayJoke() {
+                    document.getElementById('takeCareText').innerText = '-Your Furnicreature says: Your clothes are slipping offfffff';
+                    alert('Your Furnicreature says: Your clothes are slipping offfffff');
+                    reduceGridItemOpacity();
+                    stopMoveChairAnimation();
+                }
+
+                function reduceGridItemOpacity() {
+                    // Set the opacity of the image with id 'fc' to 0.5 when displayjoke happends
+                    const fcImage = document.getElementById('fc');
+                    if (fcImage) {
+                        fcImage.style.opacity = '0.3';
+                    }
+                }
+
+                function stopMoveChairAnimation() {
+                    // Stop the movechair animation
+                    const gridItemRight = document.getElementById('fc');
+                    if (gridItemRight) {
+                        gridItemRight.style.animation = 'none';
+                    }
+                }
+
+
+
+
+                // width decrease with time function
+                document.addEventListener('DOMContentLoaded', () => {
+                    // Start decreasing widths at different speeds
+                    decreaseWidth('rectangle-hunger', 300); // 0.3 second interval
+                    decreaseWidth('rectangle-health', 200); // 0.6 second interval
+                    decreaseWidth('rectangle-happiness', 500); // 0.45 second interval
+                });
+
+            </script>
+
+
+            <!-- detailed info -->
+            <div style="margin-top: 300px;" class="grid-prop">
+                <div class="grid-prop-left">
+                    <h3>Name</h3>
+                    <h3>Species</h3>
+                    <h3>Height</h3>
+                    <h3>Weight</h3>
+                    <h3>Material</h3>
+                    <h3>Habitat</h3>
+                    <br>
+                    <br>
+                    <h3>Time Together</h3>
+                    <h3>Relationship</h3>
+                    <h3>Personality</h3>
+                    <h3>Likes</h3>
+                    <h3>Dislikes</h3>
+                    <h3>Journey</h3>
+                </div>
+
+                <div class="grid-prop-right">
+                    <p>Trapeze No.16</p>
+                    <p>Suspended-Clothes Hanger</p>
+                    <p>12 inch</p>
+                    <p>0.3 pound</p>
+                    <p>Aluminum, Nylon</p>
+                    <p>Closets</p>
+                    <br>
+                    <br>
+                    <p>11 months</p>
+                    <p>Live together in a flock</p>
+                    <p>Fashionable</p>
+                    <p>Try out new clothes, Slide</p>
+                    <p>Being squeezed in the corner</p>
+                    <p>-Rhode Island</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- obg image -->
+        <div class="grid-item-right">
+            <img id="fc" title="WEEEEE-----" style="width: 200px;" src="images\homepage\ch.png">
+        </div>
+
+    </div>
+
+</body>
+
+</html>

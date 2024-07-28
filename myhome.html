@@ -50,41 +50,41 @@
             </div>
 
             <!-- Image Map, background image -->
-            <img src="images\homepage\all2.png" usemap="#image_map">
+            <img src="images\objects\all2.png" usemap="#image_map">
 
             <map name="image_map">
 
                 <!-- Define responsive areas for each fc -->
 
-                <area alt="idle" title="idle" coords="223,418 171,628 255,657 302,454 285,416 " shape="polygon">
+                <!-- <area alt="idle" title="idle" coords="223,418 171,628 255,657 302,454 285,416 " shape="polygon"> -->
 
-                <area alt="conwin" title="conguard" href="iconB.html"
+                <area alt="conwin" title="conguard" href="iconpup.html"
                     coords="549,538 609,538 628,581 625,617 595,649 538,647 535,609 576,573 " shape="polygon">
 
-                <area alt="lamp" title="lamp" href="ilamp.html" coords="910,255 902,353 962,367 983,340 967,258 "
+                <area alt="book" title="book" href="ibook.html" coords="910,255 902,353 962,367 983,340 967,258 "
                     shape="polygon">
 
-                <area alt="conshelf" title="conshy" href="iconA.html"
+                <area alt="conshelf" title="conshy" href="iconcat.html"
                     coords="839,399 839,459 899,470 935,440 932,402 891,386 " shape="polygon">
 
                 <area alt="hook" title="hook" href="ihook.html" coords="1000,467,1059,530" shape="rect">
 
 
                 <!-- bed area -->
-                <area alt="conbed" title="conshy" href="iconA.html"
+                <area alt="conbed" title="conshy" href="iconcat.html"
                     coords="312,932 315,1035 532,1174 611,1130 530,1049 323,924 " shape="polygon">
 
-                <area alt="conbed1" title="conshy" href="iconA.html"
+                <area alt="conbed1" title="conshy" href="iconcat.html"
                     coords="1051,837 1051,937 1136,894 1130,823 1095,818 " shape="polygon">
 
                 <area alt="bedsheet" title="bedsheet" href="ibedsheet.html"
                     coords="340,761 345,861 614,1013 1111,785 1117,687 1084,704 1008,676 978,728 937,723 891,695 918,649 888,638 856,682 801,674 763,641 777,609 "
                     shape="polygon">
 
-                <area alt="cushions" title="cushions" href="icushions.html"
+                <area alt="cushions" title="cushions" href="icushion.html"
                     coords="842,573 954,581 1030,611 981,744 747,641 807,554 " shape="polygon">
 
-                <area alt="conshelf1" title="conguard1" href="iconB.html"
+                <area alt="conshelf1" title="conguard1" href="iconpup.html"
                     coords="1160,386 1160,473 1222,448 1198,388 1160,386 " shape="polygon">
 
 
@@ -95,6 +95,10 @@
 
                 <area alt="stool" title="stool" href="istool.html"
                     coords="1538,858 1459,907 1445,1016 1567,1062 1657,992 1663,902 " shape="polygon">
+
+                <!-- <area alt="stool" title="stool" href="itemstest.html?item=2"
+                    coords="1538,858 1459,907 1445,1016 1567,1062 1657,992 1663,902 " shape="polygon"> -->
+
 
                 <area alt="blanket" title="blanket" href="iblanket.html"
                     coords="1176,723 1193,725 1206,823 1274,850 1301,907 1342,902 1339,842 1399,839 1399,807 1312,780 1299,674 1233,679 1184,695 "
@@ -119,7 +123,7 @@
                 <area alt="deskshelf" title="deskshelf" href="ideskshelf.html"
                     coords="1236,1331 1342,1391 1451,1301 1434,1266 1364,1239 1239,1315 " shape="polygon">
 
-                <area alt="condesk" title="conshy" href="iconA.html"
+                <area alt="condesk" title="conshy" href="iconcat.html"
                     coords="1445,1119 1396,1160 1394,1225 1489,1271 1524,1233 1519,1146 " shape="polygon">
             </map>
 
@@ -129,7 +133,7 @@
 
 
 
-    
+
     <div class="fctitle">
         <a href="index.html">
             <img src="images\0navtitle.png"></a>
@@ -141,7 +145,8 @@
 
     <div class="instructions">
         <h2>▼ Welcome home! <br> DEMO USER:: furnicreaturelover</h2>
-        <p>Here'are all the FurniCreatures currently living with you. Click to interact, feed, and play.</p>
+        <p>Here'are all the FurniCreatures currently living with you. Click to interact, feed, play and receive messages
+            with their distinctive character traits.</p>
         <p>(Click 'welcome home' to show less)</p>
     </div>
 
@@ -160,22 +165,22 @@
 
     <script>
         // script1: popup demo user
-        document.addEventListener('DOMContentLoaded', () => {
-            const openPopupButton = document.getElementById('loginicon');
-            const popup = document.getElementById('popup');
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     const openPopupButton = document.getElementById('loginicon');
+        //     const popup = document.getElementById('popup');
 
-            // Toggle the popup visibility when the icon is clicked
-            openPopupButton.addEventListener('click', () => {
-                popup.classList.toggle('popup-hidden');
-            });
+        //     // Toggle the popup visibility when the icon is clicked
+        //     openPopupButton.addEventListener('click', () => {
+        //         popup.classList.toggle('popup-hidden');
+        //     });
 
-            // Close the popup if clicked outside of it
-            window.addEventListener('click', (event) => {
-                if (!openPopupButton.contains(event.target) && !popup.contains(event.target)) {
-                    popup.classList.add('popup-hidden');
-                }
-            });
-        });
+        //     // Close the popup if clicked outside of it
+        //     window.addEventListener('click', (event) => {
+        //         if (!openPopupButton.contains(event.target) && !popup.contains(event.target)) {
+        //             popup.classList.add('popup-hidden');
+        //         }
+        //     });
+        // });
 
 
 

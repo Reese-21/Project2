@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="itemsstyle.css">
+
+    <title>itemtest</title>
+    <script>
+        // 显示符合条件的对象（根据 URL 参数）
+        function showClass() {
+            const params = new URLSearchParams(window.location.search);
+            const item = params.get('item');
+            document.querySelectorAll('.item-1, .item-2').forEach(div => {
+                div.style.display = 'none';
+            });
+            if (item) {
+                document.querySelector('.item-' + item).style.display = 'block';
+            }
+        }
+
+
+        // 页面加载时显示对应的对象
+        document.addEventListener('DOMContentLoaded', showClass);
+
+        function showTab(tabName, itemClass) {
+            const parent = document.querySelector('.' + itemClass);
+            const tabs = parent.querySelectorAll('.tab');
+            const currentTab = parent.querySelector('.' + tabName);
+
+
+
+            // 隐藏.notab class
+            const notabElement = parent.querySelector('.notab');
+            if (notabElement) {
+                notabElement.style.display = 'none';
+            }
+
+            // 如果当前 tab 已经显示，则隐藏它
+            if (currentTab.style.display === 'block') {
+                currentTab.style.display = 'none';
+                notabElement.style.display = 'block';
+
+                // 如果当前tab没有显示，则隐藏其他所有tab并显示选中tab
+            } else {
+                // Hide all tabs
+                tabs.forEach(tab => {
+                    tab.style.display = 'none';
+                });
+                // Show the selected tab
+                currentTab.style.display = 'block';
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="backarrow">
+        <a href="myhome.html">←</a>
+    </div>
+
+
+
+
+    <!-- item bedsheet -->
+    <div class="item-1">
+        <div class="tabbuttons">
+            <button class="button" onclick="showTab('notab', 'item-1')"><img src="images\tools\interact.png"></button>
+            <button class="button" onclick="showTab('basic', 'item-1')"><img src="images\tools\basic.png"></button>
+            <button class="button" onclick="showTab('more', 'item-1')"><img src="images\tools\memory.png"></button>
+        </div>
+
+        <div class="notab" id="item-1">
+            <div class="fcimage">
+                <img src="images/objects/bedsheet.png" alt="bedsheet" id="bedsheet">
+            </div>
+            <h1>HEY THERE, I AM SHEEEEEEEEEPT, YOUR BED <br> SHEET!</h1>
+
+            <!-- mini game -->
+            <div class="container-game" style="margin-right:0; width: 306px;">
+                <div class="tools">
+                    <img src="images/tools/hunger.png" title="FOOD!" alt="Increase Width Hunger"
+                        onclick="increaseWidth('rectangle-hunger-bs')" class="button">
+                    <img src="images/tools/happiness.png" title="PLAY!" alt="Increase Width Happiness"
+                        onclick="increaseWidth('rectangle-happiness-bs')" class="button">
+                    <img src="images/tools/health.png" title="VITAMIN!" alt="Increase Width Health"
+                        onclick="increaseWidth('rectangle-health-bs')" class="button">
+                </div>
+
+                <div class="bars">
+                    <h3>Hunger</h3>
+                    <div class="container-hunger">
+                        <div class="resizable-rectangle-hunger" id="rectangle-hunger-bs"></div>
+                        <div class="not-resizable-container"></div>
+                    </div>
+
+                    <h3>Happiness</h3>
+                    <div class="container-happiness">
+                        <div class="resizable-rectangle-happiness" id="rectangle-happiness-bs"></div>
+                        <div class="not-resizable-container"></div>
+                    </div>
+
+                    <h3>Health</h3>
+                    <div class="container-health">
+                        <div class="resizable-rectangle-health" id="rectangle-health-bs"></div>
+                        <div class="not-resizable-container"></div>
+                    </div>
+                </div>
+                <p id="takeCareTextBs">-Come play with me 0.0</p>
+            </div>
+
+            <!-- script for mini game -->
+            <script>
+                function initializeItemOne() {
+                    const hungerRectangle = document.getElementById('rectangle-hunger-bs');
+                    const healthRectangle = document.getElementById('rectangle-health-bs');
+                    const happinessRectangle = document.getElementById('rectangle-happiness-bs');
+                    const takeCareText = document.getElementById('takeCareTextBs');
+                    const bedsheetImage = document.getElementById('bedsheet');
+                    let loveDisplayed = false;
+                    let jokeDisplayed = false;
+
+                    function increaseWidth(rectangleId) {
+                        const rectangle = document.getElementById(rectangleId);
+                        const currentWidth = parseFloat(getComputedStyle(rectangle).width);
+                        const currentMarginRight = parseFloat(getComputedStyle(rectangle).marginRight);
+
+                        const newWidth = currentWidth + 40;
+                        rectangle.style.width = `${newWidth}px`;
+                        rectangle.style.marginRight = `${currentMarginRight - 10}px`;
+
+                        if (newWidth >= 145) {
+                            checkAndDisplayLove();
+                        }
+                    }
+
+                    function decreaseWidth(rectangleId, interval) {
+                        const rectangle = document.getElementById(rectangleId);
+                        const currentWidth = parseFloat(getComputedStyle(rectangle).width);
+                        rectangle.style.width = `${currentWidth - 1}px`;
+
+                        if (currentWidth <= 12 ||
+                            (parseFloat(getComputedStyle(hungerRectangle).width) >= 145 &&
+                                parseFloat(getComputedStyle(healthRectangle).width) >= 145 &&
+                                parseFloat(getComputedStyle(happinessRectangle).width) >= 145)) {
+                            checkAndDisplayLove();
+                        } else {
+                            setTimeout(() => decreaseWidth(rectangleId, interval), interval);
+                        }
+                    }
+
+                    function checkAndDisplayLove() {
+                        if (
+                            parseFloat(getComputedStyle(hungerRectangle).width) >= 145 &&
+                            parseFloat(getComputedStyle(healthRectangle).width) >= 145 &&
+                            parseFloat(getComputedStyle(happinessRectangle).width) >= 145 &&
+                            !loveDisplayed
+                        ) {
+                            displayLove();
+                            loveDisplayed = true;
+                        }
+                        if (parseFloat(getComputedStyle(hungerRectangle).width) <= 12 &&
+                            parseFloat(getComputedStyle(healthRectangle).width) <= 12 &&
+                            parseFloat(getComputedStyle(happinessRectangle).width) <= 12 &&
+                            !jokeDisplayed) {
+                            displayJoke();
+                            updateGridItemOpacity();
+                            stopMoveChairAnimation();
+                            jokeDisplayed = true;
+                        }
+                    }
+
+                    function displayLove() {
+                        takeCareText.innerText = '-Your Furnicreature says: Thanks, but I am still gonna sleep...';
+                        alert('Your Furnicreature says: Thanks, but I am still gonna sleep...');
+                        addGridItemOpacity();
+                        restartMoveChairAnimation();
+                    }
+
+                    function addGridItemOpacity() {
+                        bedsheetImage.style.opacity = '1';
+                    }
+
+                    function restartMoveChairAnimation() {
+                        bedsheetImage.style.animation = 'movebs 8s infinite alternate linear';
+                    }
+
+                    function displayJoke() {
+                        takeCareText.innerText = '-Your Furnicreature says: Guess I should start hibernation now...';
+                        alert('Your Furnicreature says: Guess I should start hibernation now...');
+                        reduceGridItemOpacity();
+                        stopMoveChairAnimation();
+                    }
+
+                    function reduceGridItemOpacity() {
+                        bedsheetImage.style.opacity = '0.3';
+                    }
+
+                    function stopMoveChairAnimation() {
+                        bedsheetImage.style.animation = 'none';
+                    }
+
+                    decreaseWidth('rectangle-hunger-bs', 1000);
+                    decreaseWidth('rectangle-health-bs', 1200);
+                    decreaseWidth('rectangle-happiness-bs', 5000);
+                }
+
+                // Function to check if item-1 is loaded and initialize the mini-game
+                function checkAndInitializeItemOne() {
+                    const itemOne = document.getElementById('item-1');
+                    if (itemOne) {
+                        initializeItemOne();
+                    }
+                }
+
+                document.addEventListener('DOMContentLoaded', checkAndInitializeItemOne);
+            </script>
+        </div>
+
+
+        <!-- basic info tab -->
+        <div class="tab basic">
+            <div class="fcimage">
+                <img src="images/objects/bedsheet.png" alt="bedsheet" id="bedsheet">
+            </div>
+            <div class="infocard">
+                <div class="grid-container">
+                    <!-- left -->
+                    <div class="title">
+                        <h2>SHEEEEEEEEEPT</h2>
+                    </div>
+
+                    <div class="l1">
+                        <p>OWNER</p>
+                        <p>Reese#811</p>
+                    </div>
+                    <div class="l2">
+                        <p>ID</p>
+                        <p>Bedsheets1c5#12345</p>
+                    </div>
+                    <div class="l3">
+                        <p>SPECIES</p>
+                        <p>Bedsheet, Twin size, liaic</p>
+                    </div>
+
+                    <div class="vertical-line"></div>
+
+                    <!-- right -->
+                    <div class="r1">
+                        <p>TIME TOGETHER</p>
+                        <p>2 years, 2month and 3 days</p>
+                    </div>
+                    <div class="r2">
+                        <p>MEMORIES</p>
+                        <p>0</p>
+                    </div>
+                    <div class="r3">
+                        <p>PERSONALITY</p>
+                        <p>Lazy</p>
+                    </div>
+                    <div class="r4">
+                        <p>LIKES</p>
+                        <p>Stretching on the bed</p>
+                    </div>
+                    <div class="r5">
+                        <p>DISLIKES</p>
+                        <p>Being knead into a ball</p>
+                    </div>
+                    <div class="r6">
+                        <p>JOURNEY</p>
+                        <p>Rhode Island</p>
+                    </div>
+                    <div class="r7">
+                        <p>QUOTE</p>
+                        <p>Work sleep balance? No, just sleep.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- memories tab -->
+        <div class="tab more">
+            <div class="grid-memory">
+                <div class="grid-memory-left">
+                    <div class="newmemory">
+                        <p><span style="font-size: 30px;">+</span> New Memory</p>
+                    </div>
+
+                    <div class="personality">
+                        <h3 id="toggle-button">▼ PERSONALITY</h3>
+                        <div id="personality-content" class="hidden">
+                            <p>Reflects the current personality of this Furnicreature according to the keywords of its
+                                memories.</p>
+                            <p>For example, if a furnicreature has many memories with #JOYFUL tags, it would likely be
+                                more optimistic.</p>
+                            <p>Each species has its own unique default personalities.</p>
+                        </div>
+                        <script>
+                            document.getElementById('toggle-button').addEventListener('click', function () {
+                                const content = document.getElementById('personality-content');
+                                content.classList.toggle('hidden');
+                            });
+                        </script>
+
+                        <div class="slider-container">
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon1">
+                                <div class="description">
+                                    <p>Energetic</p>
+                                    <p>Calm</p>
+                                </div>
+                            </div>
+
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon2">
+                                <div class="description">
+                                    <p>Enthusiastic</p>
+                                    <p>Chill</p>
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon3">
+                                <div class="description">
+                                    <p>Optimistic</p>
+                                    <p>Realistic</p>
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon4">
+                                <div class="description">
+                                    <p>Sociable</p>
+                                    <p>Independent</p>
+                                </div>
+                            </div>
+
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon5">
+                                <div class="description">
+                                    <p>Curious</p>
+                                    <p>Content</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-memory-right">
+                    <div class="no-memory">
+                        <p>Sheeeeeeeeept can't seem to recall anything yet.</p>
+                    </div>
+                </div>
+
+                <div class="fcimage">
+                    <img src="images/objects/bedsheet.png" alt="bedsheet">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- item stool-->
+    <div class="item-2">
+        <div class="tabbuttons">
+            <button class="button" onclick="showTab('notab', 'item-2')"><img src="images/tools/interact.png"></button>
+            <button class="button" onclick="showTab('basic', 'item-2')"><img src="images/tools/basic.png"></button>
+            <button class="button" onclick="showTab('more', 'item-2')"><img src="images/tools/memory.png"></button>
+        </div>
+
+        <!-- original load/ no tab showing -->
+        <div id="item-2" class="notab">
+            <div class="fcimage">
+                <img src="images/objects/stool.png" alt="stool" id="stool">
+            </div>
+            <h1>HEY THERE, I AM STOOLPY, YOUR STOOL AND SIDE TABLE!</h1>
+        
+            <!-- mini game -->
+            <div class="container-game" style="margin-right:0; width: 306px;">
+                <div class="tools">
+                    <img src="images/tools/hunger.png" title="FOOD!" alt="Increase Width Hunger"
+                        onclick="increaseWidth('rectangle-hunger-stool')" class="button">
+                    <img src="images/tools/happiness.png" title="PLAY!" alt="Increase Width Happiness"
+                        onclick="increaseWidth('rectangle-happiness-stool')" class="button">
+                    <img src="images/tools/health.png" title="VITAMIN!" alt="Increase Width Health"
+                        onclick="increaseWidth('rectangle-health-stool')" class="button">
+                </div>
+        
+                <div class="bars">
+                    <h3>Hunger</h3>
+                    <div class="container-hunger">
+                        <div class="resizable-rectangle-hunger" id="rectangle-hunger-stool"></div>
+                        <div class="not-resizable-container"></div>
+                    </div>
+        
+                    <h3>Happiness</h3>
+                    <div class="container-happiness">
+                        <div class="resizable-rectangle-happiness" id="rectangle-happiness-stool"></div>
+                        <div class="not-resizable-container"></div>
+                    </div>
+        
+                    <h3>Health</h3>
+                    <div class="container-health">
+                        <div class="resizable-rectangle-health" id="rectangle-health-stool"></div>
+                        <div class="not-resizable-container"></div>
+                    </div>
+                </div>
+                <p id="takeCareTextStool">-Come play with me 0.0</p>
+            </div>
+        </div>
+        
+        <script>
+            function initializeItemTwo() {
+                const hungerRectangle = document.getElementById('rectangle-hunger-stool');
+                const healthRectangle = document.getElementById('rectangle-health-stool');
+                const happinessRectangle = document.getElementById('rectangle-happiness-stool');
+                const takeCareText = document.getElementById('takeCareTextStool');
+                const stoolImage = document.getElementById('stool');
+                let loveDisplayed = false;
+                let jokeDisplayed = false;
+        
+                function increaseWidth(rectangleId) {
+                    const rectangle = document.getElementById(rectangleId);
+                    const currentWidth = parseFloat(getComputedStyle(rectangle).width);
+                    const currentMarginRight = parseFloat(getComputedStyle(rectangle).marginRight);
+        
+                    const newWidth = currentWidth + 40;
+                    rectangle.style.width = `${newWidth}px`;
+                    rectangle.style.marginRight = `${currentMarginRight - 10}px`;
+        
+                    if (newWidth >= 145) {
+                        checkAndDisplayLove();
+                    }
+                }
+        
+                function decreaseWidth(rectangleId, interval) {
+                    const rectangle = document.getElementById(rectangleId);
+                    const currentWidth = parseFloat(getComputedStyle(rectangle).width);
+                    rectangle.style.width = `${currentWidth - 1}px`;
+        
+                    if (currentWidth <= 12 ||
+                        (parseFloat(getComputedStyle(hungerRectangle).width) >= 145 &&
+                            parseFloat(getComputedStyle(healthRectangle).width) >= 145 &&
+                            parseFloat(getComputedStyle(happinessRectangle).width) >= 145)) {
+                        checkAndDisplayLove();
+                    } else {
+                        setTimeout(() => decreaseWidth(rectangleId, interval), interval);
+                    }
+                }
+        
+                function checkAndDisplayLove() {
+                    if (
+                        parseFloat(getComputedStyle(hungerRectangle).width) >= 145 &&
+                        parseFloat(getComputedStyle(healthRectangle).width) >= 145 &&
+                        parseFloat(getComputedStyle(happinessRectangle).width) >= 145 &&
+                        !loveDisplayed
+                    ) {
+                        displayLove();
+                        loveDisplayed = true;
+                    }
+                    if (parseFloat(getComputedStyle(hungerRectangle).width) <= 12 &&
+                        parseFloat(getComputedStyle(healthRectangle).width) <= 12 &&
+                        parseFloat(getComputedStyle(happinessRectangle).width) <= 12 &&
+                        !jokeDisplayed) {
+                        displayJoke();
+                        updateGridItemOpacity();
+                        stopMoveChairAnimation();
+                        jokeDisplayed = true;
+                    }
+                }
+        
+                function displayLove() {
+                    takeCareText.innerText = '-Your Furnicreature says: Yey! I love you ♥';
+                    alert('Your Furnicreature says: Yey! I love you ♥');
+                    addGridItemOpacity();
+                    restartMoveChairAnimation();
+                }
+        
+                function addGridItemOpacity() {
+                    stoolImage.style.opacity = '1';
+                }
+        
+                function restartMoveChairAnimation() {
+                    stoolImage.style.animation = 'movestool 8s infinite alternate linear';
+                }
+        
+                function displayJoke() {
+                    takeCareText.innerText = '-Your Furnicreature says: If I am a real animal, I might have just died...just kidding!';
+                    alert('Your Furnicreature says: If I am a real animal, I might have just died...just kidding!');
+                    reduceGridItemOpacity();
+                    stopMoveChairAnimation();
+                }
+        
+                function reduceGridItemOpacity() {
+                    stoolImage.style.opacity = '0.3';
+                }
+        
+                function stopMoveChairAnimation() {
+                    stoolImage.style.animation = 'none';
+                }
+        
+                // Fix the function calls to use the correct IDs
+                decreaseWidth('rectangle-hunger-stool', 300);
+                decreaseWidth('rectangle-health-stool', 600);
+                decreaseWidth('rectangle-happiness-stool', 450);
+            }
+        
+            document.addEventListener('DOMContentLoaded', initializeItemTwo);
+        </script>
+
+        
+        <!-- basic info tab -->
+        <div class="tab basic">
+            <div class="fcimage">
+                <img src="images/objects/stool.png" alt="stool" id="stool">
+            </div>
+            <div class="infocard">
+                <div class="grid-container">
+                    <!-- left -->
+                    <div class="title">
+                        <h2>STOOLPY</h2>
+                    </div>
+
+                    <div class="l1">
+                        <p>OWNER</p>
+                        <p>Reese#811</p>
+                    </div>
+                    <div class="l2">
+                        <p>ID</p>
+                        <p>Stoolpys1c5#12345</p>
+                    </div>
+                    <div class="l3">
+                        <p>SPECIES</p>
+                        <p>Stoolpy, Small size, Yellow</p>
+                    </div>
+
+                    <div class="vertical-line"></div>
+
+                    <!-- right -->
+                    <div class="r1">
+                        <p>TIME TOGETHER</p>
+                        <p>5 month and 14 days</p>
+                    </div>
+                    <div class="r2">
+                        <p>MEMORIES</p>
+                        <p>2</p>
+                    </div>
+                    <div class="r3">
+                        <p>PERSONALITY</p>
+                        <p>Curious</p>
+                    </div>
+                    <div class="r4">
+                        <p>LIKES</p>
+                        <p>Have tours around the house</p>
+                    </div>
+                    <div class="r5">
+                        <p>DISLIKES</p>
+                        <p>Stepping in water</p>
+                    </div>
+                    <div class="r6">
+                        <p>JOURNEY</p>
+                        <p>Rhode Island -New York</p>
+                    </div>
+                    <div class="r7">
+                        <p>QUOTE</p>
+                        <p>Let me show you around the house!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- memories tab -->
+        <div class="tab more">
+            <div class="grid-memory">
+                <div class="grid-memory-left">
+                    <div class="newmemory">
+                        <p><span style="font-size: 30px;">+</span> New Memory</p>
+                    </div>
+
+                    <div class="personality">
+                        <h3 class="toggle-button">▼ PERSONALITY</h3>
+                        <div class="personality-content hidden">
+                            <p>Reflects the current personality of this Furnicreature according to the keywords of its
+                                memories.</p>
+                            <p>For example, if a furnicreature has many memories with #JOYFUL tags, it would likely be
+                                more optimistic.</p>
+                            <p>Each species has its own unique default personalities.</p>
+                        </div>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                const toggleButtons = document.getElementsByClassName('toggle-button');
+                                Array.from(toggleButtons).forEach(button => {
+                                    button.addEventListener('click', function () {
+                                        const content = this.nextElementSibling;
+                                        content.classList.toggle('hidden');
+                                    });
+                                });
+                            });
+                        </script>
+
+                        <div class="slider-container">
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon1">
+                                <div class="description">
+                                    <p>Energetic</p>
+                                    <p>Calm</p>
+                                </div>
+                            </div>
+
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon2">
+                                <div class="description">
+                                    <p>Enthusiastic</p>
+                                    <p>Chill</p>
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon3">
+                                <div class="description">
+                                    <p>Optimistic</p>
+                                    <p>Realistic</p>
+                                </div>
+                            </div>
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon4">
+                                <div class="description">
+                                    <p>Sociable</p>
+                                    <p>Independent</p>
+                                </div>
+                            </div>
+
+                            <div class="slider">
+                                <div class="slide-track"></div>
+                                <img src="images/slider.png" alt="Slider Icon" class="slider-icon" id="slider-icon5">
+                                <div class="description">
+                                    <p>Curious</p>
+                                    <p>Content</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-memory-right">
+                    <div class="no-memory">
+                        <p>Stoolpy can't seem to recall anything yet.</p>
+                    </div>
+                </div>
+
+                <div class="fcimage">
+                    <img src="images/objects/stool.png" alt="stool">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

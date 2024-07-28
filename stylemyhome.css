@@ -80,6 +80,7 @@ body::before {
     position: fixed;
     bottom: 20px;
     left: 150px;
+    width:50vw;
 }
 
 .instructions h2 {
