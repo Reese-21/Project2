@@ -115,23 +115,45 @@
 
 
         /* 窄屏幕 */
-        @media (max-width:1200px) {
+        @media (max-width:1200px) and (min-width:601px) {
 
             /* Stool item image and animation */
             .item-1 .fcimage img {
-                width: 100px;
+                width: 150px;
             }
 
             .basic .fcimage {
                 top: 30vh;
-                left: 110vw;
+                left: auto;
+                right: 10vw;
             }
 
             .more .fcimage {
-                top: 50vh;
-                left:110vw;
+                top: 30vh;
+                left: auto;
+                right: 10vw;
             }
 
+        }
+
+        @media (max-width:600px) {
+
+            /* Stool item image and animation */
+            .item-1 .fcimage img {
+                width: 150px;
+            }
+
+            .basic .fcimage {
+                top: 20vh;
+                left: auto;
+                right: 10vw;
+            }
+
+            .more .fcimage {
+                top: 30vh;
+                left: auto;
+                right: 10vw;
+            }
         }
     </style>
 
