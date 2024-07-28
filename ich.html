@@ -123,22 +123,22 @@
 
             /* Stool item image and animation */
             .item-1 .fcimage img {
-                width: 60px;
+                width: 120px;
             }
 
             @keyframes movech {
-            0% {
-                transform: translateX(50px) translateY(50px);
-            }
+                0% {
+                    transform: translateX(50px) translateY(50px);
+                }
 
-            50% {
-                transform: translateX(-75px) translateY(-100px);
-            }
+                50% {
+                    transform: translateX(-75px) translateY(-100px);
+                }
 
-            100% {
-                transform: translateX(50px) translateY(50px);
+                100% {
+                    transform: translateX(50px) translateY(50px);
+                }
             }
-        }
 
             .basic .fcimage {
                 top: 30vh;
@@ -146,11 +146,29 @@
             }
 
             .more .fcimage {
-                width:80px;
-                top: 50vh;
-                left:110vw;
+                top: 30vh;
+                left: 110vw;
             }
 
+
+        }
+
+        @media (max-width:600px) {
+
+            /* Stool item image and animation */
+            .item-1 .fcimage img {
+                width: 120px;
+            }
+
+            .basic .fcimage {
+                top: 20vh;
+                left: 6vw;
+            }
+
+            .more .fcimage {
+                top: 30vh;
+                left: 6vw;
+            }
         }
     </style>
 
@@ -173,7 +191,7 @@
             <div class="fcimage">
                 <img src="images/objects/ch.png" alt="blanket" id="fc">
             </div>
-            <h1>HEY THERE I AM PINKY-BUNNY, YOUR HANGER & STYLE SISTER!</h1>
+            <h1>HEY THERE I AM PINKY-BUNNY, YOUR HANGER & STYLER!</h1>
 
             <!-- mini game -->
             <div class="container-game" style="margin-right:0; width: 306px;">
