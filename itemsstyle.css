@@ -597,11 +597,11 @@ body::before {
 
     /* tab 0 */
     .notab h1 {
-        font-size: 90px;
+        font-size: 120px;
         width: 90vw;
         top: 60px;
         word-wrap: break-word;
-        line-height: 1.3;
+        line-height: 1.2;
         /* Adjust this value to reduce space between lines */
         letter-spacing: -2px;
         /* Adjust this value to increase the width of letters */
@@ -620,7 +620,7 @@ body::before {
 
     .container-game {
         position: absolute;
-        top: 90vh;
+        top: 50vh;
         right: 2%;
         zoom: 0.6;
         padding: 30px;
@@ -741,11 +741,11 @@ body::before {
 
     /* tab 0 */
     .notab h1 {
-        font-size: 60px;
+        font-size: 90px;
         width: 90vw;
         top: 60px;
         word-wrap: break-word;
-        line-height: 1.1;
+        line-height: 1;
         /* Adjust this value to reduce space between lines */
         letter-spacing: -2px;
         /* Adjust this value to increase the width of letters */
@@ -765,7 +765,7 @@ body::before {
     .container-game {
         position: absolute;
         transform: translate(-50%, 50%);
-        top: 70vh;
+        top: 50vh;
         left: 50%;
         zoom: 0.6;
         padding: 30px;
