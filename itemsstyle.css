@@ -270,7 +270,7 @@ body::before {
 /* tab 1 */
 .basic {
     width: 100vw;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .basic .fcimage {
@@ -784,10 +784,15 @@ body::before {
 
 
     /* tab 1 */
+    .basic {
+        margin-bottom: 20px;
+    }
+
     .phonecon {
         display: flex;
         flex-direction: column;
         position: relative;
+        height: auto;
     }
 
     .infocard {
