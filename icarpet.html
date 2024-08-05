@@ -15,6 +15,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
 
+    <!-- google icon -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
     <!-- favicon -->
     <link rel="icon" href="images\objects\pancake.png" type="image/png">
     <link rel="stylesheet" href="itemsstyle.css">
@@ -198,13 +203,13 @@
             }
 
             .basic .fcimage {
-                top: 30vh;
-                left: 110vw;
+                position:relative;
+                transform: translate(-50%, 50%);
             }
 
             .more .fcimage {
-                top: 50vh;
-                left:110vw;
+                top: 40vh;
+                left: 110vw;
             }
 
         }
@@ -214,7 +219,11 @@
 
 <body>
     <div class="backarrow">
-        <a href="myhome.html">←</a>
+        <a href="myhome.html">
+            <span class="material-symbols-outlined">
+                arrow_back
+            </span>
+        </a>
     </div>
 
     <!-- item bedsheet -->
@@ -405,59 +414,61 @@
 
         <!-- basic info tab -->
         <div class="tab basic">
-            <div class="fcimage">
-                <img src="images/objects/carpet.png" alt="carpet">
-            </div>
-            <div class="infocard">
-                <div class="grid-container">
-                    <!-- left -->
-                    <div class="title">
-                        <h2>Breakfast</h2>
-                    </div>
+            <div class="phonecon">
+                <div class="fcimage">
+                    <img src="images/objects/carpet.png" alt="carpet">
+                </div>
+                <div class="infocard">
+                    <div class="grid-container">
+                        <!-- left -->
+                        <div class="title">
+                            <h2>Breakfast</h2>
+                        </div>
 
-                    <div class="l1">
-                        <p>OWNER</p>
-                        <p>Reese#811</p>
-                    </div>
-                    <div class="l2">
-                        <p>ID</p>
-                        <p>Pancakes2c4#14312</p>
-                    </div>
-                    <div class="l3">
-                        <p>SPECIES</p>
-                        <p>Pancake, Medium size, White</p>
-                    </div>
+                        <div class="l1">
+                            <p>OWNER</p>
+                            <p>Reese#811</p>
+                        </div>
+                        <div class="l2">
+                            <p>ID</p>
+                            <p>Pancakes2c4#14312</p>
+                        </div>
+                        <div class="l3">
+                            <p>SPECIES</p>
+                            <p>Pancake, Medium size, White</p>
+                        </div>
 
-                    <div class="vertical-line"></div>
+                        <div class="vertical-line"></div>
 
-                    <!-- right -->
-                    <div class="r1">
-                        <p>TIME TOGETHER</p>
-                        <p>11 months 19 days</p>
-                    </div>
-                    <div class="r2">
-                        <p>MEMORIES</p>
-                        <p>0</p>
-                    </div>
-                    <div class="r3">
-                        <p>PERSONALITY</p>
-                        <p>Curious</p>
-                    </div>
-                    <div class="r4">
-                        <p>LIKES</p>
-                        <p>Crawl around</p>
-                    </div>
-                    <div class="r5">
-                        <p>DISLIKES</p>
-                        <p>Food stain</p>
-                    </div>
-                    <div class="r6">
-                        <p>JOURNEY</p>
-                        <p>Rhode Island</p>
-                    </div>
-                    <div class="r7">
-                        <p>QUOTE</p>
-                        <p>I am in fact a part-time mop.</p>
+                        <!-- right -->
+                        <div class="r1">
+                            <p>TIME TOGETHER</p>
+                            <p>11 months 19 days</p>
+                        </div>
+                        <div class="r2">
+                            <p>MEMORIES</p>
+                            <p>0</p>
+                        </div>
+                        <div class="r3">
+                            <p>PERSONALITY</p>
+                            <p>Curious</p>
+                        </div>
+                        <div class="r4">
+                            <p>LIKES</p>
+                            <p>Crawl around</p>
+                        </div>
+                        <div class="r5">
+                            <p>DISLIKES</p>
+                            <p>Food stain</p>
+                        </div>
+                        <div class="r6">
+                            <p>JOURNEY</p>
+                            <p>Rhode Island</p>
+                        </div>
+                        <div class="r7">
+                            <p>QUOTE</p>
+                            <p>I am in fact a part-time mop.</p>
+                        </div>
                     </div>
                 </div>
             </div>

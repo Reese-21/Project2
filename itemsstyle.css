@@ -24,6 +24,16 @@ body::before {
 }
 
 
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+}
+
+
+
 .backarrow {
     position: absolute;
     left: 10px;
@@ -132,9 +142,9 @@ body::before {
     /* Adjust this value to increase the width of letters */
 }
 
-.fcimage {
+.notab .fcimage {
     position: absolute;
-    top: 65vh;
+    top: 35vh;
     left: 65vw;
     transform: translate(-50%, -50%);
     /* Ensure it has a positioning context */
@@ -751,7 +761,7 @@ body::before {
         /* Adjust this value to increase the width of letters */
     }
 
-    .fcimage {
+    .notab .fcimage {
         top: 40vh;
         left: 50vw;
     }
@@ -774,11 +784,16 @@ body::before {
 
 
     /* tab 1 */
+    .phonecon {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
     .infocard {
+        position: relative;
+        transform: translate(-50%, 20%);
         top: 15%;
-        left: 50%;
-        bottom: 5%;
-        transform: translate(-50%, 0%);
         width: 80vw;
         height: 115vh;
         padding: 25px 20px;
