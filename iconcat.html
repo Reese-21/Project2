@@ -125,7 +125,6 @@
 
         /* 窄屏幕 */
         @media (max-width:1200px) and (min-width:601px) {
-
             /* Stool item image and animation */
             .item-1 .fcimage img {
                 width: 100px;
@@ -146,22 +145,33 @@
         }
 
         @media (max-width:600px) {
+            .infocard {
+                transform: translate(-50%, 10%);
+            }
 
             /* Stool item image and animation */
             .item-1 .fcimage img {
-                width: 80px;
+                width: 150px;
+            }
+
+            .notab .fcimage {
+                left: 50vw;
+                top: 190px;
             }
 
             .basic .fcimage {
-                top: 20vh;
-                left: auto;
-                right: 10vw;
+                position: relative;
+                transform: translate(0%, 0%);
+                top: 80px;
+                left: 30%;
+                zoom: 1;
             }
 
             .more .fcimage {
-                top: 30vh;
-                left: auto;
-                right: 10vw;
+                transform: translate(0%, 0%);
+                top: 140px;
+                left: 55%;
+                zoom: 1;
             }
         }
     </style>

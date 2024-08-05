@@ -142,22 +142,32 @@
         }
 
         @media (max-width:600px) {
+            .infocard {
+                transform: translate(-50%, 10%);
+            }
 
             /* Stool item image and animation */
             .item-1 .fcimage img {
                 width: 150px;
             }
 
+            .notab .fcimage {
+                left: 50vw;
+                top:200px;
+            }
+
             .basic .fcimage {
-                top: 20vh;
-                left: auto;
-                right: 10vw;
+                position:relative;
+                transform: translate(-50%, 0%);
+                top: 90px;
+                left:80vw;
+                zoom:1;
             }
 
             .more .fcimage {
-                top: 30vh;
-                left: auto;
-                right: 10vw;
+                top: 200px;
+                left: 70vw;
+                zoom:1;
             }
         }
     </style>

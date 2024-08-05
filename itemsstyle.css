@@ -751,7 +751,8 @@ body::before {
 
     /* tab 0 */
     .notab h1 {
-        font-size: 50px;
+        font-size: 70px;
+        /* font-family: "shantell sans", sans-serif; */
         width: 90vw;
         top: 60px;
         word-wrap: break-word;
