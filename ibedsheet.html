@@ -103,21 +103,25 @@
         @media (max-width:600px) {
 
             /* tab 1 */
-            .item-1 .basic .fcimage {
-                position: absolute;
-                top: 15vh;
-                left: 95vw;
-                transform: translate(-50%, -50%);
-                /* Ensure it has a positioning context */
+            .basic .fcimage {
+                position: relative;
+                transform: translate(-50%, 0%);
+                top: 20vh;
+                left: 105vw;
             }
+            
 
             /* tab 3 */
-            .item-1 .more .fcimage {
+            .more .fcimage {
                 position: absolute;
                 top: 30vh;
                 left: 75vw;
                 zoom: 1.3;
                 z-index: 999;
+            }
+
+            .infocard {
+                transform: translate(-50%, 30%);
             }
 
         }
