@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #dbdbdb;
+    font-family: 'Shantell Sans', cursive;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 20px;
+}
+
+body::before {
+    /* Add dotted background */
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: radial-gradient(circle, #888888 1px, transparent 1px);
+    background-size: 20px 20px;
+    /* Adjust the size of the dots */
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    width: 100vw;
+    height: 100vh;
+}
+
+.grid-item-nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+    /* Gradient from #a0a0a0 (left) to #808080 (right) */
+    opacity: 0.6;
+}
+
+.grid-item-nav img {
+    width: 100px;
+    transition: transform 0.2s;
+    /* Apply transition for a smooth effect */
+}
+
+.grid-item-nav img:hover {
+    transform: translateY(-5px);
+    /* Apply initial transformation on hover */
+}
+
+
+
+
+.grid-item-left {
+    margin-left: 100px;
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.grid-item-left::-webkit-scrollbar {
+    width: 0;
+    /* Set the width of the scrollbar to 0 */
+}
+
+.grid-item-left #scrollicon{
+    margin-top: 100px;
+}
+
+
+
+.grid-item-right {
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.grid-item-right img {
+    width: 400px;
+    animation: movechair 4s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+.grid-prop {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    width: 70%;
+}
+
+.grid-prop-left {
+    margin-bottom: 80px;
+    margin-right: 80px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.grid-prop-right {
+    margin-bottom: 80px;
+    margin-left: 0px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+
+
+
+
+.fctitle {
+    position: fixed;
+    /* This makes the element fixed-positioned */
+    top: 100%;
+    /* Position from the top of the viewport */
+    left: 100%;
+    /* Position from the left of the viewport */
+    transform: translate(-100%, -100%);
+}
+
+.fctitle img {
+    width: 20vw;
+    /* Set the width of the image */
+    transition: transform 0.2s;
+    /* Apply transition for a smooth effect */
+}
+
+h1 {
+    font-size: 100px;
+}
+
+
+
+
+@media (max-width: 900px) {
+    .grid-container {
+        display: grid;
+        grid-template-rows: 100px 1fr 4fr;
+        grid-template-columns: 1fr;
+        width:100vw;
+    }
+
+    .grid-item-nav {
+        top: 0;
+        height: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+        opacity: 0.6;
+        position: fixed;
+    }
+
+    .grid-item-nav img {
+        width: 50px;
+        transition: transform 0.2s;
+    }
+
+
+
+    .grid-item-right{
+        /* margin-top: 50px; */
+        grid-row:2/3;
+        height:100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grid-item-right img{
+        width: 50%; 
+        max-width: 350px;
+    }
+
+    .grid-item-left{
+        grid-row:3/4;
+        margin-top:0px;
+    }
+
+    .grid-item-left h1{
+        font-size: 40px;
+    }
+
+    .grid-item-left #scrollicon{
+        margin-top: 20px;
+    }
+
+    .grid-prop {
+        display: grid;
+        grid-template-columns: 3fr 3fr;
+        min-width: 700px;
+        margin-bottom: 100px;
+    }
+
+
+    .fctitle {
+        position: fixed;
+        bottom: 2%;
+        right: 0%;
+        transform: translate(10%, 0%);
+        zoom:0.5;
+    }
+}
+
+
+
+
+
+
+
+/* for the mini game */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Shantell Sans', cursive;
+}
+
+.container-game {
+    width: 306px;
+}
+
+
+
+/* game buttons */
+.tools{
+    width:170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tools img {
+    cursor: pointer;
+    height:40px;
+}
+
+
+
+
+/* rectangles */
+.bars {
+    width: auto;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bars h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.container-hunger {
+    position: relative;
+}
+
+.container-health {
+    position: relative;
+}
+
+.container-happiness {
+    position: relative;
+}
+
+.resizable-rectangle-hunger,
+.resizable-rectangle-health,
+.resizable-rectangle-happiness {
+    height: 10px;
+    width:70px;
+    background-color: #e6babe;
+    transition: width 1s ease, margin-right 1s ease;
+    max-width: 150px;
+    min-width: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    margin-right: 2px;
+    position: absolute;
+    /* Add absolute positioning to place it on top */
+    top: 0%;
+    left: 0%;
+}
+
+.resizable-rectangle-happiness {
+    width: 50px;
+    height: 10px;
+    background-color: #fceed1;
+}
+
+.resizable-rectangle-health {
+    width: 80px;
+    height: 10px;
+    background-color: #b8d4d7;
+}
+
+
+
+
+
+/* Additional style for the non-resizable container */
+.not-resizable-container {
+    background-color: #d1cfe8;
+    width: 150px;
+    height: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+}
