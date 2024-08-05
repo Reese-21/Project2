@@ -144,7 +144,7 @@ body::before {
 
 .notab .fcimage {
     position: absolute;
-    top: 35vh;
+    top: 65vh;
     left: 65vw;
     transform: translate(-50%, -50%);
     /* Ensure it has a positioning context */
