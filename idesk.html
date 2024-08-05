@@ -123,12 +123,29 @@
         @media (max-width:1200px) {
 
             /* Stool item image and animation */
-            .fcimage {
-                top: 30vh;
+            .notab .fcimage {
+                top: 20vh;
                 left: 70vw;
             }
 
+            /* tab 1 */
             .basic .fcimage {
+                position: relative;
+                transform: translate(-50%, 0%);
+                top: 20vh;
+                left: 60%;
+            }
+            
+
+            /* tab 3 */
+            .more .fcimage {
+                position: absolute;
+                top: 30vh;
+                left: 80vw;
+                zoom: 1.3;
+                z-index: 999;
+            }
+            /* .basic .fcimage {
                 top: 30vh;
                 left: 70vw;
                 zoom: 1;
@@ -137,7 +154,7 @@
             .more .fcimage {
                 top: 50vh;
                 zoom: 0.6;
-            }
+            } */
 
         }
     </style>

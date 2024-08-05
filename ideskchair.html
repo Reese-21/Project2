@@ -137,15 +137,32 @@
         @media (max-width:1200px) {
 
             /* Stool item image and animation */
-            .fcimage {
-                top: 30vh;
-                left: 90vw;
-            }
             .fcimage img{
                 margin-top:10vh;
                 margin-left:10vw;
                 height: 200px;
                 width: auto;
+            }
+
+            .notab .fcimage {
+                left: 50vw;
+                top: 20vh;
+            }
+
+            .basic .fcimage {
+                position:relative;
+                transform: translate(-50%, 0%);
+                top: 20vh;
+            }
+
+            .more .fcimage {
+                left: 70vw;
+                top: 20vh;
+            }
+
+            /* .fcimage {
+                top: 30vh;
+                left: 90vw;
             }
 
             .basic .fcimage {
@@ -158,7 +175,7 @@
                 top: 80vh;
                 left: 150vw;
                 zoom:0.5;
-            }
+            } */
         }
     </style>
 
