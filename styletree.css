@@ -101,7 +101,6 @@ body::before {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
     /* Add transition for top */
-    ;
     text-align: center;
     /* Center align text horizontally */
     width: 100%;

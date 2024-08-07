@@ -9,146 +9,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
 
+
+    <!-- google icon -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
     <link rel="icon" href="images\4navstory.png" type="image/png">
     <script src="login-script.js" defer></script>
-    <title>Furnicreature Wiki</title>
+    <title>Furnicreature Stories</title>
+
+    <link rel="stylesheet" href="stylestory.css">
+
+
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: #dbdbdb;
-            font-family: 'Shantell Sans', cursive;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image: radial-gradient(circle, #888888 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        area:hover {
-            cursor: pointer;
-        }
-
-
-
-        .grid-item-nav {
-            top:0;
-            height: 100%;
-            position: fixed;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            background: linear-gradient(to right, #a0a0a0, #a0a0a088);
-            opacity: 0.6;
-        }
-
-        .grid-item-nav img {
-            width: 100px;
-            transition: transform 0.2s;
-        }
-
-        .grid-item-nav img:hover {
-            transform: translateY(-5px);
-        }
-
-        /* the furnicreature on bottom right */
-        .fctitle {
-            position: fixed;
-            top: 100%;
-            left: 100%;
-            transform: translate(-100%, -100%);
-        }
-
-        .fctitle img {
-            width: 20vw;
-            transition: transform 0.2s;
-        }
-
+        /* 4wiki */
         /* the link to shopping page */
-        .instructions {
-            position: fixed;
-            bottom: 10px;
-            left: 100px;
-        }
-
-
-
-        /* contains the left and right column of wiki */
-        .grid-item-container {
-            margin-left: 100px;
-            display: flex;
-            flex-direction: row;
-        }
-
-
-
-
-
-
-
-        /* the animal family tree */
-        .newtree {
-            grid-row: 2/3;
-            width: 90vw;
-            /* the width is set to 90vw instead of 100vw is for the webpage to not scroll left to right */
-            margin-left: 80px;
-            margin-bottom: 30px;
-        }
-
-        .newtree img {
-            width: 100%;
-            height: auto;
-        }
-
-
-        .horizontal-line {
-            width: 100%;
-            /* Full width */
-            height: 2px;
-            /* Thickness of the line */
-            background-color: #000;
-            /* Color of the line */
-            margin: 20px 0;
-            /* Adjust the spacing around the line */
-            margin-left: 40px;
-        }
-
-        .newtree h2 {
-            margin-top:20px;
-            margin-left: 40px;
-        }
-
-        .more {
-            margin-left: 40px;
-            margin-bottom: 100px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            font-size: 20px;
-        }
-
-        .more a {
-            color: #000;
+        .instructions a {
+            font-size: 30px;
             text-decoration: underline;
+            color: #000000;
         }
 
-        .more a:hover h4 {
+        .instructions a:hover {
             color: #d7a4a8;
-            /* Set the color of the link text when hovered */
             text-decoration: underline;
-            /* Add underline on hover */
             font-size: 30px;
         }
 
@@ -157,77 +43,238 @@
 
 
 
+        /* contains the left and right column of wiki */
+        .grid-item-container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: row;
+        }
+
+
+        .left-column {
+            height: 100vh;
+            width: 200px;
+            padding-bottom: 0;
+            overflow: auto;
+        }
+
+        .left-column img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .left-column a {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .left-column a:hover {
+            text-decoration: underline;
+        }
+
+        /* animation of decoration */
+        .left-column img:hover {
+            animation: upDown 0.4s infinite alternate;
+            /* Apply animation on hover */
+        }
+
+        @keyframes upDown {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-10px);
+                /* Adjust the value for desired vertical movement */
+            }
+        }
+
+        .left-column::-webkit-scrollbar {
+            width: 4px;
+            /* Set the width of the scrollbar */
+        }
+
+
+
+
+
+
+        .right-column {
+            width: calc(89vw - 200px);
+            overflow: auto;
+            height: 100vh;
+        }
+
+        #content0.active {
+            display: block;
+            position: relative;
+            top: 50%;
+            left: 40%;
+        }
+
+        .right-column .content {
+            display: none;
+        }
+
+        .right-column .content.active {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .right-column img {
+            width: 50%;
+        }
+
+        /* Customize the scrollbar width */
+        .right-column::-webkit-scrollbar {
+            width: 4px;
+            height: 0px;
+            /* Set the width of the scrollbar */
+        }
+
+        /* Customize the scrollbar track */
+        .right-column::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            /* Background color of the scrollbar track */
+        }
+
+        /* Customize the scrollbar thumb */
+        .right-column::-webkit-scrollbar-thumb {
+            background: #888;
+            /* Color of the scrollbar thumb */
+            border-radius: 2px;
+            /* Round the corners of the scrollbar thumb */
+        }
+
+        /* Customize the scrollbar thumb on hover */
+        .right-column::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            /* Color of the scrollbar thumb on hover */
+        }
+
+
+
+
+        @media (min-width: 1100px) {
+            .left-column img {
+                max-width: 150px;
+                max-height: 150px;
+            }
+
+        }
 
         @media (max-width: 900px) {
-            .grid-item-nav {
-                top: 0;
-                height: 50px;
-                width: 100vw;
+            .wiki {
+                width: 95vw;
+                margin-left: 2.5vw;
+            }
+
+            .wiki h2{
+                font-size: 14px;
+            }
+
+            .grid-item-container {
+                margin-top: 20px;
+                margin-left: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .left-column {
+                width: 95vw;
+                height: 150px;
+                margin: 0;
+                padding: 0;
+                margin-top: 0px;
+                overflow-x: auto;
                 display: flex;
                 flex-direction: row;
-                align-items: flex-start;
-                justify-content: space-around;
-                background: linear-gradient(to right, #a0a0a0, #a0a0a088);
-                opacity: 0.6;
-                position: fixed;
             }
 
-            .grid-item-nav img {
-                width: 50px;
-                transition: transform 0.2s;
+            .left-column img {
+                max-width: 80px;
+                max-height: 80px;
+            }
+
+            .left-column a {
+                display: block;
+                margin-bottom: 0;
+                margin-right: 10px;
+                color: #333;
+                text-decoration: none;
+            }
+
+            /* Customize the scrollbar width */
+            .left-column::-webkit-scrollbar {
+                height: 4px;
+                /* Set the width of the scrollbar */
+            }
+
+            /* Customize the scrollbar track */
+            .left-column::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                /* Background color of the scrollbar track */
+            }
+
+            /* Customize the scrollbar thumb */
+            .left-column::-webkit-scrollbar-thumb {
+                background: #888;
+                /* Color of the scrollbar thumb */
+                border-radius: 2px;
+                /* Round the corners of the scrollbar thumb */
+            }
+
+            /* Customize the scrollbar thumb on hover */
+            .left-column::-webkit-scrollbar-thumb:hover {
+                background: #555;
+                /* Color of the scrollbar thumb on hover */
             }
 
 
-            /* family tree */
-            .newtree h2 {
-                margin-left: 20px;
+
+
+            .right-column {
+                width: 95vw;
+                margin-left: 0;
             }
 
-            .newtree {
-                width: 100%;
-                /* the width is set to 90vw instead of 100vw is for the webpage to not scroll left to right */
-                margin-left: 0px;
-                margin-bottom: 80px;
-                margin-top: 60px;
+            .right-column img {
+                width: 90vw;
             }
 
-            .newtree img {
-                width: 100vw;
+            .right-column .content {
+                display: none;
             }
 
-
-
-
-            .horizontal-line {
-                width: 100%;
-                /* Full width */
-                height: 1px;
-                /* Thickness of the line */
-                background-color: #000;
-                /* Color of the line */
-                margin: 20px 0;
-                /* Adjust the spacing around the line */
-            }
-
-            .more {
+            .right-column .content.active {
+                display: flex;
                 flex-direction: column;
-                justify-content: space-around;
-                margin-left: 20px;
-                margin-bottom: 10px;
             }
 
+            .right-column::-webkit-scrollbar {
+                height: 0px;
+                /* Set the width of a horizontal scrollbar */
+            }
+
+
+
+
+            .instructions {
+                left: 10px;
+                bottom: 50px;
+            }
+
+            .instructions h2 {
+                font-size: 18px;
+            }
 
             .fctitle {
-                position: fixed;
-                top: 100%;
-                left: 100%;
-                transform: translate(-100%, -100%);
+                display: none;
             }
 
-            .fctitle img {
-                width: 40vw;
-                transition: transform 0.2s;
-            }
         }
     </style>
 </head>
@@ -238,8 +285,6 @@
             <img src="images/0navtitle.png"></a>
     </div>
 
-
-    
     <div class="grid-item-nav">
         <a id="LoginButton" href="myhome.html">
             <img title="myhome" alt="home" src="images/1navhome.png">
@@ -259,27 +304,300 @@
     </div>
 
 
+    <div class="main">
+        <!-- 0 top -->
+        <div class="top">
+            <div class="con-top">
+                <img src="images\tree\head5.png">
+            </div>
+            <div class="text-overlay">Get to know the Furnicreatures! <br>
+                <span class="material-symbols-outlined" style="font-size: 50px;">
+                    stat_minus_2
+                </span>
+            </div>
+            <div class="horizontal-line"></div>
+            <!-- top image and text animation -->
+            <script>
+                // Highlighted change: Added scroll event listener for fading effect
+                window.addEventListener('scroll', function () {
+                    var scrollPosition = window.scrollY;
+                    var overlay = document.querySelector('.text-overlay');
 
-    <div class="newtree">
+                    // Calculate new opacity
+                    var opacity = 1 - (scrollPosition / 200);
+                    overlay.style.opacity = Math.max(opacity, 0);
 
-        <h2>Family Tree</h2>
+                    // Calculate new top position
+                    var newTop = 60 - (scrollPosition / 10); // Adjust this value to control the speed of movement
+                    if (newTop < 40) newTop = 40; // Ensure it doesn't move up more than 100px
 
-        <img src="images\tree\tree-04.png">
+                    overlay.style.top = newTop + '%';
+                });
 
-        <div class="horizontal-line"></div>
+                // top image
+                window.addEventListener('scroll', function () {
+                    var scrollPosition = window.scrollY;
+                    var overlay = document.querySelector('.con-top');
 
+                    // Calculate new opacity
+                    var opacity = 0.8 - (scrollPosition / 1000);
+                    overlay.style.opacity = Math.max(opacity, 0);
+
+                    // Calculate new top position
+                    var newTop = 50 - (scrollPosition / 10); // Adjust this value to control the speed of movement
+                    if (newTop < 40) newTop = 40; // Ensure it doesn't move up more than 100px
+
+                    overlay.style.top = newTop + '%';
+                });
+            </script>
+        </div>
+
+
+        <!-- 1 habitat -->
+        <div class="habitat">
+
+            <div class="habitat-left">
+                <div class="text-1">
+                    <h1>Furnicreature</h1>
+                    <p>Furnicreature refers to a kingdom of inorganic creatures that cleverly blend into domestic
+                        environments as
+                        furniture, a concealed truth seldom acknowledged until recently.<br><br>
+                        This mysterious yet amiable kingdom of creatures has only recently come to the public's
+                        attention, with the possibility of further species discoveries looming on the horizon.</p>
+                </div>
+
+                <div class="text-2">
+                    <h1>Target Users</h1>
+                    <ul class="alphabet-list">
+                        <li>Families with children</li>
+                        <li>Young people who live alone and want companion (18-32)</li>
+                        <li>Dormitory/ Shared houses with friendly roommates</li>
+                        <li>People who want to keep pets but cannot</li>
+                        <li>People fond of the kawaii culture</li>
+                        <li>People who anthropomorphize--people who are curious/
+                            imaginative/ lonely</li>
+                    </ul>
+                </div>
+
+
+                <div class="text-3">
+                    <h1>Their Roles</h1>
+                    <ul class="alphabet-list">
+                        <li>Domestic companion and helpern</li>
+                        <li>Conversation starter</li>
+                        <li>Educate children; advocate care for objects</li>
+                        <li>Create happy moments in life</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="habitat-right">
+                <img src="images\tree\habitat.png">
+            </div>
+
+            <div class="horizontal-line"></div>
+        </div>
+
+
+        <!-- 2 family tree -->
+        <div class="newtree">
+            <div class="text">
+                <h1>Family Tree</h1>
+                <p>The Furnicreature kingdom is structured into three phylum, seven orders, and 19 species, including
+                    newly
+                    discovered species. These creatures thrive within domestic environments, exhibiting diverse forms
+                    and
+                    lifestyles suited to various habitats.</p>
+            </div>
+
+            <img src="images\tree\tree-04.png">
+
+            <div class="horizontal-line"></div>
+
+        </div>
+
+
+        <!-- 3 journey -->
+        <div class="alljourney">
+            <h1>Life Cycle of the Furnicreatures</h1>
+            <div class="journey">
+                <div class="arrow left" onclick="prevImage()">
+                    <span class="material-symbols-outlined">
+                        arrow_back_ios
+                    </span>
+                </div>
+
+                <div class="image-slider">
+                    <div class="image-container">
+                        <img src="images\journey\j1.jpg" alt="Image 1" class="slider-image">
+                        <img src="images\journey\j2.jpg" alt="Image 2" class="slider-image">
+                        <img src="images\journey\j3.jpg" alt="Image 3" class="slider-image">
+                        <img src="images\journey\j4.jpg" alt="Image 4" class="slider-image">
+                        <img src="images\journey\j5.jpg" alt="Image 5" class="slider-image">
+                    </div>
+                </div>
+
+                <div class="arrow right" onclick="nextImage()">
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </div>
+            <script>
+                let currentIndex = 0;
+                const images = document.querySelectorAll('.slider-image');
+
+                function showImage(index) {
+                    const imageWidth = images[0].clientWidth;
+                    document.querySelector('.image-container').style.transform = `translateX(${-index * imageWidth}px)`;
+                }
+
+                function nextImage() {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    showImage(currentIndex);
+                }
+
+                function prevImage() {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    showImage(currentIndex);
+                }
+            </script>
+            <div class="horizontal-line"></div>
+        </div>
+
+
+        <!-- 4 wiki -->
+        <div class="wiki">
+            <h1>Furnicreature Wiki</h1>
+            <div class="grid-item-container">
+                <div class="left-column">
+                    <h2 style="margin-right: 10px;">Click Me!</h2>
+                    <br>
+                    <a href="#" onclick="showContent('content1', event)">Stoolpy <br> <img title="Weee--"
+                            src="images/objects/stool.png"></a>
+                    <a href="#" onclick="showContent('content2', event)">Snuggly <br> <img title="Come into my arms"
+                            src="images/objects/sofa4.png"></a>
+                    <a href="#" onclick="showContent('content3', event)">StashyPup <br> <img title="Hi!"
+                            src="images/objects/conwin.png"></a>
+                    <a href="#" onclick="showContent('content4', event)">StashyCat <br> <img title="...0.0"
+                            src="images/objects/conbed1.png"></a>
+                    <a href="#" onclick="showContent('content5', event)">Blanky <br> <img title="Nah."
+                            src="images/objects/blanket.png"></a>
+                    <a href="#" onclick="showContent('content6', event)">Marshmallow <br> <img title="zzz..."
+                            src="images/objects/cushion.png"></a>
+                    <a href="#" onclick="showContent('content7', event)">Sheept <br> <img title="zzz..."
+                            src="images/objects/bedsheet.png"></a>
+                    <a href="#" onclick="showContent('content8', event)">Trapeze <br> <img title="Slide---"
+                            src="images/objects/ch.png"></a>
+                    <a href="#" onclick="showContent('content9', event)">Hooky <br> <img title="One more pull up!"
+                            src="images/objects/hook.png"></a>
+                    <a href="#" onclick="showContent('content10', event)">Sweaty <br> <img title="How'ru doing"
+                            src="images/objects/sweaty.png"></a>
+                    <a href="#" onclick="showContent('content11', event)">StudyPaw <br> <img title="Study with me"
+                            src="images/objects/studypaw.png"></a>
+                    <a href="#" onclick="showContent('content12', event)">Baggy <br> <img title="Take me on a walk!"
+                            src="images/objects/bag2.png"></a>
+                    <a href="#" onclick="showContent('content13', event)">Pancake <br> <img title="I'm slipping away"
+                            src="images/objects/carpet.png"></a>
+                </div>
+                <div class="right-column">
+                    <div id="content0" class="content">
+                        <p><span class="material-symbols-outlined" style="font-size: 20px">arrow_back</span>
+                            Click one of us to see our introductions!</p>
+                    </div>
+                    <div id="content1" class="content">
+                        <img src="images/wiki/wiki (1).jpg">
+                        <img src="images/wiki/wiki (2).jpg">
+                    </div>
+                    <div id="content2" class="content">
+                        <img src="images/wiki/wiki (3).jpg">
+                        <img src="images/wiki/wiki (4).jpg">
+                    </div>
+                    <div id="content3" class="content">
+                        <img src="images/wiki/wiki (5).jpg">
+                        <img src="images/wiki/wiki (6).jpg">
+                    </div>
+                    <div id="content4" class="content">
+                        <img src="images/wiki/wiki (7).jpg">
+                        <img src="images/wiki/wiki (8).jpg">
+                    </div>
+                    <div id="content5" class="content">
+                        <img src="images/wiki/wiki (9).jpg">
+                        <img src="images/wiki/wiki (10).jpg">
+                    </div>
+                    <div id="content6" class="content">
+                        <img src="images/wiki/wiki (11).jpg">
+                        <img src="images/wiki/wiki (12).jpg">
+                    </div>
+                    <div id="content7" class="content">
+                        <img src="images/wiki/wiki (13).jpg">
+                        <img src="images/wiki/wiki (14).jpg">
+                    </div>
+                    <div id="content8" class="content">
+                        <img src="images/wiki/wiki (15).jpg">
+                        <img src="images/wiki/wiki (16).jpg">
+                    </div>
+                    <div id="content9" class="content">
+                        <img src="images/wiki/wiki (17).jpg">
+                        <img src="images/wiki/wiki (18).jpg">
+                    </div>
+                    <div id="content10" class="content">
+                        <img src="images/wiki/wiki (19).jpg">
+                        <img src="images/wiki/wiki (20).jpg">
+                    </div>
+                    <div id="content11" class="content">
+                        <img src="images/wiki/wiki (23).jpg">
+                        <img src="images/wiki/wiki (24).jpg">
+                    </div>
+                    <div id="content12" class="content">
+                        <img src="images/wiki/wiki (25).jpg">
+                        <img src="images/wiki/wiki (26).jpg">
+                    </div>
+                    <div id="content13" class="content">
+                        <img src="images/wiki/wiki (21).jpg">
+                        <img src="images/wiki/wiki (22).jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="instructions">
+                <a href="tree.html">
+                    <h1>Invite The Creatures to your house!</h1>
+                </a>
+            </div>
+            <div class="horizontal-line"></div>
+            <!-- wiki script with no document reload-->
+            <script>
+                function showContent(contentId, event) {
+                    event.preventDefault(); // Prevent the default anchor behavior
+                    // Hide all content divs
+                    const contents = document.querySelectorAll('.content');
+                    contents.forEach(content => content.classList.remove('active'));
+
+                    // Show the selected content
+                    document.getElementById(contentId).classList.add('active');
+                }
+
+                // Initialize to show content0 when the page loads
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.getElementById('content0').classList.add('active');
+                });
+            </script>
+        </div>
+
+
+        <!-- 5 more links -->
         <div class="more">
-            <a href="storywiki.html" target="_blank">
-                <h4>★ Furnicreature Wiki</h4>
-            </a>
             <a href="" target="_blank">
                 <h4>Project Furnicreature</h4>
             </a>
             <a href="https://hyjreesepfo.cargo.site/2-8-FurniCreature-Animation" target="_blank">
                 <h4>Furnicreature Stories</h4>
             </a>
-            <!-- <a href="https://digitalcommons.risd.edu/masterstheses/1341/" target="_blank">
-                <h4>Book</h4>
-            </a> -->
+            <!--<a href="https://digitalcommons.risd.edu/masterstheses/1341/" target="_blank"> -->
+            <h4>Exhibition</h4>
+            <!-- </a> -->
         </div>
     </div>
+
+
+</body>
