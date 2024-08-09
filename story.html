@@ -158,21 +158,21 @@
 
 
 
-        @media (min-width: 1100px) {
+        /* @media (min-width: 1100px) {
             .left-column img {
                 max-width: 150px;
                 max-height: 150px;
             }
 
-        }
+        } */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1300px) {
             .wiki {
                 width: 95vw;
                 margin-left: 2.5vw;
             }
 
-            .wiki h2{
+            .wiki h2 {
                 font-size: 14px;
             }
 
@@ -249,6 +249,10 @@
                 display: none;
             }
 
+            #content0.active {
+                left: 0;
+            }
+
             .right-column .content.active {
                 display: flex;
                 flex-direction: column;
@@ -283,6 +287,25 @@
     <div class="fctitle">
         <a href="index.html">
             <img src="images/0navtitle.png"></a>
+        <script>
+            window.addEventListener('scroll', function () {
+                var fctitle = document.querySelector('.fctitle');
+                var windowWidth = window.innerWidth;
+                var scrollPosition = window.scrollY;
+
+                if (windowWidth > 1300) {
+                    // Show the .fctitle element only after scrolling down 100px
+                    if (scrollPosition > 100) {
+                        fctitle.style.display = 'block';
+                    } else {
+                        fctitle.style.display = 'none';
+                    }
+                } else {
+                    // Ensure the element is hidden on smaller screens
+                    fctitle.style.display = 'block';
+                }
+            });
+        </script>
     </div>
 
     <div class="grid-item-nav">
@@ -322,17 +345,24 @@
                 window.addEventListener('scroll', function () {
                     var scrollPosition = window.scrollY;
                     var overlay = document.querySelector('.text-overlay');
+                    var windowWidth = window.innerWidth;
 
                     // Calculate new opacity
-                    var opacity = 1 - (scrollPosition / 200);
+                    var opacity = 1 - (scrollPosition / 1000);
                     overlay.style.opacity = Math.max(opacity, 0);
 
-                    // Calculate new top position
-                    var newTop = 60 - (scrollPosition / 10); // Adjust this value to control the speed of movement
-                    if (newTop < 40) newTop = 40; // Ensure it doesn't move up more than 100px
+                    if (windowWidth > 1300) {
+                        // Calculate new top position if screen width is greater than 1300px
+                        var newTop = 50 - (scrollPosition / 10); // Adjust this value to control the speed of movement
+                        if (newTop < 40) newTop = 40; // Ensure it doesn't move up more than 100px
 
-                    overlay.style.top = newTop + '%';
+                        overlay.style.top = newTop + '%';
+                    } else {
+                        // Handle the case for screens narrower than 1300px
+                        overlay.style.top = '20%'; // Or any value you want for narrow screens
+                    }
                 });
+
 
                 // top image
                 window.addEventListener('scroll', function () {
@@ -587,14 +617,16 @@
 
         <!-- 5 more links -->
         <div class="more">
-            <a href="" target="_blank">
-                <h4>Project Furnicreature</h4>
+            <a href="https://hyjreesepfo.cargo.site/2-11-FurniCreature-Book" target="_blank">
+                <h4>💙FurniBook</h4>
             </a>
+
             <a href="https://hyjreesepfo.cargo.site/2-8-FurniCreature-Animation" target="_blank">
-                <h4>Furnicreature Stories</h4>
+                <h4>🤍FurniStories</h4>
             </a>
+
             <!--<a href="https://digitalcommons.risd.edu/masterstheses/1341/" target="_blank"> -->
-            <h4>Exhibition</h4>
+            <h4>💜FurniExhibition</h4>
             <!-- </a> -->
         </div>
     </div>

@@ -36,6 +36,7 @@ area:hover {
     justify-content: space-around;
     background: linear-gradient(to right, #a0a0a0, #a0a0a088);
     opacity: 0.6;
+    z-index: 1000;
 }
 
 .grid-item-nav img {
@@ -53,6 +54,7 @@ area:hover {
     top: 100%;
     left: 100%;
     transform: translate(-100%, -100%);
+    display: none; /* Initially hidden */
 }
 
 .fctitle img {
@@ -263,7 +265,7 @@ p {
     padding: 10px;
     cursor: pointer;
     user-select: none;
-    z-index: 10;
+    z-index: 1;
 }
 
 .material-symbols-outlined {
@@ -297,7 +299,10 @@ p {
 
 
 
-@media (max-width: 900px) {
+
+
+
+@media (max-width: 1300px) {
     .grid-item-nav {
         top: 0;
         height: 50px;
@@ -325,11 +330,11 @@ p {
     }
 
     h1 {
-        font-size: 18px;
+        font-size: 28px;
     }
 
     p {
-        font-size: 10px;
+        font-size: 16px;
     }
 
     .alphabet-list {
@@ -384,6 +389,21 @@ p {
         margin-bottom: 30px;
     }
 
+    .habitat-left h1{
+        margin-top: 20px;
+        font-size: 28px;
+    }
+
+    .habitat-left p{
+        padding-left: 10px;
+        font-size: 16px;
+    }
+
+    .alphabet-list {
+        font-size: 16px;
+    }
+
+
     .habitat-right {
         grid-column: 1/2;
         grid-row: 2/3;
@@ -407,7 +427,7 @@ p {
     /* 2family tree */
     .newtree {
         width: 95vw;
-        margin-left: 5vw;
+        margin-left: 2.5vw;
         margin-bottom: 30px;
     }
 
@@ -434,15 +454,20 @@ p {
         margin-left: 2.5vw;
     }
 
+    .journey{
+        width:100%;
+    }
+
     .image-slider {
-        width: 70vw;
-        height: auto;
-        margin-top: 30px;
+        width: auto;
+        height: calc(5 / 7 * 100%); /* This sets the height to 5/7 of the width */
+        margin-top: 20px;
         margin-bottom: 20px;
+        z-index:0;
     }
 
     .slider-image  {
-        width: 70vw;
+        width: 100%;
         height: auto;
     }
 
@@ -450,11 +475,13 @@ p {
         width: 10px;
         height: 10px;
         transform: translateY(-80%);
-        background-color: rgba(255, 255, 255, 0.7);
+        /* background-color: rgba(255, 255, 255, 0.7); */
+
+        
     }
     
     .material-symbols-outlined {
-        font-size: 10px;
+        font-size: 16px;
     }
 
 

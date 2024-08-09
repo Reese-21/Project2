@@ -21,6 +21,25 @@
     <div class="fctitle">
         <a href="index.html">
             <img src="images/0navtitle.png"></a>
+            <script>
+                window.addEventListener('scroll', function () {
+                    var fctitle = document.querySelector('.fctitle');
+                    var windowWidth = window.innerWidth;
+                    var scrollPosition = window.scrollY;
+    
+                    if (windowWidth > 1300) {
+                        // Show the .fctitle element only after scrolling down 100px
+                        if (scrollPosition > 100) {
+                            fctitle.style.display = 'block';
+                        } else {
+                            fctitle.style.display = 'none';
+                        }
+                    } else {
+                        // Ensure the element is hidden on smaller screens
+                        fctitle.style.display = 'block';
+                    }
+                });
+            </script>
     </div>
 
     <!-- four navigation icons -->
@@ -870,7 +889,7 @@
         });
 
 
-        // open and close sliding squares
+        // open and close sliding squares (detail info of each product)
         document.querySelectorAll('.open-square').forEach(function (element) {
             element.addEventListener('click', function (event) {
                 event.preventDefault();

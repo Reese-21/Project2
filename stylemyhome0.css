@@ -140,7 +140,7 @@ body::before {
     width: 30vw;
     height: auto;
     max-height: 80vh;
-    background-color: #fceed1;
+    background-color: #d1cfe8;
     border-radius: 10px;
     box-shadow: 0 0 15px #a19dca;
     display: none;
@@ -186,9 +186,6 @@ body::before {
 .login form {
     width: 100%;
     text-align: center; /* Centers inline-block elements horizontally */
-
-    /* display: flex;
-    flex-direction: column; */
 }
 
 
