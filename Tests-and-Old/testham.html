@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 60px;
+            /* padding-left:50px; */
+            background-color: #d1cfe8;
+            border-radius: 20px;
+            border:solid 2px #a19dca;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .box:hover{
+            transform: scale(1.01); /* Scale up the box on hover */
+        }
+
+        /* .box-text {
+            text-align: center;
+        } */
+
+        .box-label {
+            font-size: 12px;
+            /* Font size for dataset label */
+        }
+
+        .box-value {
+            font-size: 18px;
+            /* Font size for selected value */
+        }
+
+
+
+
+        .search-button {
+            width: 150px;
+            height: 60px;
+            background-color: #a19dca;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            margin-top:20px;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            box-sizing: border-box;
+            z-index: 10;
+            max-height: 300px;
+            /* Maximum height of the dropdown */
+            overflow-y: auto;
+            /* Add scroll for overflowing content */
+            overflow-x: hidden;
+        }
+
+        /* Custom scrollbar styling */
+        .dropdown-menu::-webkit-scrollbar {
+            width: 4px;
+            /* Width of the scrollbar */
+        }
+
+        .dropdown-menu::-webkit-scrollbar-thumb {
+            background-color: #a19dca;
+            /* Color of the scrollbar thumb */
+            border-radius: 10px;
+            /* Rounded corners for the scrollbar thumb */
+        }
+
+        .dropdown-menu::-webkit-scrollbar-track {
+            background-color: #f0f0f0;
+            /* Background color of the scrollbar track */
+            border-radius: 10px;
+            /* Rounded corners for the scrollbar track */
+        }
+
+        .dropdown-menu::-webkit-scrollbar-button {
+            display: none;
+            /* Hide the scrollbar buttons */
+        }
+
+
+
+
+
+        .dropdown-item,
+        .clear-choice {
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .dropdown-item:hover,
+        .clear-choice:hover {
+            background-color: #f0f0f0;
+        }
+
+        .clear-choice {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- location -->
+        <div class="box" data-label="Location">
+            <span class="box-text">Location?</span>
+            <div class="dropdown-menu">
+                <!-- Updated with US states -->
+                <div class="dropdown-item" data-value="AL">Alabama</div>
+                <div class="dropdown-item" data-value="AK">Alaska</div>
+                <div class="dropdown-item" data-value="AZ">Arizona</div>
+                <div class="dropdown-item" data-value="AR">Arkansas</div>
+                <div class="dropdown-item" data-value="CA">California</div>
+                <div class="dropdown-item" data-value="CO">Colorado</div>
+                <div class="dropdown-item" data-value="CT">Connecticut</div>
+                <div class="dropdown-item" data-value="DE">Delaware</div>
+                <div class="dropdown-item" data-value="FL">Florida</div>
+                <div class="dropdown-item" data-value="GA">Georgia</div>
+                <div class="dropdown-item" data-value="HI">Hawaii</div>
+                <div class="dropdown-item" data-value="ID">Idaho</div>
+                <div class="dropdown-item" data-value="IL">Illinois</div>
+                <div class="dropdown-item" data-value="IN">Indiana</div>
+                <div class="dropdown-item" data-value="IA">Iowa</div>
+                <div class="dropdown-item" data-value="KS">Kansas</div>
+                <div class="dropdown-item" data-value="KY">Kentucky</div>
+                <div class="dropdown-item" data-value="LA">Louisiana</div>
+                <div class="dropdown-item" data-value="ME">Maine</div>
+                <div class="dropdown-item" data-value="MD">Maryland</div>
+                <div class="dropdown-item" data-value="MA">Massachusetts</div>
+                <div class="dropdown-item" data-value="MI">Michigan</div>
+                <div class="dropdown-item" data-value="MN">Minnesota</div>
+                <div class="dropdown-item" data-value="MS">Mississippi</div>
+                <div class="dropdown-item" data-value="MO">Missouri</div>
+                <div class="dropdown-item" data-value="MT">Montana</div>
+                <div class="dropdown-item" data-value="NE">Nebraska</div>
+                <div class="dropdown-item" data-value="NV">Nevada</div>
+                <div class="dropdown-item" data-value="NH">New Hampshire</div>
+                <div class="dropdown-item" data-value="NJ">New Jersey</div>
+                <div class="dropdown-item" data-value="NM">New Mexico</div>
+                <div class="dropdown-item" data-value="NY">New York</div>
+                <div class="dropdown-item" data-value="NC">North Carolina</div>
+                <div class="dropdown-item" data-value="ND">North Dakota</div>
+                <div class="dropdown-item" data-value="OH">Ohio</div>
+                <div class="dropdown-item" data-value="OK">Oklahoma</div>
+                <div class="dropdown-item" data-value="OR">Oregon</div>
+                <div class="dropdown-item" data-value="PA">Pennsylvania</div>
+                <div class="dropdown-item" data-value="RI">Rhode Island</div>
+                <div class="dropdown-item" data-value="SC">South Carolina</div>
+                <div class="dropdown-item" data-value="SD">South Dakota</div>
+                <div class="dropdown-item" data-value="TN">Tennessee</div>
+                <div class="dropdown-item" data-value="TX">Texas</div>
+                <div class="dropdown-item" data-value="UT">Utah</div>
+                <div class="dropdown-item" data-value="VT">Vermont</div>
+                <div class="dropdown-item" data-value="VA">Virginia</div>
+                <div class="dropdown-item" data-value="WA">Washington</div>
+                <div class="dropdown-item" data-value="WV">West Virginia</div>
+                <div class="dropdown-item" data-value="WI">Wisconsin</div>
+                <div class="dropdown-item" data-value="WY">Wyoming</div>
+                <div class="clear-choice">Clear Choice</div>
+            </div>
+        </div>
+
+        <!-- Species -->
+        <div class="box" data-label="Species">
+            <span class="box-text">Species?</span>
+            <div class="dropdown-menu">
+                <div class="dropdown-item" data-value="Baggy">Baggy</div>
+                <div class="dropdown-item" data-value="Blanky">Blanky</div>
+                <div class="dropdown-item" data-value="Furnibook">FurniBook</div>
+                <div class="dropdown-item" data-value="Hooky">Hooky</div>
+                <div class="dropdown-item" data-value="Marshmallow">Marshmallow</div>
+                <div class="dropdown-item" data-value="Pancake">Pancake</div>
+
+                <div class="dropdown-item" data-value="Sheeept">Sheeept</div>
+                <div class="dropdown-item" data-value="Snuggly">Snuggly</div>
+                <div class="dropdown-item" data-value="StashyCat">StashyCat</div>
+                <div class="dropdown-item" data-value="StashyPup">StashyPup</div>
+                
+                <div class="dropdown-item" data-value="Stoolpy">Stoolpy</div>
+                <div class="dropdown-item" data-value="StudyPaw">StudyPaw</div>
+                <div class="dropdown-item" data-value="Sweaty">Sweaty</div>
+                <div class="dropdown-item" data-value="Trapeze">Trapeze</div>
+
+                <div class="dropdown-item" data-value="Other Products">Other Products</div>
+                <div class="clear-choice">Clear Choice</div>
+            </div>
+        </div>
+
+        <!-- Fee -->
+        <div class="box" data-label="Adoption Fee">
+            <span class="box-text">Adoption Fee?</span>
+            <div class="dropdown-menu">
+                <div class="dropdown-item" data-value="&lt;20$">Under 20$</div>
+                <div class="dropdown-item" data-value="20-50$">20-50$</div>
+                <div class="dropdown-item" data-value="50-100$">50-100$</div>
+                <div class="dropdown-item" data-value="100-200$">100-200$</div>
+                <div class="dropdown-item" data-value="&gt;200$">Over 200$</div>
+                <div class="clear-choice">Clear Choice</div>
+            </div>
+        </div>
+
+        <!-- Health Condition -->
+        <div class="box" data-label="Health">
+            <span class="box-text">Health Condition?</span>
+            <div class="dropdown-menu">
+                <div class="dropdown-item" data-value="Like New">Like New</div>
+                <div class="dropdown-item" data-value="Excellent Condition">Excellent Condition</div>
+                <div class="dropdown-item" data-value="Good Condition">Good Condition</div>
+                <div class="dropdown-item" data-value="Fair Condition">Fair Condition</div>
+                <div class="dropdown-item" data-value="Refurbished">Refurbished</div>
+                <div class="clear-choice">Clear Choice</div>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <button class="search-button">SEARCH!</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const boxes = document.querySelectorAll('.box');
+
+            boxes.forEach(box => {
+                const dropdownMenu = box.querySelector('.dropdown-menu');
+                const boxText = box.querySelector('.box-text');
+
+                box.addEventListener('click', (event) => {
+                    // Close other dropdown menus
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                        if (menu !== dropdownMenu) {
+                            menu.style.display = 'none';
+                        }
+                    });
+
+                    // Toggle current dropdown menu visibility
+                    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                });
+
+                dropdownMenu.addEventListener('click', (event) => {
+                    if (event.target.classList.contains('dropdown-item')) {
+                        // Get selected item value
+                        const selectedValue = event.target.getAttribute('data-value');
+
+                        // Update box text with styles
+                        boxText.innerHTML = `<span class="box-label">${box.dataset.label}:</span><br><span class="box-value">${selectedValue}</span>`;
+
+                        // Close dropdown menu
+                        dropdownMenu.style.display = 'none';
+                    } else if (event.target.classList.contains('clear-choice')) {
+                        // Clear choice and reset box text
+                        boxText.textContent = box.dataset.label;
+
+                        // Close dropdown menu
+                        dropdownMenu.style.display = 'none';
+                    }
+
+                    // Prevent event from bubbling up to the box click handler
+                    event.stopPropagation();
+                });
+            });
+
+            // Close dropdown menu when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!event.target.closest('.box')) {
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                        menu.style.display = 'none';
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

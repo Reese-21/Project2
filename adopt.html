@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+
+
+    <title>Adoption Center</title>
+
+    <link rel="stylesheet" href="styleadopt.css">
+    <script src="login-script.js" defer></script>
+    <link rel="icon" href="images/2navtree.png" type="image/png">
+</head>
+
+<body>
+    <div class="fctitle">
+        <a href="index.html">
+            <img src="images/0navtitle.png"></a>
+        <script>
+            window.addEventListener('scroll', function () {
+                var fctitle = document.querySelector('.fctitle');
+                var windowWidth = window.innerWidth;
+                var scrollPosition = window.scrollY;
+
+                if (windowWidth > 1300) {
+                    // Show the .fctitle element only after scrolling down 100px
+                    if (scrollPosition > 100) {
+                        fctitle.style.display = 'block';
+                    } else {
+                        fctitle.style.display = 'none';
+                    }
+                } else {
+                    // Ensure the element is hidden on smaller screens
+                    fctitle.style.display = 'block';
+                }
+            });
+        </script>
+    </div>
+
+    <!-- four navigation icons -->
+    <div class="grid-item-nav">
+        <a id="LoginButton" href="myhome.html">
+            <img title="myhome" alt="home" src="images/1navhome.png"> </a>
+
+        <a href="tree.html">
+            <img alt="tree" src="images/2navtree.png"> </a>
+
+        <a href="playground.html">
+            <img title="playground" alt="play" src="images/3navmine.png">
+        </a>
+
+        <a href="story.html">
+            <img title="Furnicreature Wiki" alt="story" src="images/4navstory.png"> </a>
+    </div>
+
+
+
+
+    <div class="grid-container">
+        <!-- top image -->
+        <div class="grid-item-shop">
+            <img src="images/adoption.png">
+            <div class="text-overlay">Furnicreature Adoption Community!</div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="searchandgoods">
+            <div class="search-container">
+
+                <!-- location -->
+                <div class="box" data-label="Location">
+                    <span class="box-text">Location?</span>
+                    <div class="dropdown-menu">
+                        <!-- Updated with US states -->
+                        <div class="dropdown-item" data-value="AL">Alabama</div>
+                        <div class="dropdown-item" data-value="AK">Alaska</div>
+                        <div class="dropdown-item" data-value="AZ">Arizona</div>
+                        <div class="dropdown-item" data-value="AR">Arkansas</div>
+                        <div class="dropdown-item" data-value="CA">California</div>
+                        <div class="dropdown-item" data-value="CO">Colorado</div>
+                        <div class="dropdown-item" data-value="CT">Connecticut</div>
+                        <div class="dropdown-item" data-value="DE">Delaware</div>
+                        <div class="dropdown-item" data-value="FL">Florida</div>
+                        <div class="dropdown-item" data-value="GA">Georgia</div>
+                        <div class="dropdown-item" data-value="HI">Hawaii</div>
+                        <div class="dropdown-item" data-value="ID">Idaho</div>
+                        <div class="dropdown-item" data-value="IL">Illinois</div>
+                        <div class="dropdown-item" data-value="IN">Indiana</div>
+                        <div class="dropdown-item" data-value="IA">Iowa</div>
+                        <div class="dropdown-item" data-value="KS">Kansas</div>
+                        <div class="dropdown-item" data-value="KY">Kentucky</div>
+                        <div class="dropdown-item" data-value="LA">Louisiana</div>
+                        <div class="dropdown-item" data-value="ME">Maine</div>
+                        <div class="dropdown-item" data-value="MD">Maryland</div>
+                        <div class="dropdown-item" data-value="MA">Massachusetts</div>
+                        <div class="dropdown-item" data-value="MI">Michigan</div>
+                        <div class="dropdown-item" data-value="MN">Minnesota</div>
+                        <div class="dropdown-item" data-value="MS">Mississippi</div>
+                        <div class="dropdown-item" data-value="MO">Missouri</div>
+                        <div class="dropdown-item" data-value="MT">Montana</div>
+                        <div class="dropdown-item" data-value="NE">Nebraska</div>
+                        <div class="dropdown-item" data-value="NV">Nevada</div>
+                        <div class="dropdown-item" data-value="NH">New Hampshire</div>
+                        <div class="dropdown-item" data-value="NJ">New Jersey</div>
+                        <div class="dropdown-item" data-value="NM">New Mexico</div>
+                        <div class="dropdown-item" data-value="NY">New York</div>
+                        <div class="dropdown-item" data-value="NC">North Carolina</div>
+                        <div class="dropdown-item" data-value="ND">North Dakota</div>
+                        <div class="dropdown-item" data-value="OH">Ohio</div>
+                        <div class="dropdown-item" data-value="OK">Oklahoma</div>
+                        <div class="dropdown-item" data-value="OR">Oregon</div>
+                        <div class="dropdown-item" data-value="PA">Pennsylvania</div>
+                        <div class="dropdown-item" data-value="RI">Rhode Island</div>
+                        <div class="dropdown-item" data-value="SC">South Carolina</div>
+                        <div class="dropdown-item" data-value="SD">South Dakota</div>
+                        <div class="dropdown-item" data-value="TN">Tennessee</div>
+                        <div class="dropdown-item" data-value="TX">Texas</div>
+                        <div class="dropdown-item" data-value="UT">Utah</div>
+                        <div class="dropdown-item" data-value="VT">Vermont</div>
+                        <div class="dropdown-item" data-value="VA">Virginia</div>
+                        <div class="dropdown-item" data-value="WA">Washington</div>
+                        <div class="dropdown-item" data-value="WV">West Virginia</div>
+                        <div class="dropdown-item" data-value="WI">Wisconsin</div>
+                        <div class="dropdown-item" data-value="WY">Wyoming</div>
+                        <div class="clear-choice">Clear Choice</div>
+                    </div>
+                </div>
+
+                <!-- Species -->
+                <div class="box" data-label="Species">
+                    <span class="box-text">Species?</span>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item" data-value="Baggy">Baggy</div>
+                        <div class="dropdown-item" data-value="Blanky">Blanky</div>
+                        <div class="dropdown-item" data-value="Furnibook">FurniBook</div>
+                        <div class="dropdown-item" data-value="Hooky">Hooky</div>
+                        <div class="dropdown-item" data-value="Marshmallow">Marshmallow</div>
+                        <div class="dropdown-item" data-value="Pancake">Pancake</div>
+
+                        <div class="dropdown-item" data-value="Sheeept">Sheeept</div>
+                        <div class="dropdown-item" data-value="Snuggly">Snuggly</div>
+                        <div class="dropdown-item" data-value="StashyCat">StashyCat</div>
+                        <div class="dropdown-item" data-value="StashyPup">StashyPup</div>
+
+                        <div class="dropdown-item" data-value="Stoolpy">Stoolpy</div>
+                        <div class="dropdown-item" data-value="StudyPaw">StudyPaw</div>
+                        <div class="dropdown-item" data-value="Sweaty">Sweaty</div>
+                        <div class="dropdown-item" data-value="Trapeze">Trapeze</div>
+
+                        <div class="dropdown-item" data-value="Other Products">Other Products</div>
+                        <div class="clear-choice">Clear Choice</div>
+                    </div>
+                </div>
+
+                <!-- Fee -->
+                <div class="box" data-label="Adoption Fee">
+                    <span class="box-text">Adoption Fee?</span>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item" data-value="&lt;20$">Under 20$</div>
+                        <div class="dropdown-item" data-value="20-50$">20-50$</div>
+                        <div class="dropdown-item" data-value="50-100$">50-100$</div>
+                        <div class="dropdown-item" data-value="100-200$">100-200$</div>
+                        <div class="dropdown-item" data-value="&gt;200$">Over 200$</div>
+                        <div class="clear-choice">Clear Choice</div>
+                    </div>
+                </div>
+
+                <!-- Health Condition -->
+                <div class="box" data-label="Health">
+                    <span class="box-text">Health Condition?</span>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item" data-value="Like New">Like New</div>
+                        <div class="dropdown-item" data-value="Excellent Condition">Excellent Condition</div>
+                        <div class="dropdown-item" data-value="Good Condition">Good Condition</div>
+                        <div class="dropdown-item" data-value="Fair Condition">Fair Condition</div>
+                        <div class="dropdown-item" data-value="Refurbished">Refurbished</div>
+                        <div class="clear-choice">Clear Choice</div>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <button class="search-button"
+                    onclick="alert('The filter function is still developing...')">SEARCH!</button>
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const boxes = document.querySelectorAll('.box');
+
+                    boxes.forEach(box => {
+                        const dropdownMenu = box.querySelector('.dropdown-menu');
+                        const boxText = box.querySelector('.box-text');
+
+                        box.addEventListener('click', (event) => {
+                            // Close other dropdown menus
+                            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                                if (menu !== dropdownMenu) {
+                                    menu.style.display = 'none';
+                                }
+                            });
+
+                            // Toggle current dropdown menu visibility
+                            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                        });
+
+                        dropdownMenu.addEventListener('click', (event) => {
+                            if (event.target.classList.contains('dropdown-item')) {
+                                // Get selected item value
+                                const selectedValue = event.target.getAttribute('data-value');
+
+                                // Update box text with styles
+                                boxText.innerHTML = `<span class="box-label">${box.dataset.label}:</span><br><span class="box-value">${selectedValue}</span>`;
+
+                                // Close dropdown menu
+                                dropdownMenu.style.display = 'none';
+                            } else if (event.target.classList.contains('clear-choice')) {
+                                // Clear choice and reset box text
+                                boxText.textContent = box.dataset.label;
+
+                                // Close dropdown menu
+                                dropdownMenu.style.display = 'none';
+                            }
+
+                            // Prevent event from bubbling up to the box click handler
+                            event.stopPropagation();
+                        });
+                    });
+
+                    // Close dropdown menu when clicking outside
+                    document.addEventListener('click', (event) => {
+                        if (!event.target.closest('.box')) {
+                            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                                menu.style.display = 'none';
+                            });
+                        }
+                    });
+                });
+            </script>
+
+
+
+
+            <!-- buyable goods and description -->
+            <div class="grid-item-goods">
+                <!-- shoppable item icons -->
+                <a href="#" class="open-square" data-target="#square1">
+                    <img src="images/shop/astool.png" alt="Stoolpy-Navy">
+                    <p>Stoolpy-Navy-Small</p>
+                    <p>$150.00</p>
+                    <hr>
+                    <small>3yrs 5mos (Good Condition)</small>
+                    <small>New York, NY</small>
+                </a>
+
+                <a href="#" class="open-square" data-target="#square2">
+                    <img src="images/shop/abook.png" alt="FurniBook-Regular">
+                    <p>Furnibook-Regular</p>
+                    <p>$10.00</p>
+                    <hr>
+                    <small>5yrs 2mos (Fair Condition) </small>
+                    <small>Los Angeles, CA</small>
+                </a>
+
+                <a href="#" class="open-square" data-target="#square3">
+                    <img src="images/shop/asofa.png" alt="Snuggly-White">
+                    <p>Snuggly-White-Medium</p>
+                    <p>$480.00</p>
+                    <hr>
+                    <small>1yr 2mos (Like New)</small>
+                    <small>Providence, RI</small>
+                </a>
+
+                <a href="#" class="open-square" data-target="#square4">
+                    <img src="images/shop/acushion.png" alt="Marshmallow-Mini">
+                    <p>Marshmallow-Cow-Mini</p>
+                    <p>$8.00</p>
+                    <hr>
+                    <small>1yr 7mos (Very Good Condition) </small>
+                    <small>Seattle, WA</small>
+                </a>
+
+                <a href="#" class="open-square" data-target="#square5">
+                    <img src="images\shop\abagmini.png" alt="Baggy-mini">
+                    <p>Baggy-White-Small</p>
+                    <p>$12.00</p>
+                    <hr>
+                    <small>3yr 7mos (Fair Condition) </small>
+                    <small>Providence, RI</small>
+                </a>
+            </div>
+
+
+
+
+
+            <!-- hidden components -->
+
+            <!-- 1 stoolpy-->
+            <div class="sliding-square" id="square1">
+                <!-- &times; is the X shape button -->
+                <button class="close-btn">&times;</button>
+                <div class="info-left">
+                    <h2>My name is Stormy!</h2>
+
+                    <img class="mainImage" data-square="1" src="images/shop/astool.png" alt="Main Image">
+
+                    <div class="thumbnail-container">
+                        <img data-square="1" src="images/shop/astool.png" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="1" src="images\memories\stool\1.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="1" src="images\memories\stool\2.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="1" src="images\memories\stool\11.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="1" src="images\memories\stool\12.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                    </div>
+                </div>
+
+                <div class="info-right">
+                    <h4>Adopt This Navy Blue Stoolpy!</h4>
+                    <h2 style="margin-top: 40px;">$ 150.00</h2>
+                    <hr>
+                    <br>
+                    <h4>My Basic Info:</h4>
+                    <br>
+                    <p>Small: 12 x 12 x 12 inches</p>
+                    <br>
+                    <p>Navy</p>
+                    <br>
+                    <p>ID: 2r8yafhkjl</p>
+                    <hr>
+                    <br>
+                    <h4>My Details:</h4>
+                    <br>
+                    <p>Age: 3yrs 5mos (Good Condition)</p>
+                    <br>
+                    <p>Health: Good Condition</p>
+                    <br>
+                    <p>Travel: RI-NY</p>
+                    <hr>
+                    <br>
+                    <h4>My Story:</h4>
+                    <br>
+                    <p>I woke up in Rhode Island. My first owner kept me in a creative studio space where I played with
+                        her cohort.
+                        They then moved to New York where I worked as a side table. I have fulfilled my job in this
+                        household, and
+                        I am currently waiting for a new owner who loves fish and chips. </p>
+                    <br>
+                    <hr>
+                    <br>
+                    <button id="fakebutton"
+                        onclick="alert('Thank you for your love, but sorry I have found an owner already.♥')"
+                        title="This is a fake button.">CONSIDER ADOPTING</button>
+                </div>
+            </div>
+
+            <!-- 2 book-->
+            <div class="sliding-square" id="square2">
+                <button class="close-btn">&times;</button>
+                <div class="info-left">
+                    <h2>My name is FurniBook!</h2>
+
+                    <img class="mainImage" data-square="2" src="images/shop/abook.png" alt="Main Image">
+
+                    <div class="thumbnail-container">
+                        <img data-square="2" src="images/shop/abook.png" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="2" src="images\memories\book\4.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="2" src="images\memories\book\3.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                    </div>
+                </div>
+
+                <div class="info-right">
+                    <h4>Adopt This FurniBook!</h4>
+                    <h2 style="margin-top: 40px;">$ 10.00</h2>
+                    <hr>
+                    <br>
+                    <h4>My Basic Info:</h4>
+                    <br>
+                    <p>Regular: 7 x 10 x 1 inch</p>
+                    <br>
+                    <p>Navy</p>
+                    <br>
+                    <p>ID: 2r8yafhkjl</p>
+                    <hr>
+                    <br>
+                    <h4>My Details:</h4>
+                    <br>
+                    <p>Age: 3yrs 5mos (Good Condition)</p>
+                    <br>
+                    <p>Health: Good Condition</p>
+                    <br>
+                    <p>Travel: RI-NY-CA</p>
+                    <hr>
+                    <br>
+                    <h4>My Story:</h4>
+                    <br>
+                    <p>I'm just one normal book. </p>
+                    <br>
+                    <hr>
+                    <br>
+                    <button id="fakebutton"
+                        onclick="alert('Thank you for your love, but sorry I have found an owner already.♥')"
+                        title="This is a fake button.">CONSIDER ADOPTING</button>
+                </div>
+            </div>
+
+            <!-- 3 snuggly-->
+            <div class="sliding-square" id="square3">
+                <button class="close-btn">&times;</button>
+                <div class="info-left">
+                    <h2>My name is Snowy!</h2>
+                    <img class="mainImage" data-square="3" src="images/shop/asofa.png" alt="Main Image">
+
+                    <div class="thumbnail-container">
+                        <img data-square="3" src="images/shop/asofa.png" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="3" src="images\memories\1.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+
+
+                    </div>
+                </div>
+                <div class="info-right">
+                    <h4>Adopt This White Snuggly!</h4>
+                    <h2 style="margin-top: 40px;">$ 480.00</h2>
+                    <hr>
+                    <br>
+                    <h4>My Basic Info:</h4>
+                    <br>
+                    <p>Medium: 32 x 23 x 30 inches</p>
+                    <br>
+                    <p>White</p>
+                    <br>
+                    <p>ID: 8932uhi98</p>
+                    <hr>
+                    <br>
+                    <h4>My Details:</h4>
+                    <br>
+                    <p>Age: 1yr 2mos</p>
+                    <br>
+                    <p>Health: Like New</p>
+                    <br>
+                    <p>Travel: RI</p>
+                    <hr>
+                    <br>
+                    <h4>My Story:</h4>
+                    <br>
+                    <p>Hi, This is Snowy. She is a large-size, extra soft darling. She's very comfortable to read books with.
+                        I really love her, but she is too heavy for me to bring her back to my home country which 
+                        is accross the Pacific Ocean. 
+                        <br>
+                        <br>
+                        I would deeply appreciate someone who loves Furnicreatures to take 
+                        good care of it. Please share her memories with me after you adopt her!</p>
+                    <br>
+                    <hr>
+                    <br>
+                    <button id="fakebutton"
+                        onclick="alert('Thank you for your love, but sorry I have found an owner already.♥')"
+                        title="This is a fake button.">CONSIDER ADOPTING</button>
+                </div>
+
+            </div>
+
+            <!-- 4 cushion-->
+            <div class="sliding-square" id="square4">
+                <button class="close-btn">&times;</button>
+                <div class="info-left">
+                    <h2>My name is Mini Marsh!</h2>
+                    <img class="mainImage" data-square="4" src="images/shop/acushion.png" alt="Main Image">
+
+                    <div class="thumbnail-container">
+                        <img data-square="4" src="images/shop/acushion.png" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="4" src="images\memories\cushion\1.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="4" src="images\memories\cushion\2.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="4" src="images\memories\cushion\3.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="4" src="images\memories\cushion\4.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="4" src="images\memories\cushion\5.JPG" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                    </div>
+                </div>
+
+                <div class="info-right">
+                    <h4>Adopt This Mini Cow Marshmallow!</h4>
+                    <h2 style="margin-top: 40px;">$ 8.00</h2>
+                    <hr>
+                    <br>
+                    <h4>My Basic Info:</h4>
+                    <br>
+                    <p>Small: 3 x 5 x 1 inches</p>
+                    <br>
+                    <p>Cow</p>
+                    <br>
+                    <p>ID: 2hka892jol</p>
+                    <hr>
+                    <br>
+                    <h4>My Details:</h4>
+                    <br>
+                    <p>Age: 1yr 7mos</p>
+                    <br>
+                    <p>Health: Very Good Condition</p>
+                    <br>
+                    <p>Travel: RI-WA</p>
+                    <hr>
+                    <br>
+                    <h4>My Story:</h4>
+                    <br>
+                    <p>I woke up in Rhode Island. My first owner kept me in a creative studio space where I played with
+                        her cohort.
+                        They then moved to New York where I worked as a side table. I have fulfilled my job in this
+                        household, and
+                        I am currently waiting for a new owner who loves fish and chips. </p>
+                    <br>
+                    <hr>
+                    <br>
+                    <button id="fakebutton"
+                        onclick="alert('Thank you for your love, but sorry I have found an owner already.♥')"
+                        title="This is a fake button.">CONSIDER ADOPTING</button>
+                </div>
+            </div>
+
+            <!-- 5 sbag-->
+            <div class="sliding-square" id="square5">
+                <button class="close-btn">&times;</button>
+                <div class="info-left">
+                    <h2>My name is Kitty!</h2>
+                    <img class="mainImage" data-square="5" src="images\shop\abagmini.png" alt="Main Image">
+
+                    <div class="thumbnail-container">
+                        <img data-square="5" src="images\shop\abagmini.png" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="5" src="images\memories\bag\1.jpg" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="5" src="images\memories\bag\2.jpg" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+                        <img data-square="5" src="images\memories\bag\3.jpg" alt="Thumbnail 1" class="thumbnail"
+                            onclick="showImage(this)">
+
+                    </div>
+                </div>
+                <div class="info-right">
+                    <h4>Adopt This Cat Baggy!</h4>
+                    <h2 style="margin-top: 40px;">$ 12.00</h2>
+                    <hr>
+                    <br>
+                    <h4>My Basic Info:</h4>
+                    <br>
+                    <p>Small: 4 x 5 x 0.2 inches</p>
+                    <br>
+                    <p>White</p>
+                    <br>
+                    <p>ID: 189ehkdi38</p>
+                    <hr>
+                    <br>
+                    <h4>My Details:</h4>
+                    <br>
+                    <p>Age: 3yr 7mos</p>
+                    <br>
+                    <p>Health: Fair Condition</p>
+                    <br>
+                    <p>Travel: RI</p>
+                    <hr>
+                    <br>
+                    <h4>My Story:</h4>
+                    <br>
+                    <p>Meow Meow Mewo o(=• •=)o I can hold earphones and tiny things meow!</p>
+                    <br>
+                    <hr>
+                    <br>
+                    <button id="fakebutton"
+                        onclick="alert('Thank you for your love, but sorry I have found an owner already.♥')"
+                        title="This is a fake button.">CONSIDER ADOPTING</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <script>
+                // Highlighted change: Added scroll event listener for fading effect
+                window.addEventListener('scroll', function () {
+                    var scrollPosition = window.scrollY;
+                    var overlay = document.querySelector('.text-overlay');
+
+                    // Calculate new opacity
+                    var opacity = 1 - (scrollPosition / 200);
+                    overlay.style.opacity = Math.max(opacity, 0);
+
+                    // Calculate new top position
+                    var newTop = 50 - (scrollPosition / 10); // Adjust this value to control the speed of movement
+                    if (newTop < 40) newTop = 40; // Ensure it doesn't move up more than 100px
+
+                    overlay.style.top = newTop + '%';
+                });
+
+
+                // open and close sliding squares (detail info of each product)
+                document.querySelectorAll('.open-square').forEach(function (element) {
+                    element.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        var target = this.getAttribute('data-target');
+                        document.querySelector(target).classList.add('active');
+                    });
+                });
+
+                document.querySelectorAll('.close-btn').forEach(function (element) {
+                    element.addEventListener('click', function () {
+                        this.closest('.sliding-square').classList.remove('active');
+                    });
+                });
+
+
+                // show image
+                function showImage(thumbnail) {
+                    const squareId = thumbnail.getAttribute('data-square');
+                    const mainImage = document.querySelector(`.mainImage[data-square="${squareId}"]`);
+                    if (mainImage) {
+                        mainImage.src = thumbnail.src;
+                    }
+                }
+            </script>
+
+</body>
+
+</html>

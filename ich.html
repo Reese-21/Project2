@@ -57,8 +57,14 @@
 
 
     <style>
+        body::-webkit-scrollbar {
+            width: 0px;
+            height:0px;
+        }
+
+
         .item-1 .fcimage img {
-            width: 150px;
+            width: 180px;
             animation: movech 4s infinite alternate linear;
             /* same but faster animation as bedsheet */
         }
@@ -82,15 +88,15 @@
         }
 
         .basic .fcimage {
-            top: 40vh;
-            left: 130vw;
-            zoom: 0.7;
+            top: 18vh;
+            left: 85vw;
+            transform: scale(0.8);
         }
 
         .more .fcimage {
-            top: 25vh;
-            left: 120vw;
-            zoom: 0.7;
+            top: 18vh;
+            left: 70vw;
+            transform: scale(0.8);
         }
 
 
@@ -164,7 +170,7 @@
             .infocard {
                 transform: translate(-50%, 20%);
             }
-            
+
             /* Stool item image and animation */
             .item-1 .fcimage img {
                 width: 90px;
