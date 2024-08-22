@@ -23,7 +23,7 @@ body::before {
     /* Adjust the size of the dots */
 }
 
-
+/* google icon font */
 .material-symbols-outlined {
     font-variation-settings:
         'FILL' 0,
@@ -65,7 +65,7 @@ body::before {
 
 /* id card, feeding, memories */
 .tabbuttons {
-    position: absolute;
+    position: fixed;
     /* or 'fixed' if you want it to stay in the same place relative to the viewport */
     right: 5vw;
     bottom: 10vh;
@@ -79,7 +79,7 @@ body::before {
 }
 
 .tabbuttons .button {
-    background-color: #fceed1;
+    background-color: #efefef;
     border-radius: 20px;
     border: none;
     box-shadow: 0 0 5px #525252;
@@ -563,7 +563,15 @@ body::before {
 
 .no-memory {
     grid-column: 1/4;
-    display: grid;
+    width:90%;
+    column-count: 4;  /* Number of columns */
+    column-gap: 20px;
+    padding: 20px;
+    place-items: center;
+    break-inside: avoid; /* Prevents breaking the image between columns */
+}
+
+.no-memory p {
     place-items: center;
     /* Center both horizontally and vertically */
     font-family: 'Inter', sans-serif;
@@ -571,6 +579,55 @@ body::before {
     font-size: 15px;
 }
 
+
+
+.memory-item{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.memory-item img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.623);
+}
+
+.no-memory img:hover{
+    transform: scale(1.01);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    border-radius: 20px;
+    background-color: rgba(128, 128, 128, 0.8); /* Gray with 60% opacity */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+.overlay s{
+    font-size: 12px;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.memory-item:hover .overlay {
+    opacity: 1;
+}
 
 
 
