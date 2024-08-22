@@ -57,8 +57,12 @@
 
 
     <style>
+        .no-memory {
+            column-count: 2;
+        }
+
         .item-1 .fcimage img {
-            width: 200px;
+            width: 300px;
             animation: movebag 3s infinite alternate linear;
             /* same but faster animation as bedsheet */
         }
@@ -78,15 +82,15 @@
         }
 
         .basic .fcimage {
-            top: 25vh;
-            left: 132vw;
-            zoom: 0.7;
+            top: 0vh;
+            left: 82vw;
+            transform: scale(0.8);
         }
 
         .more .fcimage {
-            top: 25vh;
-            left: 120vw;
-            zoom: 0.7;
+            top: 0vh;
+            left: 82vw;
+            transform: scale(0.8);
         }
 
 
@@ -506,7 +510,39 @@
 
                 <div class="grid-memory-right">
                     <div class="no-memory">
-                        <p>Baggy can't seem to recall anything yet.</p>
+                        <!-- 12 -->
+                        <div class="memory-item">
+                            <img src="images\memories\bag\12.jpg">
+                            <div class="overlay">
+                                <h2>Back Home</h2>
+                                <s>July 29th, 2024/ RI</s>
+                                <p>Author: Reese-811</p>
+                                <p>#TRAVEL #OUTDOOR</p>
+                            </div>
+                        </div>
+
+                        <!-- 11 -->
+                        <div class="memory-item">
+                            <img src="images\memories\bag\11.jpg">
+                            <div class="overlay">
+                                <h2>Prepared to go!</h2>
+                                <s>July 29th, 2024/ RI</s>
+                                <p>Author: Reese-811</p>
+                                <p>#TRAVEL #OUTDOOR</p>
+                            </div>
+                        </div>
+
+                        <!-- 13 -->
+                        <div class="memory-item">
+                            <img src="images\memories\bag\13.jpg">
+                            <div class="overlay">
+                                <h2>Piggy in Pocket</h2>
+                                <s>June 10th, 2024/ RI</s>
+                                <p>Author: Reese-811</p>
+                                <p>#CUTE #RELAX</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
