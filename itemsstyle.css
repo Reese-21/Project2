@@ -474,6 +474,7 @@ body::-webkit-scrollbar{
 .personality h3 {
     font-size: 25px;
     font-weight: 400;
+    padding-left: 5px;
     cursor: pointer;
 }
 
@@ -481,6 +482,11 @@ body::-webkit-scrollbar{
     width: 100%;
     background-color: #a19dca;
     border-radius: 10px;
+}
+
+#toggle-button:hover {
+    transform:scale(1.01);
+    background-color: #0056b3;
 }
 
 /* explaination of what the personality part is about */
