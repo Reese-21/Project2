@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #dbdbdb;
+            font-family: 'Shantell Sans', cursive;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: radial-gradient(circle, #888888 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+
+
+
+
+
+        .fctitle {
+            position: fixed;
+            top: 100%;
+            left: 100%;
+            transform: translate(-100%, -100%);
+            z-index: 2;
+            display: none;
+            /* Initially hidden */
+        }
+
+        .fctitle img {
+            width: 20vw;
+            transition: transform 0.2s;
+        }
+
+
+
+
+
+
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 75px;
+        }
+
+        .grid-item-nav {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            position: fixed;
+            background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+            opacity: 0.6;
+            z-index: 2;
+        }
+
+        .grid-item-nav img {
+            width: 100px;
+            transition: transform 0.2s;
+        }
+
+        .grid-item-nav img:hover {
+            transform: translateY(-5px);
+        }
+
+
+
+
+        .main {
+            margin-left: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+
+        .bigphoto {
+            width: 90%;
+        }
+
+        .bigphoto img {
+            width: 100%;
+        }
+
+
+
+        .photowall {
+            width: 90%;
+            column-count: 4;
+            /* Number of columns */
+            column-gap: 20px;
+            padding: 20px;
+            place-items: center;
+            break-inside: avoid;
+            /* Prevents breaking the image between columns */
+        }
+
+        .photowallp {
+            place-items: center;
+            /* Center both horizontally and vertically */
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 15px;
+        }
+
+
+
+        .memory-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .memory-item img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .memory-item img:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.623);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 99%;
+            border-radius: 20px;
+            background-color: #8e8e8eac;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            pointer-events: none;
+        }
+
+        .overlay s {
+            font-size: 12px;
+            font-weight: 200;
+            text-decoration: none;
+        }
+
+        .memory-item:hover .overlay {
+            opacity: 1;
+        }
+
+
+
+        .horizontal-line {
+            width: 90%;
+            height: 1px;
+            border-bottom: dashed 2px #242424;
+            margin: 20px 0;
+        }
+
+        .finalphoto {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+            margin-bottom: 200px;
+        }
+
+        .finalphoto img {
+            width: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="fctitle">
+        <a href="index.html">
+            <img src="images/0navtitle.png"></a>
+        <script>
+            window.addEventListener('scroll', function () {
+                var fctitle = document.querySelector('.fctitle');
+                var windowWidth = window.innerWidth;
+                var scrollPosition = window.scrollY;
+
+                if (windowWidth > 1300) {
+                    // Show the .fctitle element only after scrolling down 100px
+                    if (scrollPosition > 100) {
+                        fctitle.style.display = 'block';
+                    } else {
+                        fctitle.style.display = 'none';
+                    }
+                } else {
+                    // Ensure the element is hidden on smaller screens
+                    fctitle.style.display = 'block';
+                }
+            });
+        </script>
+    </div>
+
+    <div class="grid-item-nav">
+        <a id="LoginButton" href="myhome.html">
+            <img title="myhome" alt="home" src="images/1navhome.png">
+        </a>
+
+        <a href="tree.html">
+            <img alt="tree" src="images/2navtree.png">
+        </a>
+
+        <a href="playground.html">
+            <img title="playground" alt="play" src="images/3navmine.png">
+        </a>
+
+        <a href="story.html">
+            <img title="Furnicreature Wiki" alt="story" src="images/4navstory.png">
+        </a>
+    </div>
+
+
+    <div class="main">
+        <div class="bigphoto">
+            <img src="images\exhibit\1.jpg">
+            <img src="images\exhibit\2.jpg">
+        </div>
+        <br>
+        <br>
+        <br>
+        <h1>After interacting with visitors, many furnicreatures sparked new ideas!</h1>
+
+        <div class="photowall">
+            <!-- 1 -->
+            <div class="memory-item">
+                <img src="images\exhibit\11.jpg">
+                <div class="overlay">
+                    <h2>yippee! other buckets</h2>
+                    <s>June 1st, 2024/ RI</s>
+                    <p>Author: Exhibition Guests</p>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="memory-item">
+                <img src="images\exhibit\12.jpg">
+                <div class="overlay">
+                    <h2>DON'T SIT ON ME!</h2>
+                    <s>June 1st, 2024/ RI</s>
+                    <p>Author: Exhibition Guests</p>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="memory-item">
+                <img src="images\exhibit\13.jpg">
+                <div class="overlay">
+                    <h2>Family photos</h2>
+                    <s>May 22nd, 2024/ RI</s>
+                    <p>Author: Exhibition Guests</p>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="memory-item">
+                <img src="images\exhibit\14.jpg">
+                <div class="overlay">
+                    <h2>Summer's here!☀</h2>
+                    <s>May 27th, 2024/ RI</s>
+                    <p>Author: Exhibition Guests</p>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="memory-item">
+                <img src="images\exhibit\15.jpg">
+                <div class="overlay">
+                    <h2 style="font-size:20px;">Bye Buddy, <br>I hope you find your dad!</h2>
+                    <s>May 27th, 2024/ RI</s>
+                    <p>Author: Exhibition Guests</p>
+                </div>
+            </div>
+
+
+            <!-- 6 -->
+            <div class="memory-item">
+                <img src="images\exhibit\17.jpg">
+                <div class="overlay">
+                    <h2>red rckt was here🚀</h2>
+                    <s>May 24th, 2024/ RI</s>
+                    <p>Author: Exhibition Guests</p>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="memory-item">
+                <img src="images\exhibit\16.jpg">
+                <div class="overlay">
+                    <h2>Nap time!</h2>
+                    <s>May 25th, 2024/ RI</s>
+                    <p>Author: Exhibition Guests</p>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="memory-item">
+                <img src="images\exhibit\18.jpg">
+                <div class="overlay">
+                    <h2>I want BOBA:□</h2>
+                    <s>May 25th, 2024/ RI</s>
+                    <p>Author: Exhibition Guests</p>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="memory-item">
+                <img src="images\exhibit\19.jpg">
+                <div class="overlay">
+                    <h2>So many people</h2>
+                    <s>May 23th, 2024/ RI</s>
+                    <p>Author: Exhibition Guests</p>
+                </div>
+            </div>
+            <div class="memory-item">
+                <img src="images\exhibit\20.jpg">
+                <div class="overlay">
+                    <h2>Winner is Snuggly!</h2>
+                    <s>June 1th, 2024/ RI</s>
+                    <p>Author: Reese-811</p>
+                </div>
+            </div>
+            <div class="memory-item">
+                <img src="images\exhibit\21.jpg">
+                <div class="overlay">
+                    <h2>Congrats!</h2>
+                    <s>June 1th, 2024/ RI</s>
+                    <p>Author: Undergrad ID'26</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="horizontal-line"></div>
+
+        <div class="finalphoto">
+            <img src="images\exhibit\together.jpg">
+        </div>
+
+    </div>
+
+</body>
+
+</html>

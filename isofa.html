@@ -57,6 +57,10 @@
 
 
     <style>
+        .no-memory {
+            column-count: 2;
+        }
+
         .item-1 .fcimage img {
             animation: movesofa 3s infinite alternate linear;
             /* Adjust animation duration and timing function as needed */
@@ -79,15 +83,15 @@
         }
 
         .basic .fcimage {
-            top: 25vh;
-            left: 120vw;
-            zoom: 0.7;
+            top: -5vh;
+            left: 70vw;
+            transform: scale(0.6);
         }
 
         .more .fcimage {
-            top: 25vh;
-            left: 120vw;
-            zoom: 0.7;
+            top: -5vh;
+            left: 80vw;
+            transform: scale(0.6);
         }
 
 
@@ -146,11 +150,13 @@
         }
 
         @media (max-width:600px) {
+
             /* Stool item image and animation */
             .notab .fcimage img {
                 width: auto;
                 height: 200px;
             }
+
             .notab .fcimage {
                 top: 230px;
                 left: 50%;
@@ -160,6 +166,7 @@
             .notab .fcimage img {
                 height: 300px;
             }
+
             .basic .fcimage {
                 top: 180px;
                 left: 50%;
@@ -169,6 +176,7 @@
             .more .fcimage img {
                 width: 200px;
             }
+
             .more .fcimage {
                 top: 300px;
                 left: 70%;
@@ -508,7 +516,26 @@
 
                 <div class="grid-memory-right">
                     <div class="no-memory">
-                        <p>HUGo can't seem to recall anything yet.</p>
+                        <!-- 1 -->
+                        <div class="memory-item">
+                            <img src="images\memories\sofa\1.jpg">
+                            <div class="overlay">
+                                <h2>Back to home</h2>
+                                <s>June 2th, 2024/ RI</s>
+                                <p>Author: Reese-811</p>
+                                <p>#CUTE</p>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="memory-item">
+                            <img src="images\memories\sofa\3.jpg">
+                            <div class="overlay">
+                                <h2>Great place for naps</h2>
+                                <s>May 23th, 2024/ RI</s>
+                                <p>Author: Reese-811</p>
+                                <p>#WARM #LOVE #COMFY</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

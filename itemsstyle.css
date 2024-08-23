@@ -472,6 +472,12 @@ body::before {
     cursor: pointer;
 }
 
+#toggle-button{
+    width:100%;
+    background-color:#a19dca;
+    border-radius: 10px;
+}
+
 /* explaination of what the personality part is about */
 .personality-content {
     background-color: rgba(255, 255, 255, 0.735);

@@ -54,7 +54,8 @@ area:hover {
     top: 100%;
     left: 100%;
     transform: translate(-100%, -100%);
-    display: none; /* Initially hidden */
+    display: none;
+    /* Initially hidden */
 }
 
 .fctitle img {
@@ -289,12 +290,16 @@ p {
     text-decoration: underline;
 }
 
-.more a:hover h4 {
+.more a img {
+    width: 50px;
+}
+
+.more a:hover {
     color: #d7a4a8;
     /* Set the color of the link text when hovered */
     text-decoration: underline;
     /* Add underline on hover */
-    font-size: 30px;
+    transform: scale(1.2)
 }
 
 
@@ -377,7 +382,7 @@ p {
         display: grid;
         grid-template-columns: 1fr;
         margin-left: 2.5vw;
-        margin-bottom:30px;
+        margin-bottom: 30px;
         width: 95vw;
     }
 
@@ -389,12 +394,12 @@ p {
         margin-bottom: 30px;
     }
 
-    .habitat-left h1{
+    .habitat-left h1 {
         margin-top: 20px;
         font-size: 28px;
     }
 
-    .habitat-left p{
+    .habitat-left p {
         padding-left: 10px;
         font-size: 16px;
     }
@@ -454,19 +459,20 @@ p {
         margin-left: 2.5vw;
     }
 
-    .journey{
-        width:100%;
+    .journey {
+        width: 100%;
     }
 
     .image-slider {
         width: auto;
-        height: calc(5 / 7 * 100%); /* This sets the height to 5/7 of the width */
+        height: calc(5 / 7 * 100%);
+        /* This sets the height to 5/7 of the width */
         margin-top: 20px;
         margin-bottom: 20px;
-        z-index:0;
+        z-index: 0;
     }
 
-    .slider-image  {
+    .slider-image {
         width: 100%;
         height: auto;
     }
@@ -477,9 +483,9 @@ p {
         transform: translateY(-80%);
         /* background-color: rgba(255, 255, 255, 0.7); */
 
-        
+
     }
-    
+
     .material-symbols-outlined {
         font-size: 16px;
     }
