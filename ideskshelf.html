@@ -57,7 +57,7 @@
 
 
     <style>
-        .item-1 .fcimage img {
+        .fcimage img {
             width: 300px;
             animation: moveshelf 2s infinite alternate linear;
             /* same but faster animation as bedsheet */
@@ -78,15 +78,15 @@
         }
 
         .basic .fcimage {
-            top: 25vh;
-            left: 132vw;
-            zoom: 0.7;
+            top: 0;
+            left: 82vw;
+            transform: scale(0.8)
         }
 
         .more .fcimage {
-            top: 25vh;
-            left: 128vw;
-            zoom: 0.7;
+            top: 0;
+            left: 82vw;
+            transform: scale(0.8)
         }
 
 
@@ -127,27 +127,25 @@
 
             /* Stool item image and animation */
             .fcimage img {
-                width: 150px;
+                width: 250px;
             }
 
             .notab .fcimage {
                 left: 50vw;
-                top: 190px;
+                top: 200px;
             }
 
             .basic .fcimage {
-                position: relative;
-                transform: translate(0%, 0%);
-                top: 110px;
-                left: 30%;
-                zoom: 0.7;
+                position:relative;
+                transform: scale(0.7);
+                top: 90px;
+                left: 10vw;
             }
 
             .more .fcimage {
-                transform: translate(0%, 0%);
-                top: 140px;
-                left: 50%;
-                zoom: 0.7;
+                top: 120px;
+                left: 40vw;
+                transform: scale(0.8)
             }
         }
     </style>
