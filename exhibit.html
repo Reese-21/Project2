@@ -121,7 +121,7 @@
             /* Prevents breaking the image between columns */
         }
 
-        .photowallp {
+        .photowall p {
             place-items: center;
             /* Center both horizontally and vertically */
             font-family: 'Inter', sans-serif;
@@ -142,7 +142,12 @@
         }
 
         .memory-item img:hover {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.623);
+            box-shadow:
+                0 -2px 0 0 rgba(241, 240, 240, 0.8),
+                0 4px 6px rgba(0, 0, 0, 0.623);
+            transition: box-shadow 0.3s ease-in-out;
+            /* 添加过渡效果 */
+
         }
 
         .overlay {
@@ -190,14 +195,95 @@
         .finalphoto {
             width: 90%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 200px;
-            margin-bottom: 200px;
+            margin-top: 120px;
+            margin-bottom: 100px;
         }
 
         .finalphoto img {
             width: 50%;
+        }
+
+
+
+
+
+        @media (max-width: 900px) {
+            .grid-item-nav {
+                top: 0;
+                height: 50px;
+                width: 100vw;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-around;
+                background: linear-gradient(to right, #a0a0a0, #a0a0a088);
+                opacity: 0.6;
+                position: fixed;
+            }
+
+            .grid-item-nav img {
+                width: 50px;
+                transition: transform 0.2s;
+            }
+
+
+
+            .fctitle {
+                position: fixed;
+                /* This makes the element fixed-positioned */
+                top: 100%;
+                /* Position from the top of the viewport */
+                left: 100%;
+                /* Position from the left of the viewport */
+                transform: translate(-100%, -100%);
+            }
+
+            .fctitle img {
+                width: 40vw;
+                /* Set the width of the image */
+                transition: transform 0.2s;
+                /* Apply transition for a smooth effect */
+            }
+
+
+
+            /* zoom out of the background image when opening on phones, ipads, it seems the 'body' container cannot zoom */
+            .main {
+                margin-left: 0px;
+                margin-top: 80px;
+                height: 100%;
+                width: 100vw;
+                overflow-x: auto;
+                overflow-y: auto;
+            }
+
+
+            h1 {
+                font-size: 20px;
+                text-align: center;
+            }
+
+
+            .photowall {
+                column-count: 2;
+            }
+
+
+            .finalphoto {
+                margin-top: 0px;
+                margin-bottom: 80px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .finalphoto img {
+                width: 100%;
+            }
+
         }
     </style>
 
@@ -250,9 +336,10 @@
     <div class="main">
         <div class="bigphoto">
             <img src="images\exhibit\1.jpg">
+            <br>
+            <br>
             <img src="images\exhibit\2.jpg">
         </div>
-        <br>
         <br>
         <br>
         <h1>After interacting with visitors, many furnicreatures sparked new ideas!</h1>
@@ -279,7 +366,7 @@
 
             <!-- 4 -->
             <div class="memory-item">
-                <img src="images\exhibit\13.jpg">
+                <img src="images\exhibit\13.JPG">
                 <div class="overlay">
                     <h2>Family photos</h2>
                     <s>May 22nd, 2024/ RI</s>
@@ -289,7 +376,7 @@
 
             <!-- 3 -->
             <div class="memory-item">
-                <img src="images\exhibit\14.jpg">
+                <img src="images\exhibit\14.JPG">
                 <div class="overlay">
                     <h2>Summer's here!☀</h2>
                     <s>May 27th, 2024/ RI</s>
@@ -299,7 +386,7 @@
 
             <!-- 5 -->
             <div class="memory-item">
-                <img src="images\exhibit\15.jpg">
+                <img src="images\exhibit\15.JPG">
                 <div class="overlay">
                     <h2 style="font-size:20px;">Bye Buddy, <br>I hope you find your dad!</h2>
                     <s>May 27th, 2024/ RI</s>
@@ -310,9 +397,9 @@
 
             <!-- 6 -->
             <div class="memory-item">
-                <img src="images\exhibit\17.jpg">
+                <img src="images\exhibit\17.JPG">
                 <div class="overlay">
-                    <h2>red rckt was here🚀</h2>
+                    <h2>I want BOBA:□</h2>
                     <s>May 24th, 2024/ RI</s>
                     <p>Author: Exhibition Guests</p>
                 </div>
@@ -328,16 +415,16 @@
             </div>
             <!-- 6 -->
             <div class="memory-item">
-                <img src="images\exhibit\18.jpg">
+                <img src="images\exhibit\18.JPG">
                 <div class="overlay">
-                    <h2>I want BOBA:□</h2>
+                    <h2>red rckt was here🚀</h2>
                     <s>May 25th, 2024/ RI</s>
                     <p>Author: Exhibition Guests</p>
                 </div>
             </div>
             <!-- 6 -->
             <div class="memory-item">
-                <img src="images\exhibit\19.jpg">
+                <img src="images\exhibit\19.JPG">
                 <div class="overlay">
                     <h2>So many people</h2>
                     <s>May 23th, 2024/ RI</s>
@@ -365,6 +452,8 @@
         <div class="horizontal-line"></div>
 
         <div class="finalphoto">
+            <p>Many Thanks to my Cohort at RISD 2024!</p>
+            <br>
             <img src="images\exhibit\together.jpg">
         </div>
 
