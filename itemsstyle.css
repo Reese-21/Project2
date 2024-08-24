@@ -33,9 +33,9 @@ body::before {
 }
 
 
-body::-webkit-scrollbar{
-    height:0px;
-    width:4px;
+body::-webkit-scrollbar {
+    height: 0px;
+    width: 4px;
 }
 
 
@@ -93,13 +93,13 @@ body::-webkit-scrollbar{
 }
 
 .tabbuttons .button:hover {
-    transform:scale(1.06);
+    transform: scale(1.06);
 }
 
 .tabbuttons .button:focus,
 .tabbuttons .button:active {
     background-color: #a19dca;
-    transform:scale(1.06);
+    transform: scale(1.06);
 }
 
 .tabbuttons img {
@@ -486,7 +486,7 @@ body::-webkit-scrollbar{
 }
 
 #toggle-button:hover {
-    transform:scale(1.01);
+    transform: scale(1.01);
     background-color: #0056b3;
 }
 
@@ -671,6 +671,7 @@ body::-webkit-scrollbar{
     /* every tab button */
     .tabbuttons .button {
         height: auto;
+        margin-right: 10px;
     }
 
     /* button icon image */
@@ -746,11 +747,14 @@ body::-webkit-scrollbar{
 
 
     /* tab3 */
+    .grid-memory {
+        margin-top: 40px;
+    }
+
     .more .fcimage {
         position: absolute;
-        top: 35vh;
-        left: 90vw;
-        zoom: 1;
+        top: 0;
+        left: 80vw;
         z-index: 999;
     }
 
@@ -1069,8 +1073,8 @@ body::-webkit-scrollbar{
         font-weight: 300;
         font-size: 15px;
         width: 100%;
-        padding:0px;
-        margin-top:20px;
+        padding: 0px;
+        margin-top: 20px;
     }
 
     .no-memory {

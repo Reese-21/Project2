@@ -107,7 +107,7 @@ hr {
     position: fixed;
     background: linear-gradient(to right, #a0a0a0, #a0a0a088);
     opacity: 0.6;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .grid-item-nav img {
@@ -405,7 +405,7 @@ hr {
 
 /* Customize the scrollbar thumb */
 .sliding-square::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #a19dca;
     /* Color of the scrollbar thumb */
     border-radius: 4px;
     /* Round the corners of the scrollbar thumb */
@@ -482,6 +482,12 @@ hr {
     border-radius: 10px;
     border: #a19dca;
 }
+
+#fakebutton:hover {
+    background-color: #0056b3;
+    transform: scale(1.01)
+}
+
 
 
 

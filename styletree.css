@@ -20,9 +20,9 @@ body::before {
     background-size: 20px 20px;
 }
 
-body::-webkit-scrollbar{
-    height:0px;
-    width:8px;
+body::-webkit-scrollbar {
+    height: 0px;
+    width: 8px;
 }
 
 body::-webkit-scrollbar-track {
@@ -55,7 +55,8 @@ body::-webkit-scrollbar-thumb:hover {
     left: 99.5%;
     transform: translate(-100%, -100%);
     z-index: 2;
-    display: none; /* Initially hidden */
+    display: none;
+    /* Initially hidden */
 }
 
 .fctitle img {
@@ -91,7 +92,7 @@ body::-webkit-scrollbar-thumb:hover {
     position: fixed;
     background: linear-gradient(to right, #a0a0a0, #a0a0a088);
     opacity: 0.6;
-    z-index: 2;
+    z-index: 100;
 }
 
 .grid-item-nav img {
@@ -136,7 +137,7 @@ body::-webkit-scrollbar-thumb:hover {
     /* Ensure the text is centered within the container */
 }
 
-.text-overlay a{
+.text-overlay a {
     color: #ffffff;
     font-size: 24px;
     font-weight: bold;
@@ -186,8 +187,9 @@ body::-webkit-scrollbar-thumb:hover {
     padding: 10px;
 }
 
-.open-square:hover{
-    transform: scale(1.01); /* Scale up item info on hover */
+.open-square:hover {
+    transform: scale(1.01);
+    /* Scale up item info on hover */
 }
 
 /* this is the goods window that opens */
@@ -233,7 +235,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Customize the scrollbar thumb */
 .sliding-square::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #a19dca;
     /* Color of the scrollbar thumb */
     border-radius: 4px;
     /* Round the corners of the scrollbar thumb */
@@ -283,6 +285,7 @@ body::-webkit-scrollbar-thumb:hover {
     cursor: pointer;
     margin-top: 10px;
     margin-right: 10px;
+    object-fit: cover;
 }
 
 
@@ -310,6 +313,10 @@ body::-webkit-scrollbar-thumb:hover {
     border: #a19dca;
 }
 
+#fakebutton:hover {
+    background-color: #0056b3;
+    transform: scale(1.01)
+}
 
 
 
@@ -357,11 +364,12 @@ body::-webkit-scrollbar-thumb:hover {
         width: 90%;
         font-size: 24px;
     }
-    .text-overlay a{
+
+    .text-overlay a {
         color: #ffffff;
         font-size: 14px;
     }
-    
+
 
     .grid-item-news h2 {
         font-size: 18px;

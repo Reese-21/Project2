@@ -130,40 +130,47 @@
 
             /* Stool item image and animation */
             .item-1 .fcimage img {
-                width: 150px;
+                width: 200px;
+                height: auto;
+            }
+
+            .notab .fcimage {
+                left: 20vw;
             }
 
             .basic .fcimage {
-                top: 30vh;
-                left: auto;
-                right: 10vw;
+                top: 150px;
+                left: 30vw;
+            }
+
+            .more .fcimage img {
+                width: 80px;
             }
 
             .more .fcimage {
-                top: 30vh;
-                left: auto;
-                right: 10vw;
+                top: 150px;
+                left: 40vw;
             }
 
             @keyframes movestool {
                 0% {
-                    transform: translateX(100vw) rotateY(0);
+                    transform: translateX(60vw) rotateY(0);
                 }
 
                 45% {
-                    transform: translateX(40vw);
+                    transform: translateX(0vw);
                 }
 
                 50% {
-                    transform: translateX(40vw) rotateY(180deg);
+                    transform: translateX(0vw) rotateY(180deg);
                 }
 
                 95% {
-                    transform: translateX(100vw) rotateY(180deg);
+                    transform: translateX(60vw) rotateY(180deg);
                 }
 
                 100% {
-                    transform: translateX(100vw) rotateY(0);
+                    transform: translateX(60vw) rotateY(0);
                 }
             }
 
