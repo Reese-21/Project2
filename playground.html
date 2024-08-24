@@ -42,11 +42,55 @@
             justify-content: center;
             align-items: center;
             cursor: none;
+            z-index: 1;
         }
 
         #img1 {
             display: block;
         }
+
+
+
+
+
+        .stops {
+            position: absolute;
+            width: calc(100vw - 100px);
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            place-items: center;
+            margin-left: 100px;
+            z-index: 2;
+        }
+
+        .stops a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+
+        .stops a img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .stops h4 {
+            color: #8984c1;
+            text-decoration: underline;
+        }
+
+        .stops a:visited h4 {
+            color: #a34791;
+            /* Change the color after the link is clicked */
+        }
+
+
 
 
         @media (max-width: 900px) {
@@ -55,7 +99,42 @@
             }
 
             #img1 {
-                zoom: 0.6;
+                transform: scale(0.6);
+            }
+
+            .text{
+                position: absolute;
+                text-align: center;
+                top: 35%;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+
+
+            .stops {
+                width: 100%;
+                height: 100vh;
+                margin-left: 0px;
+                margin-top: 50px;
+            }
+
+            .stops a {
+                visibility: hidden;
+                width: 50px;
+            }
+
+            .stops a img {
+                visibility: visible;
+                width: 40px;
+                margin-bottom: 10px;
+            }
+
+            .stops h4 {
+                visibility: hidden;
+                font-size: 10px;
             }
         }
     </style>
@@ -81,16 +160,32 @@
 
 
     <div class="grid-item-bg">
-        <h3>I AM WATCHING.</h3>
-        <p id="mousePositionDisplay">Move your mouse to see the position!</p>
+        <div class="text">
+            <h3>Move your mouse to discover some SECRETS!</h3>
+            <p id="mousePositionDisplay">Click Twice</p>
+        </div>
         <img id='img1' src='images\head\middle.png'>
     </div>
 
 
-
-
-
-
+    <div class="stops">
+        <a href="exhibit.html" target="_blank">
+            <img src="images/tree/zexhibit.png">
+            <h4>💜FurniExhibition</h4>
+        </a>
+        <a href="https://hyjreesepfo.cargo.site/2-11-FurniCreature-Book" target="_blank">
+            <img src="images/tree/zbook.png">
+            <h4>💙FurniBook</h4>
+        </a>
+        <a href="https://hyjreesepfo.cargo.site/2-8-FurniCreature-Animation" target="_blank">
+            <img src="images/tree/zvideo.png">
+            <h4>🤍FurniStories</h4>
+        </a>
+        <a href="index.html">
+            <img src="images/tree/zweb.png" target="_blank">
+            <h4>🧡FurniWeb</h4>
+        </a>
+    </div>
 
 
     <!-- coord script -->
@@ -192,6 +287,51 @@
                 // Place the first trail dot at the current mouse position
                 trailDots[0].style.left = mouseX - 25 + 'px'; // Adjust position for the image size
                 trailDots[0].style.top = mouseY - 25 + 'px';  // Adjust position for the image size
+            });
+        });
+    </script>
+
+
+    <!-- hover link script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stops = document.querySelectorAll('.stops a');
+
+            stops.forEach(stop => {
+                let hideTimeout;
+
+                stop.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout); // 清除可能存在的隐藏延迟
+                    stop.style.opacity = '1'; // 鼠标进入时显示
+                });
+
+                stop.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        stop.style.opacity = '0'; // 鼠标离开2秒后隐藏
+                    }, 400); // 500毫秒 = 0.5秒
+                });
+            });
+        });
+
+        // phone tap to show the link
+        document.addEventListener('DOMContentLoaded', () => {
+            const stopsLinks = document.querySelectorAll('.stops a');
+
+            stopsLinks.forEach(link => {
+                let tapCount = 0;
+
+                link.addEventListener('click', (event) => {
+                    tapCount++;
+                    if (tapCount === 1) {
+                        event.preventDefault(); // 阻止第一次点击打开链接
+                        link.querySelector('h4').style.visibility = 'visible'; // 显示内容
+                        setTimeout(() => {
+                            tapCount = 0; // 设置延迟后重置点击计数
+                        }, 10000); // 10 秒后重置计数
+                    } else if (tapCount === 2) {
+                        window.location.href = link.getAttribute('href'); // 第二次点击打开链接
+                    }
+                });
             });
         });
     </script>

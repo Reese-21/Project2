@@ -127,6 +127,7 @@ hr {
 
 /* opening image */
 .grid-item-shop {
+    margin-top:50px;
     width: 90vw;
     height: auto;
     position: relative;
@@ -532,7 +533,7 @@ hr {
     }
 
     .grid-item-shop img{
-        transform:scale(1.4);
+        transform:scale(1.3);
     }
 
     .searchandgoods {
