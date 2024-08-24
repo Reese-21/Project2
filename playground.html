@@ -25,6 +25,7 @@
 
         .grid-item-nav {
             left: 0;
+            z-index: 100;
         }
 
         .trail-dot {
@@ -49,7 +50,18 @@
             display: block;
         }
 
-
+        .trail-dot {
+            position: absolute;
+            /* Ensures that the dots can be positioned freely */
+            width: 120px;
+            /* Adjust size if needed */
+            height: 120px;
+            /* Adjust size if needed */
+            z-index: 2;
+            /* High z-index to ensure it's above other content */
+            pointer-events: none;
+            /* Prevents the dots from blocking mouse events */
+        }
 
 
 
@@ -62,7 +74,7 @@
             grid-template-rows: 1fr 1fr;
             place-items: center;
             margin-left: 100px;
-            z-index: 2;
+            z-index: 3;
         }
 
         .stops a {
@@ -102,7 +114,7 @@
                 transform: scale(0.6);
             }
 
-            .text{
+            .text {
                 position: absolute;
                 text-align: center;
                 top: 35%;
@@ -116,7 +128,7 @@
 
             .stops {
                 width: 100%;
-                height: 100vh;
+                height: 90vh;
                 margin-left: 0px;
                 margin-top: 50px;
             }
@@ -263,19 +275,21 @@
             const trailLength = 5; // Number of trail dots
             const trailDots = [];
 
+            // Create and add trail dots
             for (let i = 0; i < trailLength; i++) {
                 const dot = document.createElement('img');
-                dot.className = 'trail-dot';
+                dot.className = 'trail-dot'; // Ensure CSS class is applied
                 dot.src = 'images/homepage/stool.png'; // Set the correct image path
                 document.body.appendChild(dot);
                 trailDots.push(dot);
             }
 
+            // Update trail dot positions based on mouse movement
             document.addEventListener('mousemove', function (event) {
                 const mouseX = event.pageX;
                 const mouseY = event.pageY;
 
-                // Update the positions of trail dots based on historical mouse coordinates
+                // Move each dot to the position of the previous dot
                 for (let i = trailLength - 1; i > 0; i--) {
                     const prevDot = trailDots[i - 1];
                     const currentDot = trailDots[i];
@@ -285,8 +299,8 @@
                 }
 
                 // Place the first trail dot at the current mouse position
-                trailDots[0].style.left = mouseX - 25 + 'px'; // Adjust position for the image size
-                trailDots[0].style.top = mouseY - 25 + 'px';  // Adjust position for the image size
+                trailDots[0].style.left = mouseX - 25 + 'px'; // Adjust for image size
+                trailDots[0].style.top = mouseY - 25 + 'px';  // Adjust for image size
             });
         });
     </script>
