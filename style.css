@@ -22,6 +22,33 @@ body::before {
     /* Adjust the size of the dots */
 }
 
+body::-webkit-scrollbar{
+    height:0px;
+    width:8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Background color of the scrollbar track */
+}
+
+/* Customize the scrollbar thumb */
+body::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Color of the scrollbar thumb */
+    border-radius: 4px;
+    /* Round the corners of the scrollbar thumb */
+}
+
+/* Customize the scrollbar thumb on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Color of the scrollbar thumb on hover */
+}
+
+
+
+
 .map area:hover {
     cursor: pointer;
 }
@@ -30,13 +57,6 @@ body::before {
 
 
 
-
-/* .grid-container {
-    display: grid;
-    grid-template-columns: 75px 2100px;
-    grid-template-rows: repeat(8, 1fr);
-    width: 100vw;
-} */
 
 .grid-item-nav {
     height: 100%;
@@ -68,7 +88,8 @@ body::before {
 .grid-item-bg img {
     width: 2046px;
     height: auto;
-    zoom:0.8;
+    /* transform: scale(0.6); */
+    zoom: 0.8;
 }
 
 
@@ -115,9 +136,9 @@ body::before {
 .fctitle {
     position: fixed;
     /* This makes the element fixed-positioned */
-    top: 100%;
+    top: 99%;
     /* Position from the top of the viewport */
-    left: 100%;
+    left: 99.5%;
     /* Position from the left of the viewport */
     transform: translate(-100%, -100%);
 }
@@ -127,6 +148,15 @@ body::before {
     /* Set the width of the image */
     transition: transform 0.2s;
     /* Apply transition for a smooth effect */
+}
+
+.fctitle:hover {
+    background-color: #d1cfe8d2;
+    border-radius: 20px;
+    box-shadow:
+        0 -2px 0 0 rgba(241, 240, 240, 0.8),
+        0 4px 6px rgba(0, 0, 0, 0.623);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 
@@ -156,13 +186,13 @@ body::before {
 
     /* zoom out of the background image when opening on phones, ipads, it seems the 'body' container cannot zoom */
     .grid-item-bg {
-        margin-top:50px;
-        margin-left:-50px;
-        width:calc(100vw+50px);
+        margin-top: 50px;
+        margin-left: -50px;
+        width: calc(100vw+50px);
         overflow-x: auto;
     }
 
-    .grid-item-bg img{
+    .grid-item-bg img {
         zoom: 0.5;
     }
 
@@ -186,14 +216,14 @@ body::before {
         /* Position from the left of the viewport */
         transform: translate(-100%, -100%);
     }
-    
+
     .fctitle img {
         width: 40vw;
         /* Set the width of the image */
         transition: transform 0.2s;
         /* Apply transition for a smooth effect */
     }
-    
+
 
 }
 

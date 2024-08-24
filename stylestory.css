@@ -20,6 +20,31 @@ body::before {
     background-size: 20px 20px;
 }
 
+body::-webkit-scrollbar{
+    height:0px;
+    width:8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Background color of the scrollbar track */
+}
+
+/* Customize the scrollbar thumb */
+body::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Color of the scrollbar thumb */
+    border-radius: 4px;
+    /* Round the corners of the scrollbar thumb */
+}
+
+/* Customize the scrollbar thumb on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Color of the scrollbar thumb on hover */
+}
+
+
 area:hover {
     cursor: pointer;
 }
@@ -51,8 +76,8 @@ area:hover {
 /* the furnicreature on bottom right */
 .fctitle {
     position: fixed;
-    top: 100%;
-    left: 100%;
+    top: 99%;
+    left: 99.5%;
     transform: translate(-100%, -100%);
     display: none;
     /* Initially hidden */
@@ -63,7 +88,14 @@ area:hover {
     transition: transform 0.2s;
 }
 
-
+.fctitle:hover {
+    background-color: #d1cfe8d2;
+    border-radius: 20px;
+    box-shadow:
+        0 -2px 0 0 rgba(241, 240, 240, 0.8),
+        0 4px 6px rgba(0, 0, 0, 0.623);
+    transition: box-shadow 0.3s ease-in-out;
+}
 
 
 

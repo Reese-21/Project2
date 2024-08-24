@@ -93,12 +93,13 @@ body::-webkit-scrollbar{
 }
 
 .tabbuttons .button:hover {
-    background-color: #a19dca;
+    transform:scale(1.06);
 }
 
 .tabbuttons .button:focus,
 .tabbuttons .button:active {
     background-color: #a19dca;
+    transform:scale(1.06);
 }
 
 .tabbuttons img {
