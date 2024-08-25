@@ -28,7 +28,6 @@
             font-family: 'Shantell Sans', cursive;
         }
 
-
         body::before {
             /* Add dotted background */
             content: "";
@@ -43,9 +42,35 @@
             /* Adjust the size of the dots */
         }
 
+        body::-webkit-scrollbar {
+            height: 0px;
+            width: 8px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            /* Background color of the scrollbar track */
+        }
+
+        /* Customize the scrollbar thumb */
+        body::-webkit-scrollbar-thumb {
+            background: #888;
+            /* Color of the scrollbar thumb */
+            border-radius: 4px;
+            /* Round the corners of the scrollbar thumb */
+        }
+
+        /* Customize the scrollbar thumb on hover */
+        body::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            /* Color of the scrollbar thumb on hover */
+        }
 
 
 
+
+
+        
         .backarrow {
             position: absolute;
             left: 10px;

@@ -102,6 +102,11 @@ body::-webkit-scrollbar-thumb:hover {
     cursor: pointer;
 }
 
+.instructions h2:hover {
+    transform: scale(1.01);
+    color:#0056b3;
+}
+
 
 
 
@@ -191,7 +196,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .popup-content p {
-    Font-size: 10px;
+    Font-size: 12px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -360,3 +365,4 @@ button[type="submit"] {
 }
 
 /* green #b8d4d7 purple light #d1cfe8 purple dark #a19dca red #e6babe yellow #fceed1 */
+/* hover blue #0056b3 */
