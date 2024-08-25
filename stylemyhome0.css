@@ -83,18 +83,14 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 .grid-item-bg {
-    display: flex;
-    justify-content: center; /* Centers the image horizontally */
-    align-items: center; /* Centers the image vertically if needed */
+    width:auto;
+    place-content: center;
 }
 
 .grid-item-bg img {
-    margin-left:100px;
-    width: 2007px;
-    height: auto;
-    zoom: 0.8;
+    width:2007px;
+    zoom:0.8;
 }
-
 
 
 
@@ -255,13 +251,6 @@ button[type="submit"] {
 }
 
 
-@media (max-width:1200px) and (min-width:901px) {
-    .grid-item-bg img {
-        margin-top:-200px;
-        margin-left: 250px;
-        transform: scale(0.8);
-    }
-}
 
 
 @media (max-width: 900px) {
@@ -290,31 +279,23 @@ button[type="submit"] {
 
     /* zoom out of the background image when opening on phones, ipads, it seems the 'body' container cannot zoom */
     .grid-item-bg {
-        display: flex;
-        justify-content: flex-start; /* Centers the image horizontally */
-        align-items: flex-start; /* Centers the image vertically if needed */
-        margin-left:0px;
-        margin-top:80px;
+        margin-top: 80px;
         height: 100%;
-        width:auto;
+        width: 100vw;
         overflow-x: auto;
         overflow-y: auto;
     }
 
-    .grid-item-bg::-webkit-scrollbar {
-        height: 0px;
-    }
-    
     .grid-item-bg img {
-        margin-left: -100px;
+        margin-left: -160px;
         width: 2007px;
         height: auto;
         zoom: 0.4;
     }
 
-
-
-
+    .grid-item-bg::-webkit-scrollbar {
+        height: 0px;
+    }
 
     
     .instructions {
