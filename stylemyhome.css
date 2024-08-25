@@ -261,7 +261,7 @@ body::-webkit-scrollbar-thumb:hover {
 
     .homebg img {
         margin-top: -400px;
-        margin-left: 450px;
+        margin-left: 100px;
         transform: scale(0.8);
     }
 }
