@@ -22,9 +22,9 @@ body::before {
     /* Adjust the size of the dots */
 }
 
-body::-webkit-scrollbar{
-    height:0px;
-    width:8px;
+body::-webkit-scrollbar {
+    height: 0px;
+    width: 8px;
 }
 
 body::-webkit-scrollbar-track {
@@ -66,7 +66,7 @@ body::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(to right, #a0a0a0, #a0a0a088);
     /* Gradient from #a0a0a0 (left) to #808080 (right) */
     opacity: 0.6;
-    z-index:100;
+    z-index: 100;
 }
 
 .grid-item-nav img {
@@ -106,7 +106,7 @@ body::-webkit-scrollbar-thumb:hover {
     position: fixed;
     bottom: 20px;
     left: 150px;
-    width:50vw;
+    width: 50vw;
 }
 
 .instructions h2 {
@@ -246,7 +246,19 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
+@media (max-width:1200px) and (min-width:901px) {
+    .cloud img {
+        top: 250px;
+        left: 100vw;
+        z-index:10;
+    }
 
+    .grid-item-bg img {
+        margin-top:-200px;
+        margin-left: 250px;
+        transform: scale(0.8);
+    }
+}
 
 
 
@@ -282,7 +294,7 @@ body::-webkit-scrollbar-thumb:hover {
         align-items: flex-start;
         /* Centers the image vertically if needed */
         margin-left: 0px;
-        margin-top:80px;
+        margin-top: 80px;
         height: 100%;
         width: 100vw;
         overflow-x: auto;
@@ -353,7 +365,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 
     #loginicon {
-        display:none;
+        display: none;
         /* transform: translate(0%, -100%);
         top: 20vh;
         left: 4%;
@@ -362,7 +374,7 @@ body::-webkit-scrollbar-thumb:hover {
     }
 
     #popup {
-        display:none;
+        display: none;
         /* transform: translate(0%, -100%);
         top: 20vh;
         left: 22%;
@@ -371,18 +383,16 @@ body::-webkit-scrollbar-thumb:hover {
     }
 
     #popup p {
-        display:none;
+        display: none;
         /* font-size: 10px; */
     }
-
-
 
 
 
     .cloud img {
         position: relative;
         top: 100px;
-        right: 10%;
+        left: 100vw;
         width: 250px;
     }
 }

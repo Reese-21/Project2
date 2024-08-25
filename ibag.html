@@ -123,24 +123,27 @@
 
 
 
-        /* 窄屏幕 */
+        /* 宽屏幕 */
         @media (max-width:1200px) and (min-width:601px) {
-
-            /* Stool item image and animation */
             .item-1 .fcimage img {
-                width: 150px;
+                width: 200px;
+                height: auto;
+            }
+
+            .notab .fcimage {
+                left: 50vw;
             }
 
             .basic .fcimage {
-                top: 30vh;
-                left: auto;
-                right: 10vw;
+                top: 10px;
+                left: 80vw;
+                transform: scale(0.7);
             }
 
             .more .fcimage {
-                top: 30vh;
-                left: auto;
-                right: 10vw;
+                top: 10px;
+                left: 80vw;
+                transform: scale(0.7);
             }
 
         }

@@ -117,10 +117,30 @@
         }
 
 
+        /* 宽屏幕 */
+        @media (max-width: 1200px) and (min-width:601px) {
+            .item-1 .fcimage img {
+                width: 450px;
+                height: auto;
+            }
 
+            .notab .fcimage {
+                left: 50vw;
+            }
+
+            .basic .fcimage {
+                top: -100px;
+                left: 70vw;
+            }
+
+            .more .fcimage {
+                top: -100px;
+                left: 70vw;
+            }
+        }
 
         /* 窄屏幕 */
-        @media (max-width:1200px) {
+        @media (max-width:600px) {
             .infocard {
                 transform: translate(-50%, 10%);
             }

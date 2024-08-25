@@ -235,7 +235,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Customize the scrollbar thumb */
 .sliding-square::-webkit-scrollbar-thumb {
-    background: #a19dca;
+    background: #888;
     /* Color of the scrollbar thumb */
     border-radius: 4px;
     /* Round the corners of the scrollbar thumb */

@@ -251,6 +251,16 @@ button[type="submit"] {
     'opsz' 24;
 }
 
+
+@media (max-width:1200px) and (min-width:901px) {
+    .grid-item-bg img {
+        margin-top:-200px;
+        margin-left: 250px;
+        transform: scale(0.8);
+    }
+}
+
+
 @media (max-width: 900px) {
     .grid-item-nav {
         top: 0;

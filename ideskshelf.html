@@ -119,8 +119,30 @@
 
 
 
-        /* 窄屏幕 */
-        @media (max-width:1200px) {
+        /* 宽屏幕 */
+        @media (max-width:1200px) and (min-width:601px) {
+            .item-1 .fcimage img {
+                width: 300px;
+                height: auto;
+            }
+
+            .notab .fcimage {
+                left: 50vw;
+            }
+
+            .basic .fcimage {
+                top: 10px;
+                left: 70vw;
+            }
+
+            .more .fcimage {
+                top: 10px;
+                left: 70vw;
+            }
+
+        }
+        
+        @media (max-width:600px){
             .infocard {
                 transform: translate(-50%, 10%);
             }

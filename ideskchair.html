@@ -94,13 +94,13 @@
         .basic .fcimage {
             top: -20px;
             left: 82vw;
-            transform:scale(0.7);
+            transform: scale(0.7);
         }
 
         .more .fcimage {
             top: -20px;
             left: 82vw;
-            transform:scale(0.7);
+            transform: scale(0.7);
         }
 
 
@@ -131,42 +131,63 @@
         }
 
 
+        /* 宽屏幕 */
+        @media (max-width: 1200px) and (min-width:601px) {
+            .item-1 .fcimage img {
+                width: 300px;
+                height: auto;
+            }
+
+            .notab .fcimage {
+                left: 50vw;
+            }
+
+            .basic .fcimage {
+                top: 10px;
+                left: 70vw;
+            }
+
+            .more .fcimage {
+                top: 10px;
+                left: 70vw;
+            }
+        }
 
 
         /* 窄屏幕 */
-        @media (max-width:1200px) {
+        @media (max-width:600px) {
             .infocard {
                 transform: translate(-50%, 10%);
             }
 
             /* Stool item image and animation */
-            .fcimage img{
+            .fcimage img {
                 height: 250px;
                 width: auto;
             }
 
             .notab .fcimage {
-                left:60vw;
+                left: 60vw;
                 top: 220px;
             }
 
             .basic .fcimage {
-                position:relative;
+                position: relative;
                 transform: translate(0%, 0%);
                 top: 110px;
-                left:30vw;
+                left: 30vw;
             }
 
             .more .fcimage {
                 transform: translate(0%, 0%);
                 top: 110px;
-                left:50vw;
+                left: 50vw;
             }
-            .more .fcimage img{
-                height:250px;
+
+            .more .fcimage img {
+                height: 250px;
             }
         }
-
     </style>
 
 </head>
@@ -439,9 +460,12 @@
                         <h3 id="toggle-button">▼ PERSONALITY</h3>
                         <p>(default)</p>
                         <div id="personality-content" class="hidden">
-                            <p>This reflects the current personality of the Furnicreature based on the accumulated keywords from its memories.</p> <br>
-                            <p>For example, if a Furnicreature has many memories tagged with #JOYFUL, it is likely to be more optimistic.</p><br>
-                            <p>Its personality will influence the tone of messages it sends you. Each species has its own unique default personality traits.</p>
+                            <p>This reflects the current personality of the Furnicreature based on the accumulated
+                                keywords from its memories.</p> <br>
+                            <p>For example, if a Furnicreature has many memories tagged with #JOYFUL, it is likely to be
+                                more optimistic.</p><br>
+                            <p>Its personality will influence the tone of messages it sends you. Each species has its
+                                own unique default personality traits.</p>
                         </div>
                         <script>
                             document.getElementById('toggle-button').addEventListener('click', function () {

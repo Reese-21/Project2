@@ -192,10 +192,38 @@
         }
 
 
+        /* 宽屏幕 */
+        @media (max-width:1200px) and (min-width:601px) {
+            .item-1 .fcimage img {
+                width: 200px;
+                height: auto;
+            }
 
+            .notab .fcimage {
+                left: 50vw;
+                top: 350px;
+            }
+
+            .notab .fcimage img{
+                width: 400px;
+            }
+
+            .basic .fcimage {
+                top: 50px;
+                left: 80vw;
+                transform: scale(0.7);
+            }
+
+            .more .fcimage {
+                top: 50px;
+                left: 80vw;
+                transform: scale(0.7);
+            }
+
+        }
 
         /* 窄屏幕 */
-        @media (max-width:1200px) {
+        @media (max-width:600px) {
 
             /* Stool item image and animation */
             .fcimage img {
