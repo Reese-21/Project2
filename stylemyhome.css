@@ -83,20 +83,46 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-
-.grid-item-bg {
+.homebg {
     display: flex;
-    justify-content: center;
-    /* Centers the image horizontally */
-    align-items: center;
-    /* Centers the image vertically if needed */
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically if needed */
 }
 
-.grid-item-bg img {
-    margin-left: 100px;
+.homebg img {
+    margin-left:100px;
+    margin-top:-250px;
     width: 2007px;
+    height: auto;
     zoom: 0.8;
 }
+
+
+
+
+/*cloud animation*/
+.cloud img {
+    position: relative;
+    top: 60px;
+    left: 80vw;
+    transform: translate(100%, -50%);
+    width: 200px;
+
+    animation: limitedchair 2s infinite alternate;
+}
+
+@keyframes limitedchair {
+    0% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+
+
 
 
 
@@ -138,27 +164,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 
-.cloud img {
-    position: absolute;
-    top: 12vh;
-    left: 1500px;
-    transform: translate(100%, -50%);
-    width: 300px;
 
-    animation: limitedchair 2s infinite alternate;
-}
-
-@keyframes limitedchair {
-    0% {
-        transform: translateY(20px);
-    }
-
-    100% {
-        transform: translateY(-10px);
-    }
-}
-
-/*cloud animation*/
 
 
 
@@ -248,14 +254,14 @@ body::-webkit-scrollbar-thumb:hover {
 
 @media (max-width:1200px) and (min-width:901px) {
     .cloud img {
-        top: 250px;
+        top: 60px;
         left: 100vw;
-        z-index:10;
+        z-index: 10;
     }
 
-    .grid-item-bg img {
-        margin-top:-200px;
-        margin-left: 250px;
+    .homebg img {
+        margin-top: -400px;
+        margin-left: 450px;
         transform: scale(0.8);
     }
 }
@@ -287,7 +293,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 
     /* zoom out of the background image when opening on phones, ipads, it seems the 'body' container cannot zoom */
-    .grid-item-bg {
+    .homebg {
         display: flex;
         justify-content: flex-start;
         /* Centers the image horizontally */
@@ -295,22 +301,32 @@ body::-webkit-scrollbar-thumb:hover {
         /* Centers the image vertically if needed */
         margin-left: 0px;
         margin-top: 80px;
-        height: 100%;
+        height: 100vh;
         width: 100vw;
         overflow-x: auto;
         overflow-y: auto;
     }
 
-    .grid-item-bg::-webkit-scrollbar {
+    .homebg::-webkit-scrollbar {
         height: 0px;
     }
 
-    .grid-item-bg img {
+    .homebg img {
         margin-left: -160px;
         width: 2007px;
         height: auto;
         zoom: 0.4;
     }
+
+    .cloud img {
+        position: absolute;
+        top: 100px;
+        left: 60vw;
+        width: 100px;
+    }
+
+
+
 
 
     .instructions {
@@ -385,15 +401,6 @@ body::-webkit-scrollbar-thumb:hover {
     #popup p {
         display: none;
         /* font-size: 10px; */
-    }
-
-
-
-    .cloud img {
-        position: relative;
-        top: 100px;
-        left: 100vw;
-        width: 250px;
     }
 }
 
