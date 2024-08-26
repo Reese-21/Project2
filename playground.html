@@ -181,7 +181,7 @@
 
     <div class="grid-item-bg">
         <div class="text">
-            <h3>Move your mouse to discover some SECRETS!</h3>
+            <h3>Move your mouse to discover 4 SECRETS!</h3>
             <p id="mousePositionDisplay">Click Twice</p>
         </div>
         <img id='img1' src='images\head\middle.png'>
@@ -306,7 +306,7 @@
                     currentDot.style.top = prevDot.style.top;
                 }
 
-                // Place the first trail dot at the current mouse position
+                // Place the first trail dot at the current mouse position (offset by half the image size)
                 trailDots[0].style.left = mouseX - 25 + 'px'; // Adjust for image size
                 trailDots[0].style.top = mouseY - 25 + 'px';  // Adjust for image size
             });
